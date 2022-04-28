@@ -10,3 +10,4 @@ and 84.7\% (irrelevant)/ 86.6\% (relevant) F1 scores using five-fold cross valid
 We show that deep learning can be used as a time-efficient step to make social media a viable source of image and video data for biodiversity 
 assessments.
 
+![alt text](https://github.com/ramirezmichelle/youtube-humpback-whale-classifier/blob/main/capstone_poster.png)
