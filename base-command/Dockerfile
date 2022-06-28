@@ -11,5 +11,6 @@ RUN pip install imageio \
     imutils \
     opencv-python \
     seaborn \
-    git+https://github.com/tensorflow/docs
+    git+https://github.com/tensorflow/docs \
+    wandb
 
