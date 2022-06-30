@@ -5,7 +5,7 @@ import pandas as pd
 
 WORKSPACE_PATH = "/mount/data/"
 downloads_df = pd.read_csv(WORKSPACE_PATH + '/downloaded_videos.csv')
-for i, row in downloads_df[0:2].iterrows():
+for i, row in downloads_df.iterrows():
     
     full_video = WORKSPACE_PATH + 'videos/' + row['renamed_title']
     video_clip_name = row['renamed_title'].replace('_', '_clip_')
