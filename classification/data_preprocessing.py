@@ -38,7 +38,29 @@ def get_video_frames(video_title, max_frames=500, resize=(224, 224)):
 
 def frame_capture(path):
     
-    videObj = cv2. 
+    vidObj = cv2.VideoCapture(path)
+    total_frames = vidObj.get(cv2.CAP_PROP_FRAME_COUNT)
+    print(total_frames)
+    
+    #keep track of frame count
+    count = 0
+    
+    #check whether frames were extracted
+    success = 1
+    
+    while count != total_frames:
+        success, image = vidObj.read()
+        
+        if success:
+            cv2.imwrite("frames/frame%d.jpg" % count, image)
+        else:
+            print(f'frame {count} not available')
+        
+        count +=1
+        
+    
+    return count
+    
 # def pad_videos():
     
 #     '''Function to pad videos that fall short of standardized frame count by replicating middle frame'''
