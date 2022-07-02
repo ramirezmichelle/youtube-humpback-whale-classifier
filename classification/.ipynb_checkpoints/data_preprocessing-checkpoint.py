@@ -56,6 +56,7 @@ def frame_capture(path):
             count +=1
         else:
             print('frame not available')
+            break
                 
     return count
     
