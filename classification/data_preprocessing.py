@@ -53,12 +53,10 @@ def frame_capture(path):
         
         if success:
             cv2.imwrite("frames/frame%d.jpg" % count, image)
+            count +=1
         else:
-            print(f'frame {count} not available')
-        
-        count +=1
-        
-    
+            print('frame not available')
+                
     return count
     
 # def pad_videos():
