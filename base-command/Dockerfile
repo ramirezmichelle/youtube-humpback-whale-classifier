@@ -13,5 +13,6 @@ RUN pip install imageio \
     seaborn \
     git+https://github.com/tensorflow/docs \
     wandb \ 
-    decord
+    decord \ 
+    moviepy
 
