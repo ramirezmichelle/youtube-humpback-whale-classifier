@@ -31,7 +31,7 @@ def get_video_frames(video, resize=(224, 224)):
         frame = frame[:, :, [2, 1, 0]]  
 
         #save frame as jpeg file
-        cv2.imwrite(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, count), frame)             
+#         cv2.imwrite(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, count), frame)             
         count += 1
 
     cap.release()
