@@ -13,14 +13,14 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
     clip_number = video_title.split('_')[2].split('.')[0]
     
     #read video
-    all_video_frames = VideoReader(workspace_path + '/video_clips/' + video_title, ctx=context)
+    vr = VideoReader(workspace_path + '/video_clips/' + video_title, ctx=context, width=resize[0], height=resize[1])
     
     #get batch of frames that matches amount needed
-    frames = get_n_frames(all_video_frames, max_frames)
+    frame_indices, frames = get_n_frames(vr, max_frames)
 
     #save frames as jpg images 
-    for i in range(frames.shape[0]):
-        frame = frames[i].asnumpy()
+    for i in frame_indices:
+        frame = vr[i].asnumpy()
         frame = cv2.resize(frame, resize)
         
         #reorder color channels (will leave out for now)
@@ -31,8 +31,8 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
     
     
     #return frame numbers to double check functionality
-    num_frames_collected = frames.shape[0]
-    num_total_frames = len(all_video_frames)
+    num_frames_collected = len(frame_indices)
+    num_total_frames = len(vr)
     
     return num_frames_collected, num_total_frames
     
@@ -54,7 +54,7 @@ def get_n_frames(all_frames, max_frames):
         frame_indices = [i for i in range(len(all_frames))]
         frames = all_frames
         
-    return frames
+    return frame_indices, frames
     
 
 def sample_n_frames(num_available, n):
