@@ -6,22 +6,7 @@ RUN apt update && \
     apt install -y \
         ffmpeg \
         libsm6 \
-        libxext6 \
-        build-essential \
-        python3-dev \
-        python3-setuptools \
-        make \ 
-        cmake \
-        libavcodec-dev \
-        libavfilter-dev \
-        libavformat-dev \
-        libavutil-dev
-
-RUN git clone --recursive https://github.com/dmlc/decord
-
-RUN ln -s /usr/lib/x86_64-linux-gnu/libnvcuvid.so.1 /usr/lib/x86_64-linux-gnu/libnvcuvid.so
-
-RUN cd decord && mkdir build && cd build && cmake .. -DUSE_CUDA=ON -DCMAKE_BUILD_TYPE=Release && make -j2 && cd ../python && python3 setup.py install
+        libxext6
 
 RUN pip install imageio \
     imutils \
