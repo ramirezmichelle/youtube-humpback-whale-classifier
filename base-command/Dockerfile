@@ -19,6 +19,8 @@ RUN apt update && \
 
 RUN git clone --recursive https://github.com/dmlc/decord
 
+RUN ln -s /usr/lib/x86_64-linux-gnu/libnvcuvid.so.1 /usr/lib/x86_64-linux-gnu/libnvcuvid.so
+
 RUN cd decord && mkdir build && cd build && cmake .. -DUSE_CUDA=ON -DCMAKE_BUILD_TYPE=Release && make -j2 && cd ../python && python3 setup.py install
 
 RUN pip install imageio \
