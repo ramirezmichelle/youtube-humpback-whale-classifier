@@ -73,8 +73,27 @@ def pad_frames(num_available, n):
     Outputs
         frame_indices (int): indices of frames, including padded middle frame 
     '''
-    return
+    if num_available > n:
+        print("Video has sufficient frames and does not need padding. Returning..")
+        return False
     
+    #find how many times we need to replicate the middle frame
+    num_frames_needed = n - num_available
     
+    #find the middle frame index
+    mid_frame_idx = num_available // 2
+    
+    #replicate mid_frame_idx as many times as needed 
+    padded = [mid_frame_idx for i in range(num_frames_needed)]
+    
+    #include mid frame padding indices in list of final indices
+    existing = [i for i in range(num_available)]
+    final_frame_indices = existing + padded
+    
+    #sort index list so padded frame indices are in place
+    final_frame_indices.sort()
+    
+    return final_frame_indices
+
 # def standardize_videos():
     
