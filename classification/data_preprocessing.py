@@ -54,11 +54,11 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
     #get batch of frames that matches amount needed
     frames = get_n_frames(vr, len(vr))
 
-    #save frames as jpg images 
-    for i in range(len(frames)):
-        frame = frames[i].asnumpy()
-        frame = cv2.resize(frame, resize)
-        plt.imsave(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, i), frame)
+#     #save frames as jpg images 
+#     for i in range(len(frames)):
+#         frame = frames[i].asnumpy()
+#         frame = cv2.resize(frame, resize)
+#         plt.imsave(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, i), frame)
     
     
     return len(frames), len(vr)
