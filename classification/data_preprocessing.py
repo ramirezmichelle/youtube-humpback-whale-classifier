@@ -65,26 +65,35 @@ def sample_n_frames(num_available, n):
         print("Video does not have sufficient frames and does not need undersampling. Returning..")
         return False
     
-    
     #get interval of how often to sample
-    sample_interval = num_available // n
+    sampling_interval = int(np.floor(num_available/ n))
     
-    #put together list of cut down (undersampled) frame indices
-    undersampled_indices = [i for i in range(0, num_available, sample_interval)]
+    #establish which indices we have to start out with
+    frame_indices = [i for i in range(num_available)]
     
-    #check if we fall short of n total frames (due to uneven division) -
-    #if so, pad the middle frame
-    if len(undersampled_indices) < n:
-        num_needed = n - len(undersampled_indices)
-        mid_idx = len(undersampled_indices) // 2
-        
-        padded = [undersampled_indices[mid_idx] for i in range(num_needed)]
-        undersampled_indices += padded
-        undersampled_indices.sort()
-        
+    #recursively get a list of evenly spread out frame indices across the video's duration
+    undersampled_indices = recursive_undersample(frame_indices, n, sampling_interval)
             
     return undersampled_indices
+
+def recursive_undersample(frame_indices, n, step):
+    '''Recursively narrow down list of frame indices to n total frame indices'''
     
+    if len(frame_indices) == n:
+        return frame_indices
+        
+    #put together list of cut down (undersampled) frame indices
+    num_available = len(frame_indices)
+
+    if step == 1:
+         undersampled_indices = [frame_indices[i] for i in range(0, n, step)]  
+    else:
+        undersampled_indices = [frame_indices[i] for i in range(0, num_available, step)]    
+
+    new_step = int(np.floor(len(undersampled_indices)/n))
+    
+    return recursive_undersample(undersampled_indices, n, new_step)
+
     
 def pad_frames(num_available, n):
     
