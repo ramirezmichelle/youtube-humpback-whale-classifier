@@ -1,4 +1,4 @@
-video_id,url,title,license,relevant,renamed_title,clip_start,clip_end,duration,frames_collected,frames_reported,frames_reported_decord
+video_id,url,title,license,relevant,renamed_title,clip_start,clip_end,duration,frames_collected_opencv,frames_reported_opencv,frames_reported_decord
 67OIlq2oMt0,https://youtu.be/67OIlq2oMt0,Hawaiian Islands Humpback Whale National Marine Sanctuary,creativeCommon,True,video_0000.mp4,10,25,266.0,361.0,473.0,473.0
 EUcMuUBMYJc,https://youtu.be/EUcMuUBMYJc,Tagging expedition: revealing the delicate nursing behavior of humpback whale calves,creativeCommon,True,video_0001.mp4,44,59,269.0,360.0,441.0,441.0
 dpSuygz7ZmA,https://youtu.be/dpSuygz7ZmA,Your Earth Is Blue: Disentangling a Humpback Whale,creativeCommon,True,video_0002.mp4,5,20,102.0,361.0,398.0,398.0

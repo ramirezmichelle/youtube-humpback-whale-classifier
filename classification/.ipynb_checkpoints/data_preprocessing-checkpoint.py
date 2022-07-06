@@ -13,13 +13,13 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
     clip_number = video_title.split('_')[2].split('.')[0]
     
     #read video
-    vr = VideoReader(workspace_path + '/video_clips/' + video_title, ctx=context)
+    all_video_frames = VideoReader(workspace_path + '/video_clips/' + video_title, ctx=context)
     
     #get batch of frames that matches amount needed
-    frames = get_n_frames(vr, len(vr))
+    frames = get_n_frames(all_video_frames, max_frames)
 
     #save frames as jpg images 
-    for i in range(len(frames)):
+    for i in range(frames.shape[0]):
         frame = frames[i].asnumpy()
         frame = cv2.resize(frame, resize)
         
@@ -29,24 +29,30 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
         #save frame image in directory
         plt.imsave(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, i), frame)
     
-    return len(frames), len(vr)
+    
+    #return frame numbers to double check functionality
+    num_frames_collected = frames.shape[0]
+    num_total_frames = len(all_video_frames)
+    
+    return num_frames_collected, num_total_frames
     
 
-def get_n_frames(video_reader, max_frames):
+def get_n_frames(all_frames, max_frames):
     ''' Get the needed number of frames (max_frames)'''
     
-    if len(video_reader) > max_frames:
+    if len(all_frames) > max_frames:
         #only sample the needed amt of frames
-        frame_indices = sample_n_frames(len(video_reader), max_frames)
-        frames = video_reader.get_batch(frame_indices)
+        frame_indices = sample_n_frames(len(all_frames), max_frames)
+        frames = all_frames.get_batch(frame_indices)
     
-    elif len(video_reader) < max_frames:
+    elif len(all_frames) < max_frames:
         #pad frames
-        frame_indices = pad_frames(len(video_reader), max_frames)
-        frames = video_reader.get_batch(frame_indices)
+        frame_indices = pad_frames(len(all_frames), max_frames)
+        frames = all_frames.get_batch(frame_indices)
    
     else:
-        frames = video_reader
+        frame_indices = [i for i in range(len(all_frames))]
+        frames = all_frames
         
     return frames
     
