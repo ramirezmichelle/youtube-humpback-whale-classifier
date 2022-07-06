@@ -60,7 +60,30 @@ def sample_n_frames(num_available, n):
     Outputs
         frame_indices (int): indices of frames, including padded middle frame 
     '''
-    return
+    
+    if num_available <= n:
+        print("Video does not have sufficient frames and does not need undersampling. Returning..")
+        return False
+    
+    
+    #get interval of how often to sample
+    sample_interval = num_available // n
+    
+    #put together list of cut down (undersampled) frame indices
+    undersampled_indices = [i for i in range(0, num_available, sample_interval)]
+    
+    #check if we fall short of n total frames (due to uneven division) -
+    #if so, pad the middle frame
+    if len(undersampled_indices) < n:
+        num_needed = n - len(undersampled_indices)
+        mid_idx = len(undersampled_indices) // 2
+        
+        padded = [undersampled_indices[mid_idx] for i in range(num_needed)]
+        undersampled_indices += padded
+        undersampled_indices.sort()
+        
+            
+    return undersampled_indices
     
     
 def pad_frames(num_available, n):
@@ -73,7 +96,7 @@ def pad_frames(num_available, n):
     Outputs
         frame_indices (int): indices of frames, including padded middle frame 
     '''
-    if num_available > n:
+    if num_available >= n:
         print("Video has sufficient frames and does not need padding. Returning..")
         return False
     
