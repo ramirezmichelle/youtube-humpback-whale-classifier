@@ -1,8 +1,11 @@
 import cv2
+import pandas as pd
 import numpy as np
 from decord import VideoReader
 from decord import cpu, gpu
 import matplotlib.pyplot as plt
+from multiprocessing import Pool, cpu_count
+from functools import partial
 
 workspace_path = '/mount/data'
 
@@ -92,7 +95,7 @@ def recursive_undersample(frame_indices, n, step):
     num_available = len(frame_indices)
 
     if step == 1:
-         undersampled_indices = [frame_indices[i] for i in range(0, n, step)]  
+        undersampled_indices = [frame_indices[i] for i in range(0, n, step)]  
     else:
         undersampled_indices = [frame_indices[i] for i in range(0, num_available, step)]    
 
@@ -133,5 +136,29 @@ def pad_frames(num_available, n):
     
     return final_frame_indices
 
-# def standardize_videos():
+
+if __name__ == '__main__':
+    
+    #get list of .mp4 clip files to extract frames from
+    downloads_df = pd.read_csv(workspace_path + '/downloaded_videos.csv')
+    video_titles = list(downloads_df.renamed_title) 
+    clip_titles = [video.replace('_', '_clip_') for video in video_titles]
+
+    #print out message about how many CPUs are available
+    print(f"There are {cpu_count()} CPUs on this machine ")
+    
+    #instantiate parallel processes with all available cpu's
+    pool = Pool(cpu_count())
+
+    #map frame extraction function to processes
+    download_frames = partial(get_video_frames, max_frames = 461, resize=(224,224))
+    pool.map(download_frames, clip_titles)
+
+    #terminate worker processes now that parallelizable portion is finished
+    pool.close()
+
+    # wait for the worker processes to terminate.
+    pool.join()
+    
+    print(f'Finished downloading 461 frames from each of our {len(clip_titles)} video clips.')
     
