@@ -145,7 +145,9 @@ if __name__ == '__main__':
     clip_titles = [video.replace('_', '_clip_') for video in video_titles]
 
     #print out message about how many CPUs are available
+    print(f"We need to download {len(clip_titles)} videos" )
     print(f"There are {cpu_count()} CPUs on this machine ")
+    print(f"We need to download {len(clip_titles)} videos" )
     
     #instantiate parallel processes with all available cpu's
     pool = Pool(cpu_count())
