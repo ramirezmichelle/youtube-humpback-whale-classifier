@@ -9,7 +9,7 @@ class CNN:
         self.IMG_SIZE = IMG_SIZE
         
 
-    def inceptionV3(self.IMG_SIZE, self.IMG_SIZE):
+    def InceptionV3(self):
         '''Returns InceptionV3 architecture pre-trained on ImageNet-1k dataset for feature extraction'''
 
         #instantiate InceptionV3 as feature extractor 
