@@ -36,6 +36,9 @@ def prepare_all_videos(X, y, max_frames, num_features, feature_extractor):
 
     for index, video_title in enumerate(videos):
 
+        if index % 100 == 0:
+            print(video_title)
+            
         #Gather all the video's frames and add a batch dimension (frames has shape frames[None, ...])
         frames = load_frames(video_title, max_frames)
 
