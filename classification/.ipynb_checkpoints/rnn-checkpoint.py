@@ -1,10 +1,10 @@
+from tensorflow import keras
 
 class RNN:
-    def __init__():
-        self.model= None
+    def __init__(self):
+        return
         
-    
-    def model(self, MAX_SEQ_LENGTH, NUM_FEATURES ):
+    def build_model(self, MAX_SEQ_LENGTH, NUM_FEATURES):
     
         # create + compile the model
         class_vocab          = [0, 1] 
@@ -19,7 +19,14 @@ class RNN:
 
         self.model          = keras.Model([frame_features_input, mask_input], output)
         
-        return 
+        return
+    
+    def compile_model(self, loss, optimizer, metrics):
+        
+        #compile model
+        self.model.compile(loss=loss, optimizer=optimizer, metrics=[metrics])
+        
+        return
 
     def fit(self, frame_features, frame_masks, frame_labels, model_name):
         """Fit model with frame features, masks, and label data. Weights are saved in models directory"""
@@ -37,7 +44,7 @@ class RNN:
                                 verbose= 0
                             )
         
-        return self.model
+        return history
 
     def predict(self, frame_features, frame_masks):
         """ Returns the predicted labels on input frame features and masks
@@ -52,7 +59,7 @@ class RNN:
         return max_probabilities
         
     
-    def evauluate(self, frame_features, frame_masks, frame_labels):
+    def evaluate(self, frame_features, frame_masks, frame_labels):
         """ Generate loss and accuracy metrics on rnn's performance 
             for the input frame features, masks, and labels
         """
