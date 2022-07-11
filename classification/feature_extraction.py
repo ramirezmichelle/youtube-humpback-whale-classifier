@@ -49,7 +49,8 @@ def prepare_all_videos(X, y, max_frames, num_features, feature_extractor):
         for i, batch in enumerate(frames):
             #extract features from the frames of the current video
             for j in range(max_frames):
-                temp_frame_features[i, j, :] = feature_extractor.predict(batch[None, j, :])
+                current_frame = batch[None, j, :]
+                temp_frame_features[i, j, :] = feature_extractor.predict(current_frame)
 
             #create mask for current video 
             #1 = not masked, 0 = masked
