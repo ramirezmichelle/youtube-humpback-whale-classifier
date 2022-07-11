@@ -750,3 +750,76 @@ j: 459
 j: 460
 (461, 224, 224, 3)
 Batch of frames for video 0000 shape:  (461, 224, 224, 3)
+Batch of frames for video 0000 shape:  (461, 224, 224, 3)
+0 video_0000.mp4
+(1, 461, 224, 224, 3)
+i: 0 batch.shape:  (461, 224, 224, 3)
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/inception_v3/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5
+
+87916544/87910968 [==============================] - 4s 0us/step
+87924736/87910968 [==============================] - 4s 0us/step
+0 video_0000.mp4
+(1, 461, 224, 224, 3)
+i: 0 batch.shape:  (461, 224, 224, 3)
+2022-07-11 21:27:51.657480: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+batch_features shape: (461, 2048)
+0 video_0000.mp4
+(1, 461, 224, 224, 3)
+i: 0 batch.shape:  (461, 224, 224, 3)
+batch_features shape: (461, 2048)
+0 video_0000.mp4
+(1, 461, 224, 224, 3)
+i: 0 batch.shape:  (461, 224, 224, 3)
+batch_features shape: (461, 2048)
+Frame features shape:  (364, 461, 2048)
+Frame masks shape:  (364, 461)
+0 video_0000.mp4
+(1, 461, 224, 224, 3)
+i: 0 batch.shape:  (461, 224, 224, 3)
+batch_features shape: (461, 2048)
+1 video_0001.mp4
+(1, 461, 224, 224, 3)
+i: 0 batch.shape:  (461, 224, 224, 3)
+batch_features shape: (461, 2048)
+2 video_0002.mp4
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 152, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface.py", line 138, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 405, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Exception in thread ChkStopThr:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 170, in check_status
+    status_response = self._interface.communicate_stop_status()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface.py", line 127, in communicate_stop_status
+    resp = self._communicate_stop_status(status)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 395, in _communicate_stop_status
+    resp = self._communicate(req, local=True)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Error in callback <function _WandbInit._resume_backend at 0x7f834d1c0040> (for pre_run_cell):
+Frame features shape:  (364, 461, 2048)
+Frame masks shape:  (364, 461)
+Error in callback <function _WandbInit._pause_backend at 0x7f834d1c00d0> (for post_run_cell):
+Error in callback <function _WandbInit._resume_backend at 0x7f834d1c0040> (for pre_run_cell):
+/device:GPU:0
+/device:GPU:1

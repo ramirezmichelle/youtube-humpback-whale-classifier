@@ -47,13 +47,13 @@ def prepare_all_videos(X, y, max_frames, num_features, feature_extractor):
         temp_frame_features = np.zeros(shape=(1, max_frames, num_features), dtype="float32")
 
         for i, batch in enumerate(frames):
-            #extract features from the frames of the current video
-            for j in range(max_frames):
-                current_frame = batch[None, j, :]
-                temp_frame_features[i, j, :] = feature_extractor.predict(current_frame)
+            
+            #extract features from all (461) frames in batch at once
+            batch_features = feature_extractor.predict_on_batch(batch)
+        
+            temp_frame_features[i, :, :] = batch_features
 
-            #create mask for current video 
-            #1 = not masked, 0 = masked
+            #create mask for current video: 1 = not masked, 0 = masked
             temp_frame_mask[i, :max_frames] = 1 
 
         frame_features[index, ] = temp_frame_features.squeeze()
