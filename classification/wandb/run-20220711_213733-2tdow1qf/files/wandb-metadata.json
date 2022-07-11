@@ -1,0 +1,23 @@
+{
+    "os": "Linux-5.4.0-107-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-07-11T21:37:35.807160",
+    "startedAt": "2022-07-11T21:37:33.759997",
+    "docker": null,
+    "gpu": "Tesla V100-SXM2-16GB-N",
+    "gpu_count": 2,
+    "cpu_count": 80,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "workspace/youtube-humpback-whale-classifier/classification/video_classification.ipynb",
+    "root": "/workspace/youtube-humpback-whale-classifier",
+    "git": {
+        "remote": "https://github.com/ramirezmichelle/youtube-humpback-whale-classifier",
+        "commit": "a02d890112d43338d26d9fd3b3d49065340e6e55"
+    },
+    "email": "mramir71@uic.edu",
+    "host": "3117865",
+    "username": "root",
+    "executable": "/usr/bin/python"
+}
