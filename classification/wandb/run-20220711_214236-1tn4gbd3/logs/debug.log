@@ -53,3 +53,20 @@ config: {}
 2022-07-11 21:43:26,263 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
 2022-07-11 21:43:26,263 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
 2022-07-11 21:43:28,346 INFO    MainThread:47568 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-12 02:49:19,750 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-12 02:49:19,751 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-12 02:49:19,843 INFO    MainThread:47568 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-12 02:49:19,848 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-12 02:49:19,848 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-12 02:49:19,921 INFO    MainThread:47568 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-12 02:49:19,924 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-12 02:49:19,924 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-12 02:51:37,605 INFO    MainThread:47568 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-12 02:51:37,609 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-12 02:51:37,609 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-12 02:51:39,225 INFO    MainThread:47568 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-12 02:51:39,227 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-12 02:51:39,227 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-12 02:51:40,106 INFO    MainThread:47568 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-12 02:54:04,646 INFO    MainThread:47568 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-12 02:54:04,646 INFO    MainThread:47568 [jupyter.py:save_ipynb():377] not saving jupyter notebook
