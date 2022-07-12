@@ -1,0 +1,6 @@
+Frame features shape:  (364, 461, 2048)
+Frame masks shape:  (364, 461)
+Number of Labels:  364
+3/3 [==============================] - 0s 35ms/step - loss: 0.6174 - accuracy: 0.7260
+Loss: 0.6173623204231262, Accuracy: 0.7260273694992065
+F1: [0.6875     0.75609756], Precision: [0.84615385 0.65957447], Recall: [0.57894737 0.88571429]
