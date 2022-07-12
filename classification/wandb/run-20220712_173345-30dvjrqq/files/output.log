@@ -4,3 +4,201 @@ Number of Labels:  364
 3/3 [==============================] - 0s 35ms/step - loss: 0.6174 - accuracy: 0.7260
 Loss: 0.6173623204231262, Accuracy: 0.7260273694992065
 F1: [0.6875     0.75609756], Precision: [0.84615385 0.65957447], Recall: [0.57894737 0.88571429]
+Done Logging WandB metrics.
+[193, 33, 15, 347, 57, 183, 76, 119, 152, 126, 227, 39, 303, 55, 137, 298, 0, 225, 328, 101, 9, 165, 72, 338, 247, 195, 219, 220, 362, 360, 25, 108, 42, 351, 196, 114, 63, 22, 341, 353, 316, 248, 30, 261, 109, 233, 90, 56, 5, 45, 229, 275, 282, 344, 176, 336, 93, 3, 358, 77, 291, 255, 78, 46, 296, 73, 223, 124, 202, 82, 94, 192, 305]
+(73, 3)
+0 File                   video_0241.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 0, dtype: object
+3 File                   video_0410.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 3, dtype: object
+9 File                   video_0163.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 9, dtype: object
+10 File                   video_0276.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 10, dtype: object
+11 File                   video_0047.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 11, dtype: object
+12 File                   video_0361.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 12, dtype: object
+17 File                   video_0274.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 17, dtype: object
+18 File                   video_0389.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 18, dtype: object
+20 File                   video_0010.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 20, dtype: object
+21 File                   video_0207.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 21, dtype: object
+22 File                   video_0095.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 22, dtype: object
+24 File                   video_0300.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 24, dtype: object
+26 File                   video_0268.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 26, dtype: object
+27 File                   video_0269.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 27, dtype: object
+28 File                   video_0429.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 28, dtype: object
+29 File                   video_0427.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 29, dtype: object
+33 File                   video_0416.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 33, dtype: object
+38 File                   video_0404.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 38, dtype: object
+39 File                   video_0418.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 39, dtype: object
+40 File                   video_0375.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 40, dtype: object
+41 File                   video_0301.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 41, dtype: object
+43 File                   video_0315.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 43, dtype: object
+44 File                   video_0143.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 44, dtype: object
+45 File                   video_0283.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 45, dtype: object
+49 File                   video_0053.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 49, dtype: object
+50 File                   video_0279.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 50, dtype: object
+52 File                   video_0338.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 52, dtype: object
+53 File                   video_0407.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 53, dtype: object
+54 File                   video_0221.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 54, dtype: object
+55 File                   video_0398.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 55, dtype: object
+58 File                   video_0424.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 58, dtype: object
+60 File                   video_0347.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 60, dtype: object
+61 File                   video_0309.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 61, dtype: object
+62 File                   video_0105.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 62, dtype: object
+66 File                   video_0272.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 66, dtype: object
+68 File                   video_0250.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 68, dtype: object
+70 File                   video_0127.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 70, dtype: object
+71 File                   video_0240.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 71, dtype: object
+0 File                   video_0241.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 0, dtype: object
+3 File                   video_0410.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 3, dtype: object
+9 File                   video_0163.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 9, dtype: object
+10 File                   video_0276.mp4
+True Relevant Label             False
+Pred Relevant Label             False
+Name: 10, dtype: object
+11 File                   video_0047.mp4
+True Relevant Label             False
+Pred Relevant Label              True
+Name: 11, dtype: object
+224 224 3
+224 224 3
+OpenCV: FFMPEG: tag 0x00000000/'????' is not supported with codec id 13 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+[mp4 @ 0x29e9f840] Could not find tag for codec rawvideo in stream #0, codec not currently supported in container
+224 224 3
+OpenCV: FFMPEG: tag 0x00000000/'????' is not supported with codec id 13 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+[mp4 @ 0x29e9f840] Could not find tag for codec rawvideo in stream #0, codec not currently supported in container
+OpenCV: FFMPEG: tag 0x00000000/'????' is not supported with codec id 13 and format 'mp4 / MP4 (MPEG-4 Part 14)'
+[mp4 @ 0x29e9f840] Could not find tag for codec rawvideo in stream #0, codec not currently supported in container
+224 224 3
+Done
+224 224 3
+224 224 3
+Done
+/usr/local/lib/python3.8/dist-packages/pandas/core/indexing.py:1684: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  self.obj[key] = infer_fill_value(value)
+/usr/local/lib/python3.8/dist-packages/pandas/core/indexing.py:1817: SettingWithCopyWarning:
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
