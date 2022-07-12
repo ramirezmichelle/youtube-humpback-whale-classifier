@@ -1,4 +1,5 @@
 from tensorflow import keras
+import numpy as np
 
 class RNN:
     def __init__(self):
@@ -51,7 +52,7 @@ class RNN:
         """
         
         #generate class probabilities for each example
-        probabilities = self.model.predict(frame_features, frame_masks)
+        probabilities = self.model.predict([frame_features, frame_masks])
         
         #take the max probability and assign the corresponding class to each example
         max_probabilities = np.array([np.argmax(p) for p in probabilities])
