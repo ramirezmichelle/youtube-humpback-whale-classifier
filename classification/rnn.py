@@ -29,20 +29,23 @@ class RNN:
         
         return
 
-    def fit(self, frame_features, frame_masks, frame_labels, model_name):
+    def fit(self, frame_features, frame_masks, frame_labels, num_epochs=10, verbose=0):
         """Fit model with frame features, masks, and label data. Weights are saved in models directory"""
         
-        # only saves best weights (when best val_loss is achieved)
-        filepath        = '/models/' + model_name
-        my_callbacks    = [keras.callbacks.ModelCheckpoint(filepath, save_weights_only=True, save_best_only=True, verbose=0)]
+        # stop training early if accuracy is not increasing
+        my_callbacks    = [keras.callbacks.EarlyStopping(monitor="val_accuracy", 
+                                                         patience=5,
+                                                         mode="max",
+                                                         min_delta = 0.01,
+                                                         restore_best_weights=True)]
 
         # Fit data to model  
         history = self.model.fit([frame_features, frame_masks], 
                                 frame_labels,
-                                validation_split = 0.1,
+                                validation_split = 0.2,
                                 callbacks = my_callbacks,
-                                epochs = 10,
-                                verbose= 0
+                                epochs = num_epochs,
+                                verbose= verbose
                             )
         
         return history
