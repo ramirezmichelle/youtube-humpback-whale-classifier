@@ -326,3 +326,117 @@ config: {}
 2022-07-13 18:06:51,692 INFO    MainThread:619 [wandb_init.py:_resume_backend():383] resuming backend
 2022-07-13 18:07:01,560 INFO    MainThread:619 [wandb_init.py:_pause_backend():374] pausing backend
 2022-07-13 18:07:01,560 INFO    MainThread:619 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-13 18:21:45,644 INFO    MainThread:619 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-13 18:21:45,668 INFO    MainThread:619 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-13 18:21:45,668 INFO    MainThread:619 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-13 18:21:48,134 INFO    MainThread:619 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-13 18:21:48,135 INFO    MainThread:619 [wandb_run.py:_finish():1680] finishing run epg/whale-classification-inception/7y6wssm4
+2022-07-13 18:21:48,136 INFO    MainThread:619 [jupyter.py:save_history():435] not saving jupyter history
+2022-07-13 18:21:48,136 INFO    MainThread:619 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-13 18:21:48,136 INFO    MainThread:619 [wandb_init.py:_jupyter_teardown():393] cleaning up jupyter logic
+2022-07-13 18:21:48,136 INFO    MainThread:619 [wandb_run.py:_atexit_cleanup():1862] got exitcode: 0
+2022-07-13 18:21:48,142 INFO    MainThread:619 [wandb_run.py:_restore():1834] restore
+2022-07-13 18:21:49,159 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 771
+  total_bytes: 771
+}
+
+2022-07-13 18:21:49,328 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 771
+  total_bytes: 771
+}
+
+2022-07-13 18:21:49,579 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 771
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:49,684 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 771
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:49,786 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:49,889 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:49,991 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:50,093 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:50,195 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:50,297 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:50,628 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+
+2022-07-13 18:21:50,894 INFO    MainThread:619 [wandb_run.py:_on_finish():1991] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 64827
+  total_bytes: 64827
+}
+local_info {
+}
+
+2022-07-13 18:21:52,132 INFO    MainThread:619 [wandb_run.py:_footer_history_summary_info():3099] rendering history
+2022-07-13 18:21:52,133 INFO    MainThread:619 [wandb_run.py:_footer_history_summary_info():3131] rendering summary
+2022-07-13 18:21:52,137 INFO    MainThread:619 [wandb_run.py:_footer_sync_info():3055] logging synced files

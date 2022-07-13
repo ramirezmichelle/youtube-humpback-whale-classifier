@@ -1247,3 +1247,4 @@ Learning rate for epoch 11 is 9.999999747378752e-06
 Epoch 12/12
 1/1 [==============================] - ETA: 0s - loss: 1.2887 - accuracy: 0.7864
 Learning rate for epoch 12 is 9.999999747378752e-06
+1/1 [==============================] - 1s 520ms/step - loss: 1.2887 - accuracy: 0.7864 - lr: 1.0000e-05
