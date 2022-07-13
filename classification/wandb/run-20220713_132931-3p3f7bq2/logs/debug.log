@@ -80,3 +80,98 @@ config: {}
 2022-07-13 14:43:34,710 INFO    MainThread:90403 [wandb_init.py:_resume_backend():383] resuming backend
 2022-07-13 14:44:13,582 INFO    MainThread:90403 [wandb_init.py:_pause_backend():374] pausing backend
 2022-07-13 14:44:13,583 INFO    MainThread:90403 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-13 16:02:18,987 INFO    MainThread:90403 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-13 16:02:18,989 INFO    MainThread:90403 [wandb_run.py:_finish():1680] finishing run epg/whale-classification-inception/3p3f7bq2
+2022-07-13 16:02:18,989 INFO    MainThread:90403 [jupyter.py:save_history():435] not saving jupyter history
+2022-07-13 16:02:18,989 INFO    MainThread:90403 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-13 16:02:18,989 INFO    MainThread:90403 [wandb_init.py:_jupyter_teardown():393] cleaning up jupyter logic
+2022-07-13 16:02:18,989 INFO    MainThread:90403 [wandb_run.py:_atexit_cleanup():1862] got exitcode: 0
+2022-07-13 16:02:18,991 INFO    MainThread:90403 [wandb_run.py:_restore():1834] restore
+2022-07-13 16:02:19,459 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 785
+  total_bytes: 785
+}
+
+2022-07-13 16:02:19,716 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 785
+  total_bytes: 785
+}
+
+2022-07-13 16:02:20,151 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 785
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:20,257 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 785
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:20,359 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 14250
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:20,460 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 14250
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:20,563 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 14250
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:20,664 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 14250
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:21,047 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 14250
+  total_bytes: 14250
+}
+
+2022-07-13 16:02:21,312 INFO    MainThread:90403 [wandb_run.py:_on_finish():1991] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 14250
+  total_bytes: 14250
+}
+local_info {
+}
+
+2022-07-13 16:02:22,500 INFO    MainThread:90403 [wandb_run.py:_footer_history_summary_info():3099] rendering history
+2022-07-13 16:02:22,501 INFO    MainThread:90403 [wandb_run.py:_footer_history_summary_info():3131] rendering summary
+2022-07-13 16:02:22,505 INFO    MainThread:90403 [wandb_run.py:_footer_sync_info():3055] logging synced files

@@ -305,3 +305,4 @@ experimental_type {
     }
   }
 
+313/313 [==============================] - 2s 5ms/step - loss: 0.0945 - sparse_categorical_accuracy: 0.9696
