@@ -1,81 +1,72 @@
 import cv2
 import numpy as np
+import tensorflow as tf
 
 
 workspace_path = '/mount/data'
+      
+def load_frames(video_title, max_frames):
+    '''read all frames in for 1 video from workspace 'frames' directory'''
 
-class Extraction:
-    def __init__(self, cnn):
-        self.feature_extractor = cnn
-        
-    def load_frames(self, video_title, max_frames):
-        '''read all frames in for 1 video from workspace 'frames' directory'''
+    #get number associated with clip to retrieve respective frames
+    clip_number = video_title.split('_')[1].split('.')[0]
 
-        #get number associated with clip to retrieve respective frames
-        clip_number = video_title.split('_')[1].split('.')[0]
+    #create list to store each frame
+    frames = []
 
-        #create list to store each frame
-        frames = []
+    for i in range(max_frames):
 
-        for i in range(max_frames):
+        #read in .jpg file as array for video clip 
+        img = cv2.imread(workspace_path + f'/frames/clip_{clip_number}_frame_{i}.jpg')
+        frames.append(img)
 
-            #read in .jpg file as array for video clip 
-            img = cv2.imread(workspace_path + f'/frames/clip_{clip_number}_frame_{i}.jpg')
-            frames.append(img)
+    #put list of frames in numpy format
+    frames = np.array(frames)
 
-        #put list of frames in numpy format
-        frames = np.array(frames)
+    #return frames with an extra batch dimension
+    return frames[None, ...]
 
-        #return frames with an extra batch dimension
-        return frames[None, ...]
-    
-    def prepare_all_videos(self, tf_dataset, max_frames, num_features):       
-        
-        #decode byte video names into strings and bool labels into ints 
-        #this process merges all batches contained in tf_dataset back into one entity
-        string_video_names = []
-        labels = []
-        for batch in list(tf_dataset.as_numpy_iterator()):
+@tf.function
+def prepare_all_videos(tf_dataset, max_frames, num_features, feature_extractor):       
 
-            batch_video_names =  batch[0]
-            batch_labels = batch[1]
+    #decode byte video names into strings and bool labels into ints 
+    #this process merges all batches contained in tf_dataset back into one entity
+    string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
+    labels = [bool_label.astype(int) for bool_label in list(labels_tensor.numpy())]
 
-            string_video_names += [byte_name.decode("utf-8") for byte_name in batch_video_names]
-            labels += [bool_label.astype(int) for bool_label in batch_labels]
-        
-        num_samples = len(string_video_names)
-        
-        # `frame masks` and `frame_features are what we will feed to our sequence model
-        frame_masks = np.zeros(shape=(num_samples, max_frames), dtype="bool")
-        frame_features = np.zeros(shape=(num_samples, max_frames, num_features) , dtype="float32")
+    num_samples = len(string_video_names)
 
-        for index, video_title in enumerate(string_video_names):
+    # `frame masks` and `frame_features are what we will feed to our sequence model
+    frame_masks = np.zeros(shape=(num_samples, max_frames), dtype="bool")
+    frame_features = np.zeros(shape=(num_samples, max_frames, num_features) , dtype="float32")
 
-            if index % 50 == 0:
-                print(video_title)
+    for index, video_title in enumerate(string_video_names):
 
-            #Gather all the video's frames and add a batch dimension (frames has shape frames[None, ...])
-            frames = self.load_frames(video_title, max_frames)
+        if index % 50 == 0:
+            print(video_title)
 
-            #initialize placeholders to store the masks and features of the current video
-            temp_frame_mask = np.zeros(shape=(1, max_frames), dtype="bool")  
-            temp_frame_features = np.zeros(shape=(1, max_frames, num_features), dtype="float32")
+        #Gather all the video's frames and add a batch dimension (frames has shape frames[None, ...])
+        frames = load_frames(video_title, max_frames)
 
-            for i, batch in enumerate(frames):
+        #initialize placeholders to store the masks and features of the current video
+        temp_frame_mask = np.zeros(shape=(1, max_frames), dtype="bool")  
+        temp_frame_features = np.zeros(shape=(1, max_frames, num_features), dtype="float32")
 
-                #extract features from all (461) frames in batch at once
-                batch_features = self.feature_extractor.predict_on_batch(batch)
+        for i, batch in enumerate(frames):
 
-                temp_frame_features[i, :, :] = batch_features
+            #extract features from all (461) frames in batch at once
+            batch_features = feature_extractor.predict_on_batch(batch)
 
-                #create mask for current video: 1 = not masked, 0 = masked
-                temp_frame_mask[i, :max_frames] = 1 
+            temp_frame_features[i, :, :] = batch_features
 
-            frame_features[index, ] = temp_frame_features.squeeze()
-            frame_masks[index, ] = temp_frame_mask.squeeze()
+            #create mask for current video: 1 = not masked, 0 = masked
+            temp_frame_mask[i, :max_frames] = 1 
 
-        
-        return (frame_features, frame_masks), labels
+        frame_features[index, ] = temp_frame_features.squeeze()
+        frame_masks[index, ] = temp_frame_mask.squeeze()
+
+
+    return (frame_features, frame_masks), labels
 
 #     def prepare_all_videos(X, y, max_frames, num_features):
 
