@@ -29,8 +29,8 @@ class Extraction:
         #return frames with an extra batch dimension
         return frames[None, ...]
     
-    def prepare_all_videos(self, tf_dataset, max_frames, num_features):
-            
+    def prepare_all_videos(self, tf_dataset, max_frames, num_features):       
+        
         #decode byte video names into strings and bool labels into ints 
         #this process merges all batches contained in tf_dataset back into one entity
         string_video_names = []
@@ -42,7 +42,6 @@ class Extraction:
 
             string_video_names += [byte_name.decode("utf-8") for byte_name in batch_video_names]
             labels += [bool_label.astype(int) for bool_label in batch_labels]
-        
         
         num_samples = len(string_video_names)
         
