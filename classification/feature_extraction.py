@@ -27,46 +27,61 @@ def load_frames(video_title, max_frames):
     return frames[None, ...]
 
 @tf.function
-def prepare_all_videos(tf_dataset, max_frames, num_features, feature_extractor):       
+def prepare_all_videos(replica_data, max_frames, num_features, feature_extractor):       
 
     #decode byte video names into strings and bool labels into ints 
     #this process merges all batches contained in tf_dataset back into one entity
-    string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
-    labels = [bool_label.astype(int) for bool_label in list(labels_tensor.numpy())]
+    print(replica_data)
+    print(type(replica_data))
+    
+    print('replica_data[0]:    ', replica_data[0], type(replica_data[0]))
+    print('replica_data[1]:    ', replica_data[1], type(replica_data[1]))
+    
+    print('\n')
+    
+#     for f,t in replica_data:
+#         print('f:', f)
+#         print('t: ', t)
+#     return
+#     feature_tensor = replica_data[0].values[0]
+#     labels_tensor = replica_data[1].values[0]
+    
+#     string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
+#     labels = [bool_label.astype(int) for bool_label in list(labels_tensor.numpy())]
 
-    num_samples = len(string_video_names)
+#     num_samples = len(string_video_names)
 
-    # `frame masks` and `frame_features are what we will feed to our sequence model
-    frame_masks = np.zeros(shape=(num_samples, max_frames), dtype="bool")
-    frame_features = np.zeros(shape=(num_samples, max_frames, num_features) , dtype="float32")
+#     # `frame masks` and `frame_features are what we will feed to our sequence model
+#     frame_masks = np.zeros(shape=(num_samples, max_frames), dtype="bool")
+#     frame_features = np.zeros(shape=(num_samples, max_frames, num_features) , dtype="float32")
 
-    for index, video_title in enumerate(string_video_names):
+#     for index, video_title in enumerate(string_video_names):
 
-        if index % 50 == 0:
-            print(video_title)
+#         if index % 50 == 0:
+#             print(video_title)
 
-        #Gather all the video's frames and add a batch dimension (frames has shape frames[None, ...])
-        frames = load_frames(video_title, max_frames)
+#         #Gather all the video's frames and add a batch dimension (frames has shape frames[None, ...])
+#         frames = load_frames(video_title, max_frames)
 
-        #initialize placeholders to store the masks and features of the current video
-        temp_frame_mask = np.zeros(shape=(1, max_frames), dtype="bool")  
-        temp_frame_features = np.zeros(shape=(1, max_frames, num_features), dtype="float32")
+#         #initialize placeholders to store the masks and features of the current video
+#         temp_frame_mask = np.zeros(shape=(1, max_frames), dtype="bool")  
+#         temp_frame_features = np.zeros(shape=(1, max_frames, num_features), dtype="float32")
 
-        for i, batch in enumerate(frames):
+#         for i, batch in enumerate(frames):
 
-            #extract features from all (461) frames in batch at once
-            batch_features = feature_extractor.predict_on_batch(batch)
+#             #extract features from all (461) frames in batch at once
+#             batch_features = feature_extractor.predict_on_batch(batch)
 
-            temp_frame_features[i, :, :] = batch_features
+#             temp_frame_features[i, :, :] = batch_features
 
-            #create mask for current video: 1 = not masked, 0 = masked
-            temp_frame_mask[i, :max_frames] = 1 
+#             #create mask for current video: 1 = not masked, 0 = masked
+#             temp_frame_mask[i, :max_frames] = 1 
 
-        frame_features[index, ] = temp_frame_features.squeeze()
-        frame_masks[index, ] = temp_frame_mask.squeeze()
+#         frame_features[index, ] = temp_frame_features.squeeze()
+#         frame_masks[index, ] = temp_frame_mask.squeeze()
 
 
-    return (frame_features, frame_masks), labels
+#     return (frame_features, frame_masks), labels
 
 #     def prepare_all_videos(X, y, max_frames, num_features):
 

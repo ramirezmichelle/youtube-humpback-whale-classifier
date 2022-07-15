@@ -1,0 +1,1685 @@
+Num GPUs available:  4
+/physical_device:GPU:0
+/physical_device:GPU:1
+/physical_device:GPU:2
+/physical_device:GPU:3
+2022-07-15 05:23:10.701691: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-15 05:23:13.976722: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-07-15 05:23:13.978861: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-07-15 05:23:13.980813: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-07-15 05:23:13.982759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+2022-07-15 05:24:01.606790: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
+    NameError: name 'feature_tensor' is not defined
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+NameError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
+    NameError: name 'feature_tensor' is not defined
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
+    NameError: name 'feature_tensor' is not defined
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+NameError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        string_video_names = [video.decode("utf-8") for video in list(feature_tensor.numpy())]
+    NameError: name 'feature_tensor' is not defined
+2022-07-15 05:26:15.352669: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\025TensorSliceDataset:38"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+AttributeError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+AttributeError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+2022-07-15 05:27:20.789666: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\025TensorSliceDataset:76"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+AttributeError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 34, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+2022-07-15 05:27:29.034080: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\025TensorSliceDataset:99"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+AttributeError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+2022-07-15 05:28:51.935966: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:122"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+AttributeError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        feature_tensor = replica_data[0].values[0]
+    AttributeError: 'Tensor' object has no attribute 'values'
+2022-07-15 05:30:13.057206: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:145"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+tensorflow.python.framework.errors_impl.OperatorNotAllowedInGraphError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+tensorflow.python.framework.errors_impl.OperatorNotAllowedInGraphError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 37, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args:0", shape=(4,), dtype=string)
+replica_data[1]:     Tensor("args_4:0", shape=(4,), dtype=bool)
+(<tf.Tensor 'args_1:0' shape=(4,) dtype=string>, <tf.Tensor 'args_5:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_1:0", shape=(4,), dtype=string)
+replica_data[1]:     Tensor("args_5:0", shape=(4,), dtype=bool)
+(<tf.Tensor 'args_2:0' shape=(4,) dtype=string>, <tf.Tensor 'args_6:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_2:0", shape=(4,), dtype=string)
+replica_data[1]:     Tensor("args_6:0", shape=(4,), dtype=bool)
+(<tf.Tensor 'args_3:0' shape=(4,) dtype=string>, <tf.Tensor 'args_7:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_3:0", shape=(4,), dtype=string)
+replica_data[1]:     Tensor("args_7:0", shape=(4,), dtype=bool)
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_4:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_1:0' shape=(4,) dtype=string>, <tf.Tensor 'args_5:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_1:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_5:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_2:0' shape=(4,) dtype=string>, <tf.Tensor 'args_6:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_2:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_6:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_3:0' shape=(4,) dtype=string>, <tf.Tensor 'args_7:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_3:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_7:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_4:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_1:0' shape=(4,) dtype=string>, <tf.Tensor 'args_5:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_1:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_5:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_2:0' shape=(4,) dtype=string>, <tf.Tensor 'args_6:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_2:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_6:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_3:0' shape=(4,) dtype=string>, <tf.Tensor 'args_7:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_3:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_7:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  1: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  2: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([False, False,  True,  True])>,
+  3: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>
+})
+(PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  1: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  2: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([False, False,  True,  True])>,
+  3: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>
+})
+(PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  1: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  2: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([False, False,  True,  True])>,
+  3: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>
+})
+PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+(<tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>)
+2022-07-15 05:37:39.773834: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:423"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_4:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_1:0' shape=(4,) dtype=string>, <tf.Tensor 'args_5:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_1:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_5:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_2:0' shape=(4,) dtype=string>, <tf.Tensor 'args_6:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_2:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_6:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_3:0' shape=(4,) dtype=string>, <tf.Tensor 'args_7:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_3:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_7:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  1: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>,
+  2: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([False, False,  True,  True])>,
+  3: <tf.Tensor: shape=(4,), dtype=bool, numpy=array([ True,  True,  True,  True])>
+})
+[]
+2022-07-15 05:42:23.434860: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "RangeDataset/_3"
+op: "RangeDataset"
+input: "Const/_0"
+input: "Const/_1"
+input: "Const/_2"
+attr {
+  key: "_cardinality"
+  value {
+    i: 4
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\020RangeDataset:461"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+[PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([0])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([2])>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([4])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([6])>
+}]
+2022-07-15 05:42:34.687786: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "RangeDataset/_3"
+op: "RangeDataset"
+input: "Const/_0"
+input: "Const/_11"
+input: "Const/_2"
+attr {
+  key: "_cardinality"
+  value {
+    i: 4
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\020RangeDataset:478"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+[PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([0])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([2])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([4])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([6])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}]
+2022-07-15 05:42:51.730331: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "RangeDataset/_3"
+op: "RangeDataset"
+input: "Const/_0"
+input: "Const/_1"
+input: "Const/_2"
+attr {
+  key: "_cardinality"
+  value {
+    i: 8
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\020RangeDataset:501"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+[PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([0])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([2])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([4])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([6])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([8])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([10])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([12])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([14])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}]
+2022-07-15 05:43:03.892602: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "RangeDataset/_3"
+op: "RangeDataset"
+input: "Const/_0"
+input: "Const/_1"
+input: "Const/_2"
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\020RangeDataset:524"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+[PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([0])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([2])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([4])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([6])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([8])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([10])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([12])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([14])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([16])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([18])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([20])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([22])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([24])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([26])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([28])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([30])>,
+  2: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>,
+  3: <tf.Tensor: shape=(0,), dtype=int64, numpy=array([], dtype=int64)>
+}]
+2022-07-15 05:43:45.440310: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "RangeDataset/_3"
+op: "RangeDataset"
+input: "Const/_0"
+input: "Const/_1"
+input: "Const/_2"
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\020RangeDataset:547"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+[PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([0])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([2])>,
+  2: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([4])>,
+  3: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([6])>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([8])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([10])>,
+  2: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([12])>,
+  3: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([14])>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([16])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([18])>,
+  2: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([20])>,
+  3: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([22])>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([24])>,
+  1: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([26])>,
+  2: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([28])>,
+  3: <tf.Tensor: shape=(1,), dtype=int64, numpy=array([30])>
+}]
+2022-07-15 05:45:23.912786: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:570"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+(PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0000.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0001.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0002.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0003.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  1: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  2: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  3: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>
+})
+(PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0004.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0006.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0007.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0008.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  1: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  2: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  3: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>
+})
+(PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0009.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0010.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0011.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0014.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([False])>,
+  1: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([False])>,
+  2: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  3: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>
+})
+(PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0017.mp4'], dtype=object)>,
+  1: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0018.mp4'], dtype=object)>,
+  2: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0019.mp4'], dtype=object)>,
+  3: <tf.Tensor: shape=(1,), dtype=string, numpy=array([b'video_0020.mp4'], dtype=object)>
+}, PerReplica:{
+  0: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  1: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  2: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>,
+  3: <tf.Tensor: shape=(1,), dtype=bool, numpy=array([ True])>
+})
+[]
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4'], shape=(1,), dtype=string),
+  1: tf.Tensor([b'video_0001.mp4'], shape=(1,), dtype=string),
+  2: tf.Tensor([b'video_0002.mp4'], shape=(1,), dtype=string),
+  3: tf.Tensor([b'video_0003.mp4'], shape=(1,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([ True], shape=(1,), dtype=bool),
+  1: tf.Tensor([ True], shape=(1,), dtype=bool),
+  2: tf.Tensor([ True], shape=(1,), dtype=bool),
+  3: tf.Tensor([ True], shape=(1,), dtype=bool)
+}
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0004.mp4'], shape=(1,), dtype=string),
+  1: tf.Tensor([b'video_0006.mp4'], shape=(1,), dtype=string),
+  2: tf.Tensor([b'video_0007.mp4'], shape=(1,), dtype=string),
+  3: tf.Tensor([b'video_0008.mp4'], shape=(1,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([ True], shape=(1,), dtype=bool),
+  1: tf.Tensor([ True], shape=(1,), dtype=bool),
+  2: tf.Tensor([ True], shape=(1,), dtype=bool),
+  3: tf.Tensor([ True], shape=(1,), dtype=bool)
+}
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0009.mp4'], shape=(1,), dtype=string),
+  1: tf.Tensor([b'video_0010.mp4'], shape=(1,), dtype=string),
+  2: tf.Tensor([b'video_0011.mp4'], shape=(1,), dtype=string),
+  3: tf.Tensor([b'video_0014.mp4'], shape=(1,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([False], shape=(1,), dtype=bool),
+  1: tf.Tensor([False], shape=(1,), dtype=bool),
+  2: tf.Tensor([ True], shape=(1,), dtype=bool),
+  3: tf.Tensor([ True], shape=(1,), dtype=bool)
+}
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0017.mp4'], shape=(1,), dtype=string),
+  1: tf.Tensor([b'video_0018.mp4'], shape=(1,), dtype=string),
+  2: tf.Tensor([b'video_0019.mp4'], shape=(1,), dtype=string),
+  3: tf.Tensor([b'video_0020.mp4'], shape=(1,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([ True], shape=(1,), dtype=bool),
+  1: tf.Tensor([ True], shape=(1,), dtype=bool),
+  2: tf.Tensor([ True], shape=(1,), dtype=bool),
+  3: tf.Tensor([ True], shape=(1,), dtype=bool)
+}
+[]
+2022-07-15 05:48:28.766132: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_STRING
+      type: DT_BOOL
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 16
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:608"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_STRING
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_BOOL
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  1: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  2: tf.Tensor([False False  True  True], shape=(4,), dtype=bool),
+  3: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
+}
+[]
+---------0-------------
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  1: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  2: tf.Tensor([False False  True  True], shape=(4,), dtype=bool),
+  3: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
+}
+---------0-------------
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+labels:  PerReplica:{
+  0: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  1: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  2: tf.Tensor([False False  True  True], shape=(4,), dtype=bool),
+  3: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
+}
+[]
+---------0-------------
+features:  (<tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>)
+labels:  PerReplica:{
+  0: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  1: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  2: tf.Tensor([False False  True  True], shape=(4,), dtype=bool),
+  3: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
+}
+[]
+---------0-------------
+features:  tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string)
+labels:  PerReplica:{
+  0: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  1: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool),
+  2: tf.Tensor([False False  True  True], shape=(4,), dtype=bool),
+  3: tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
+}
+[]
+---------0-------------
+features:  (<tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>)
+[]
+---------0-------------
+features:  PerReplica:{
+  0: tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string),
+  1: tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string),
+  2: tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string),
+  3: tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+}
+[]
+---------0-------------
+---------0-------------
+features:  (<tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>)
+[]
+---------0-------------
+features:  tf.Tensor([b'video_0000.mp4' b'video_0001.mp4' b'video_0002.mp4' b'video_0003.mp4'], shape=(4,), dtype=string)
+[]
+---------0-------------
+features:  tf.Tensor([b'video_0004.mp4' b'video_0006.mp4' b'video_0007.mp4' b'video_0008.mp4'], shape=(4,), dtype=string)
+[]
+---------0-------------
+features:  tf.Tensor([b'video_0009.mp4' b'video_0010.mp4' b'video_0011.mp4' b'video_0014.mp4'], shape=(4,), dtype=string)
+[]
+---------0-------------
+features:  tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+[]
+---------0-------------
+features:  tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
