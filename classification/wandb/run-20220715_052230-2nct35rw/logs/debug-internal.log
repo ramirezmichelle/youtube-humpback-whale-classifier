@@ -545,3 +545,123 @@
 2022-07-15 06:09:34,656 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
 2022-07-15 06:09:50,896 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
 2022-07-15 06:09:50,897 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:10:02,422 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:10:07,354 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:10:07,354 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:10:23,236 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:10:23,236 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:10:32,718 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:10:38,876 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:10:38,876 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:10:55,541 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:10:55,542 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:11:03,016 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:11:09,514 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:11:11,323 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:11:11,323 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:11:25,519 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:11:27,037 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:11:27,037 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:11:33,342 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:11:42,232 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:11:42,232 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:11:57,317 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:11:57,317 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:12:09,202 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:12:17,317 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:12:17,318 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:12:33,448 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:12:33,448 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:12:33,989 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:12:47,549 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:12:48,650 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:12:48,650 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:13:01,555 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:13:03,736 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:13:03,736 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:13:04,611 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:13:19,612 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:13:19,613 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:13:34,563 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:13:34,706 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:13:34,706 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:13:49,964 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:13:49,964 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:14:04,842 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:14:05,389 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:14:05,389 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:14:20,551 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:14:20,551 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:14:35,128 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:14:35,662 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:14:35,663 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:14:50,777 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:14:50,777 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:15:05,415 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:15:06,217 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:15:06,218 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:15:21,408 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:15:21,409 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:15:35,701 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:15:36,667 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:15:36,667 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:15:52,180 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:15:52,181 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:16:05,988 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:16:07,615 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:16:07,615 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:16:23,140 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:16:23,140 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:16:31,632 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:16:36,282 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:16:38,389 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:16:38,390 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:16:41,636 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:16:53,800 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:16:53,800 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:17:06,573 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:17:09,238 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:17:09,238 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:17:24,734 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:17:24,735 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:17:36,861 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:17:40,294 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:17:40,295 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:17:55,384 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:17:55,384 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:18:07,145 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:18:10,542 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:18:10,543 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:18:25,627 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:18:25,627 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:18:37,431 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:18:40,741 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:18:40,741 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:18:43,680 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:18:55,831 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:18:55,831 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:19:07,710 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:19:10,940 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:19:10,941 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:19:17,692 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:19:26,112 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:19:26,112 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:19:38,001 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:19:41,357 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:19:41,358 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:19:56,440 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:19:56,440 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:20:08,283 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:20:11,534 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:20:11,534 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:20:20,714 INFO    Thread-7  :229425 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/wandb/run-20220715_052230-2nct35rw/files/output.log
+2022-07-15 06:20:26,816 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:20:26,817 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:20:38,575 DEBUG   SenderThread:229425 [sender.py:send():236] send: stats
+2022-07-15 06:20:42,293 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:20:42,293 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:20:49,581 WARNING MainThread:229425 [internal.py:wandb_internal():153] Internal process interrupt: 1
+2022-07-15 06:20:57,730 DEBUG   HandlerThread:229425 [handler.py:handle_request():140] handle_request: stop_status
+2022-07-15 06:20:57,730 DEBUG   SenderThread:229425 [sender.py:send_request():250] send_request: stop_status
+2022-07-15 06:21:04,195 WARNING MainThread:229425 [internal.py:wandb_internal():153] Internal process interrupt: 2
+2022-07-15 06:21:04,196 ERROR   MainThread:229425 [internal.py:wandb_internal():156] Internal process interrupted.

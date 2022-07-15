@@ -1683,3 +1683,91 @@ features:  tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'vi
 []
 ---------0-------------
 features:  tf.Tensor([ True  True  True  True], shape=(4,), dtype=bool)
+[]
+---------0-------------
+features:  (<tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0000.mp4', b'video_0001.mp4', b'video_0002.mp4',
+       b'video_0003.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0004.mp4', b'video_0006.mp4', b'video_0007.mp4',
+       b'video_0008.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0009.mp4', b'video_0010.mp4', b'video_0011.mp4',
+       b'video_0014.mp4'], dtype=object)>, <tf.Tensor: shape=(4,), dtype=string, numpy=
+array([b'video_0017.mp4', b'video_0018.mp4', b'video_0019.mp4',
+       b'video_0020.mp4'], dtype=object)>)
+[]
+---------0-------------
+features:  tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+[]
+(<tf.Tensor 'args:0' shape=(4,) dtype=string>, <tf.Tensor 'args_4:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_4:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_1:0' shape=(4,) dtype=string>, <tf.Tensor 'args_5:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_1:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_5:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_2:0' shape=(4,) dtype=string>, <tf.Tensor 'args_6:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_2:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_6:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+(<tf.Tensor 'args_3:0' shape=(4,) dtype=string>, <tf.Tensor 'args_7:0' shape=(4,) dtype=bool>)
+<class 'tuple'>
+replica_data[0]:     Tensor("args_3:0", shape=(4,), dtype=string) <class 'tensorflow.python.framework.ops.Tensor'>
+replica_data[1]:     Tensor("args_7:0", shape=(4,), dtype=bool) <class 'tensorflow.python.framework.ops.Tensor'>
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 42, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+tensorflow.python.framework.errors_impl.OperatorNotAllowedInGraphError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 42, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+/usr/local/lib/python3.8/dist-packages/tensorflow/python/data/ops/dataset_ops.py:449: UserWarning: To make it possible to preserve tf.data options across serialization boundaries, their implementation has moved to be part of the TensorFlow graph. As a consequence, the options value is in general no longer known at graph construction time. Invoking this method in graph mode retains the legacy behavior of the original implementation, but note that the returned value might not reflect the actual value of the options.
+  warnings.warn("To make it possible to preserve tf.data options across "
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 42, in prepare_all_videos  *
+        for f,t in replica_data:
+    ValueError: Flattening a PerReplica to components is not supported in replica context.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 42, in prepare_all_videos  *
+        for f,t in replica_data:
+    ValueError: Flattening a PerReplica to components is not supported in replica context.
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 42, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+tensorflow.python.framework.errors_impl.OperatorNotAllowedInGraphError: in user code:
+    File "/workspace/youtube-humpback-whale-classifier/classification/feature_extraction.py", line 42, in prepare_all_videos  *
+        for f,t in replica_data:
+    OperatorNotAllowedInGraphError: iterating over `tf.Tensor` is not allowed: AutoGraph did convert this function. This might indicate you are trying to use an unsupported feature.
+---------0-------------
+<tensorflow.python.distribute.distribute_lib._DefaultReplicaContext object at 0x7ff0485eb2b0>
+features:  tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+[]
+---------0-------------
+0
+features:  tf.Tensor([b'video_0017.mp4' b'video_0018.mp4' b'video_0019.mp4' b'video_0020.mp4'], shape=(4,), dtype=string)
+[]
+---------0-------------
+replica ID:  0
