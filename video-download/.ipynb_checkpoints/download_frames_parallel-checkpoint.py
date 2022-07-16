@@ -6,6 +6,7 @@ from decord import cpu, gpu
 import matplotlib.pyplot as plt
 from multiprocessing import Pool, cpu_count
 from functools import partial
+import os
 
 workspace_path = '/mount/data'
 
@@ -14,6 +15,7 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
     
     #get clip number for frame naming
     clip_number = video_title.split('_')[2].split('.')[0]
+    video_folder = video_title.split('.mp4')[0]
     
     #read video
     vr = VideoReader(workspace_path + '/video_clips/' + video_title, ctx=context, width=resize[0], height=resize[1])
@@ -26,14 +28,12 @@ def get_video_frames(video_title, max_frames, context=cpu(0), resize=(224,224)):
     for i in frame_indices:
         frame = vr[i].asnumpy()
         frame = cv2.resize(frame, resize)
-        
-        #reorder color channels (will leave out for now)
-        #frame = frame[:, :, [2, 1, 0]] 
-        
+                
         #save frame image in directory
-        plt.imsave(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, frame_label), frame)
+        ##plt.imsave(workspace_path + "/frames/" + "/clip_%s_frame_%d.jpg" % (clip_number, frame_label), frame)
+        plt.imsave(workspace_path + "/dali_frames/" + video_folder + "/clip_%s_frame_%d.jpg" % (clip_number, frame_label), frame)
+        
         frame_label += 1
-    
     
     #return frame numbers to double check functionality
     num_frames_collected = len(frame_indices)
@@ -138,6 +138,13 @@ def pad_frames(num_available, n):
     
     return final_frame_indices
 
+def make_video_folders(clip_titles):
+    
+    #make a new folder dir to store curr video's frames
+    for clip_title in clip_titles:
+        video_folder = os.mkdir('/mount/data/dali_frames/'  + clip_title.split('.mp4')[0]) 
+    
+    return
 
 if __name__ == '__main__':
     
@@ -145,6 +152,9 @@ if __name__ == '__main__':
     downloads_df = pd.read_csv(workspace_path + '/downloaded_videos.csv')
     video_titles = list(downloads_df.renamed_title)  
     clip_titles = [video.replace('_', '_clip_') for video in video_titles]
+    
+    #make separate folders for each video's frames in workspace
+    make_video_folders(clip_titles)
 
     #print out message about how many CPUs are available
     print(f"There are {cpu_count()} CPUs on this machine ")
