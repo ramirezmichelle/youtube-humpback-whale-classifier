@@ -24,8 +24,9 @@ def load_frames(video_title, max_frames):
     frames = np.array(frames)
 
     #return frames with an extra batch dimension
-    return frames[None, ...]
+#     return frames[None, ...]
 
+    return frames
 @tf.function
 def prepare_all_videos(string_video_names, labels, max_frames, num_features, feature_extractor):       
 # def prepare_all_videos(replica_data, replica_id, max_frames, num_features, feature_extractor):       
@@ -49,6 +50,7 @@ def prepare_all_videos(string_video_names, labels, max_frames, num_features, fea
     frame_masks = np.zeros(shape=(num_samples, max_frames), dtype="bool")
     frame_features = np.zeros(shape=(num_samples, max_frames, num_features) , dtype="float32")
 
+    res = []
     for index, video_title in enumerate(string_video_names):
 
         if index % 50 == 0:
@@ -61,21 +63,31 @@ def prepare_all_videos(string_video_names, labels, max_frames, num_features, fea
         temp_frame_mask = np.zeros(shape=(1, max_frames), dtype="bool")  
         temp_frame_features = np.zeros(shape=(1, max_frames, num_features), dtype="float32")
 
+        video_batch_features = []
         for i, batch in enumerate(frames):
 
             #extract features from all (461) frames in batch at once
-            batch_features = feature_extractor.predict_on_batch(batch)
+#             batch_features = feature_extractor.predict_on_batch(batch)
+            batch_features = feature_extractor(batch, training=False)
+    
+#             print(type(batch_features))
+            
+            video_batch_features.append(batch_features)
+        
+        res.append(video_batch_features)
+        
+        return res
 
-            temp_frame_features[i, :, :] = batch_features
+#             temp_frame_features[i, :, :] = batch_features
 
-            #create mask for current video: 1 = not masked, 0 = masked
-            temp_frame_mask[i, :max_frames] = 1 
+#             #create mask for current video: 1 = not masked, 0 = masked
+#             temp_frame_mask[i, :max_frames] = 1 
 
-        frame_features[index, ] = temp_frame_features.squeeze()
-        frame_masks[index, ] = temp_frame_mask.squeeze()
+#         frame_features[index, ] = temp_frame_features.squeeze()
+#         frame_masks[index, ] = temp_frame_mask.squeeze()
 
 
-    return (frame_features, frame_masks), labels
+#     return (frame_features, frame_masks), labels
 
 #     def prepare_all_videos(X, y, max_frames, num_features):
 
