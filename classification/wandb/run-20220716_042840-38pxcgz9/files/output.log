@@ -75,3 +75,14 @@ experimental_type {
     }
   }
 }
+2022-07-16 04:30:46.773522: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+video_0060.mp4
+video_0122.mp4
+2022-07-16 05:58:46.270040: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+video_0178.mp4
+video_0227.mp4
+2022-07-16 07:37:50.827720: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+video_0282.mp4
+video_0329.mp4
+2022-07-16 09:02:46.562928: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+video_0382.mp4
