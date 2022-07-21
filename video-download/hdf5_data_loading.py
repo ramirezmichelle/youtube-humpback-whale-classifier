@@ -82,7 +82,7 @@ def get_n_frames(all_frames, max_frames):
    
     else:
         frame_indices = [i for i in range(len(all_frames))]
-        frames = all_frames
+        frames = all_frames.get_batch(frame_indices)
         
     return frame_indices, frames
     
@@ -167,6 +167,8 @@ if __name__ == '__main__':
     
     sequence_length = 461
     df = pd.read_csv(workspace_path + "/downloaded_videos.csv")
+    
+    print('<<<<START>>>>')
 
     for i, row in df.iterrows():
         

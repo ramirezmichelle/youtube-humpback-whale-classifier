@@ -82,7 +82,7 @@ def get_n_frames(all_frames, max_frames):
    
     else:
         frame_indices = [i for i in range(len(all_frames))]
-        frames = all_frames
+        frames = all_frames.get_batch(frame_indices)
         
     return frame_indices, frames
     
@@ -163,5 +163,29 @@ def pad_frames(num_available, n):
     
     return final_frame_indices
 
+if __name__ == '__main__':
+    
+    sequence_length = 461
+    df = pd.read_csv(workspace_path + "/downloaded_videos.csv")
+    
+    print('<<<<START>>>>')
 
+    for i, row in df.iterrows():
+        
+        if i % 50 == 0:
+            print(f"Saving frames for video {i}...")
+            
+        #create array of relevance labels (one label per frame)
+        frame_labels = [int(row['relevant']) for i in range(sequence_length)]
+        
+        #get name of video clip and filename for .h5 file
+        video_clip = row['renamed_title'].replace("_", "_clip_")
+        fn = video_clip.replace(".mp4", "")
+
+        #get numpy frames and store in hdf5
+        _, frames = get_video_frames(video_clip, max_frames=sequence_length)
+        store_frames_hdf5(frames, frame_labels, fn)
+
+    print('Done saving video frames to their HDF5 files.')
+    
     
