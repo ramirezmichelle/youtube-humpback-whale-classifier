@@ -41,7 +41,7 @@ class CNN:
         feature_extractor = keras.applications.ResNet50(
                                                             weights      = 'imagenet',
                                                             include_top  = False,
-                                                            pooling      = 'avg',
+                                                            pooling      = None,
                                                             input_shape  = (self.IMG_SIZE, self.IMG_SIZE, 3)
                                                         )
 
