@@ -1,0 +1,36 @@
+
+Num GPUs available:  4
+Loading frames for video 0...
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 103.10239052772522 seconds.
+2022-07-25 17:18:03.068651: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-25 17:18:06.551047: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 188 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-25 17:18:06.552632: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14194 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-25 17:18:06.554063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14194 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-25 17:18:06.555452: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14194 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+2022-07-25 17:18:06.570316: I tensorflow/stream_executor/cuda/cuda_driver.cc:739] failed to allocate 188.75M (197918720 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/inception_v3/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5
+87916544/87910968 [==============================] - 2s 0us/step
+87924736/87910968 [==============================] - 2s 0us/step
+Model: "feature_extractor"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ input_2 (InputLayer)        [(None, 224, 224, 3)]     0
+ tf.math.truediv (TFOpLambda  (None, 224, 224, 3)      0
+ )
+ tf.math.subtract (TFOpLambd  (None, 224, 224, 3)      0
+ a)
+ inception_v3 (Functional)   (None, 2048)              21802784
+=================================================================
+Total params: 21,802,784
+Trainable params: 21,768,352
+Non-trainable params: 34,432
