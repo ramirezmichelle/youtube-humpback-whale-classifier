@@ -1,0 +1,474 @@
+
+Num GPUs available:  4
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 582.3002216815948 seconds.
+2022-07-25 21:28:47.600521: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-25 21:28:51.858565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-25 21:28:51.862218: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-25 21:28:51.864229: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-25 21:28:51.866195: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+Model: "feature_extractor"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ input_2 (InputLayer)        [(None, 224, 224, 3)]     0
+ tf.__operators__.getitem (S  (None, 224, 224, 3)      0
+ licingOpLambda)
+ tf.nn.bias_add (TFOpLambda)  (None, 224, 224, 3)      0
+ resnet50 (Functional)       (None, 2048)              23587712
+=================================================================
+Total params: 23,587,712
+Trainable params: 23,534,592
+Non-trainable params: 53,120
+_________________________________________________________________
+Video 0...
+Video 50...
+Video 100...
+Video 150...
+Video 200...
+Video 250...
+Video 300...
+Video 350...
+Finished extracting features from all 364 videos in 3518.14151930809 seconds.
+(291, 461, 2048)
+(73, 461, 2048)
+INFO:tensorflow:Mixed precision compatibility check (mixed_float16): OK
+Your GPUs will likely run quickly with dtype policy mixed_float16 as they all have compute capability of at least 7.0
+WARNING:tensorflow:Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm_2 will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm_2 will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm_2 will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+Epoch 1/15
+2022-07-25 22:59:09.930752: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+
+
+
+
+
+
+
+8/8 [==============================] - 82s 8s/step - loss: 0.5907 - accuracy: 0.7069 - val_loss: 0.4716 - val_accuracy: 0.8136
+Epoch 2/15
+
+
+
+
+
+
+
+8/8 [==============================] - 58s 7s/step - loss: 0.4586 - accuracy: 0.7845 - val_loss: 0.4937 - val_accuracy: 0.7627
+Epoch 3/15
+
+
+
+
+
+
+
+8/8 [==============================] - 57s 7s/step - loss: 0.3787 - accuracy: 0.8362 - val_loss: 0.4833 - val_accuracy: 0.7627
+Epoch 4/15
+
+
+
+
+
+
+
+8/8 [==============================] - 57s 7s/step - loss: 0.3282 - accuracy: 0.8664 - val_loss: 0.4261 - val_accuracy: 0.8305
+Epoch 5/15
+
+
+
+
+
+
+
+8/8 [==============================] - 57s 7s/step - loss: 0.2203 - accuracy: 0.9181 - val_loss: 0.4987 - val_accuracy: 0.7458
+Epoch 6/15
+
+
+
+
+
+
+
+8/8 [==============================] - 56s 7s/step - loss: 0.1490 - accuracy: 0.9483 - val_loss: 0.5640 - val_accuracy: 0.7288
+Epoch 7/15
+
+
+
+
+
+
+
+8/8 [==============================] - 56s 7s/step - loss: 0.0789 - accuracy: 0.9784 - val_loss: 0.6080 - val_accuracy: 0.7627
+Done training.
+3/3 [==============================] - 3s 1s/step - loss: 0.5478 - accuracy: 0.7534
+Test Metrics - Loss: 0.5477980375289917, Accuracy: 0.7534246444702148
+Done Logging WandB metrics.
+Epoch 1/15
+8/8 [==============================] - 23s 845ms/step - loss: 0.6255 - accuracy: 0.6724 - val_loss: 0.5256 - val_accuracy: 0.7627
+Epoch 2/15
+8/8 [==============================] - 2s 195ms/step - loss: 0.4842 - accuracy: 0.7931 - val_loss: 0.4484 - val_accuracy: 0.7966
+Epoch 3/15
+8/8 [==============================] - 1s 193ms/step - loss: 0.3695 - accuracy: 0.8448 - val_loss: 0.4288 - val_accuracy: 0.7797
+Epoch 4/15
+8/8 [==============================] - 1s 189ms/step - loss: 0.2562 - accuracy: 0.9052 - val_loss: 0.4494 - val_accuracy: 0.7966
+Epoch 5/15
+8/8 [==============================] - 2s 194ms/step - loss: 0.1696 - accuracy: 0.9310 - val_loss: 0.6314 - val_accuracy: 0.7458
+Done training.
+3/3 [==============================] - 0s 67ms/step - loss: 0.4941 - accuracy: 0.7671
+Test Metrics - Loss: 0.494140625, Accuracy: 0.767123281955719
+Epoch 1/15
+
+8/8 [==============================] - 26s 932ms/step - loss: 0.5925 - accuracy: 0.6810 - val_loss: 0.5151 - val_accuracy: 0.7458
+Epoch 2/15
+8/8 [==============================] - 2s 270ms/step - loss: 0.3054 - accuracy: 0.8836 - val_loss: 0.4864 - val_accuracy: 0.7797
+Epoch 3/15
+8/8 [==============================] - 2s 262ms/step - loss: 0.1634 - accuracy: 0.9353 - val_loss: 0.7425 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 2s 261ms/step - loss: 0.1066 - accuracy: 0.9440 - val_loss: 0.6352 - val_accuracy: 0.7458
+Epoch 5/15
+8/8 [==============================] - 2s 267ms/step - loss: 0.0803 - accuracy: 0.9655 - val_loss: 0.8614 - val_accuracy: 0.7288
+Epoch 6/15
+8/8 [==============================] - 2s 280ms/step - loss: 0.1241 - accuracy: 0.9569 - val_loss: 0.8381 - val_accuracy: 0.7119
+Done training.
+3/3 [==============================] - 0s 82ms/step - loss: 0.9943 - accuracy: 0.7397
+Test Metrics - Loss: 0.9942610263824463, Accuracy: 0.7397260069847107
+Epoch 1/15
+8/8 [==============================] - 24s 886ms/step - loss: 0.6063 - accuracy: 0.6293 - val_loss: 0.4829 - val_accuracy: 0.7627
+Epoch 2/15
+8/8 [==============================] - 2s 261ms/step - loss: 0.4038 - accuracy: 0.8405 - val_loss: 0.4897 - val_accuracy: 0.7627
+Epoch 3/15
+8/8 [==============================] - 2s 257ms/step - loss: 0.2385 - accuracy: 0.8879 - val_loss: 0.7142 - val_accuracy: 0.6610
+Epoch 4/15
+Done training.=====================] - 2s 266ms/step - loss: 0.1350 - accuracy: 0.9526 - val_loss: 0.9093 - val_accuracy: 0.6441
+Done training.=====================] - 2s 266ms/step - loss: 0.1350 - accuracy: 0.9526 - val_loss: 0.9093 - val_accuracy: 0.6441
+3/3 [==============================] - 0s 87ms/step - loss: 0.5147 - accuracy: 0.7397
+Test Metrics - Loss: 0.514725387096405, Accuracy: 0.7397260069847107
+Epoch 1/15
+
+8/8 [==============================] - 24s 893ms/step - loss: 0.6419 - accuracy: 0.6638 - val_loss: 0.4963 - val_accuracy: 0.7797
+Epoch 2/15
+8/8 [==============================] - 2s 264ms/step - loss: 0.3715 - accuracy: 0.8276 - val_loss: 0.6394 - val_accuracy: 0.6610
+Epoch 3/15
+8/8 [==============================] - 2s 266ms/step - loss: 0.2617 - accuracy: 0.8836 - val_loss: 0.4785 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 2s 257ms/step - loss: 0.1363 - accuracy: 0.9569 - val_loss: 0.3892 - val_accuracy: 0.8475
+Epoch 5/15
+8/8 [==============================] - 2s 258ms/step - loss: 0.0871 - accuracy: 0.9612 - val_loss: 0.4135 - val_accuracy: 0.8136
+Epoch 6/15
+8/8 [==============================] - 2s 264ms/step - loss: 0.0492 - accuracy: 0.9871 - val_loss: 0.4594 - val_accuracy: 0.7966
+Epoch 7/15
+8/8 [==============================] - 2s 259ms/step - loss: 0.0620 - accuracy: 0.9655 - val_loss: 0.9251 - val_accuracy: 0.7797
+Epoch 8/15
+8/8 [==============================] - 2s 270ms/step - loss: 0.0404 - accuracy: 0.9828 - val_loss: 0.7180 - val_accuracy: 0.6780
+Epoch 9/15
+8/8 [==============================] - 2s 285ms/step - loss: 0.0154 - accuracy: 1.0000 - val_loss: 0.9193 - val_accuracy: 0.7627
+Epoch 10/15
+8/8 [==============================] - 2s 290ms/step - loss: 0.0057 - accuracy: 0.9957 - val_loss: 1.0091 - val_accuracy: 0.7458
+Epoch 11/15
+8/8 [==============================] - 2s 249ms/step - loss: 0.0023 - accuracy: 1.0000 - val_loss: 0.7087 - val_accuracy: 0.8136
+Epoch 12/15
+8/8 [==============================] - 2s 247ms/step - loss: 7.6630e-04 - accuracy: 1.0000 - val_loss: 0.9194 - val_accuracy: 0.7966
+Epoch 13/15
+8/8 [==============================] - 2s 260ms/step - loss: 3.0123e-04 - accuracy: 1.0000 - val_loss: 0.9560 - val_accuracy: 0.7627
+Epoch 14/15
+8/8 [==============================] - 2s 291ms/step - loss: 1.4962e-04 - accuracy: 1.0000 - val_loss: 0.9433 - val_accuracy: 0.7966
+Epoch 15/15
+8/8 [==============================] - 2s 283ms/step - loss: 9.4521e-05 - accuracy: 1.0000 - val_loss: 0.9425 - val_accuracy: 0.7966
+Done training.
+3/3 [==============================] - 0s 79ms/step - loss: 1.1145 - accuracy: 0.7534
+Test Metrics - Loss: 1.1145387887954712, Accuracy: 0.7534246444702148
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+2022-07-25 23:17:29.071859: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_FLOAT
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 291
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\027TensorSliceDataset:1273"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 2048
+        }
+      }
+      shape {
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+Epoch 1/15
+INFO:tensorflow:batch_all_reduce: 26 all-reduces with algorithm = nccl, num_packs = 1
+INFO:tensorflow:batch_all_reduce: 26 all-reduces with algorithm = nccl, num_packs = 1
+2022-07-25 23:22:01.523315: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-07-25 23:22:02.592431: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-07-25 23:22:03.189595: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-07-25 23:22:07.599449: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_9"
+op: "FlatMapDataset"
+input: "PrefetchDataset/_8"
+attr {
+  key: "Targuments"
+  value {
+    list {
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: -2
+  }
+}
+attr {
+  key: "f"
+  value {
+    func {
+      name: "__inference_Dataset_flat_map_slice_batch_indices_229901"
+    }
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\023FlatMapDataset:1300"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: -1
+        }
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+. Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+1/8 [==>...........................] - ETA: 9:08 - loss: 0.6937 - accuracy: 0.5292WARNING:tensorflow:Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 120 batches). You may need to use the repeat() function when building your dataset.
+8/8 [==============================] - 79s 84ms/step - loss: 0.6937 - accuracy: 0.5292
+Done training.
+2/3 [===================>..........] - ETA: 0s - loss: 0.7030 - accuracy: 0.7031
+2022-07-25 23:22:25.110652: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at cudnn_rnn_ops.cc:1563 : UNKNOWN: CUDNN_STATUS_BAD_PARAM
+in tensorflow/stream_executor/cuda/cuda_dnn.cc(1788): 'cudnnSetTensorNdDescriptor( tensor_desc.get(), data_type, sizeof(dims) / sizeof(dims[0]), dims, strides)'
+2022-07-25 23:22:25.110708: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at cudnn_rnn_ops.cc:1563 : UNKNOWN: CUDNN_STATUS_BAD_PARAM
+
+2/3 [===================>..........] - ETA: 0s - loss: 0.7030 - accuracy: 0.7031 Epoch 1/15
+INFO:tensorflow:batch_all_reduce: 26 all-reduces with algorithm = nccl, num_packs = 1
+INFO:tensorflow:batch_all_reduce: 26 all-reduces with algorithm = nccl, num_packs = 1
+1/4 [======>.......................] - ETA: 3:41 - loss: 0.6833 - accuracy: 0.5945WARNING:tensorflow:Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches (in this case, 60 batches). You may need to use the repeat() function when building your dataset.
+4/4 [==============================] - 74s 28ms/step - loss: 0.6833 - accuracy: 0.5945
+Done training.
+2022-07-25 23:24:30.438061: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Did not find a shardable source, walked to a node which is not a dataset: name: "FlatMapDataset/_9"
+op: "FlatMapDataset"
+input: "PrefetchDataset/_8"
+attr {
+  key: "Targuments"
+  value {
+    list {
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: -2
+  }
+}
+attr {
+  key: "f"
+  value {
+    func {
+      name: "__inference_Dataset_flat_map_slice_batch_indices_320351"
+    }
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\023FlatMapDataset:1348"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: -1
+        }
+      }
+    }
+  }
+}
+attr {
+  key: "output_types"
+  value {
+    list {
+      type: DT_INT64
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_INT64
+        }
+      }
+    }
+  }
+}
+. Consider either turning off auto-sharding or switching the auto_shard_policy to DATA to shard this dataset. You can do this by creating a new `tf.data.Options()` object then setting `options.experimental_distribute.auto_shard_policy = AutoShardPolicy.DATA` before applying the options object to the dataset via `dataset.with_options(options)`.
+2/3 [===================>..........] - ETA: 0s - loss: 0.6597 - accuracy: 0.6562
+2022-07-25 23:24:48.150847: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at cudnn_rnn_ops.cc:1563 : UNKNOWN: CUDNN_STATUS_BAD_PARAM
+in tensorflow/stream_executor/cuda/cuda_dnn.cc(1788): 'cudnnSetTensorNdDescriptor( tensor_desc.get(), data_type, sizeof(dims) / sizeof(dims[0]), dims, strides)'
+2022-07-25 23:24:48.150918: W tensorflow/core/framework/op_kernel.cc:1745] OP_REQUIRES failed at cudnn_rnn_ops.cc:1563 : UNKNOWN: CUDNN_STATUS_BAD_PARAM
+in tensorflow/stream_executor/cuda/cuda_dnn.cc(1788): 'cudnnSetTensorNdDescriptor( tensor_desc.get(), data_type, sizeof(dims) / sizeof(dims[0]), dims, strides)'
