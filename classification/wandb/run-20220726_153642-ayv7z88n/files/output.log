@@ -1,0 +1,175 @@
+
+Num GPUs available:  4
+2022-07-26 16:02:09.886651: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-26 16:02:14.653677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-26 16:02:14.667673: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-26 16:02:14.670561: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-26 16:02:14.675224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/resnet/resnet50_weights_tf_dim_ordering_tf_kernels_notop.h5
+94773248/94765736 [==============================] - 2s 0us/step
+94781440/94765736 [==============================] - 2s 0us/step
+/tmp/ipykernel_906/641654691.py:2: UserWarning: `Model.predict_generator` is deprecated and will be removed in a future version. Please use `Model.predict`, which supports generators.
+  features = feature_extractor.predict_generator(training_generator)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/interactiveshell.py", line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_906/641654691.py", line 2, in <cell line: 2>
+    features = feature_extractor.predict_generator(training_generator)
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 2276, in predict_generator
+    return self.predict(
+  File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/workspace/youtube-humpback-whale-classifier/classification/DataGenerator.py", line 43, in __getitem__
+    X, y = self.__data_generation(list_IDs_temp)
+  File "/workspace/youtube-humpback-whale-classifier/classification/DataGenerator.py", line 63, in __data_generation
+    X[i, ...], _ = read_frames_hdf5(ID)
+ValueError: could not broadcast input array from shape (461,224,224,3) into shape (224,224,3)
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/interactiveshell.py", line 1982, in showtraceback
+    stb = self.InteractiveTB.structured_traceback(
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 1118, in structured_traceback
+    return FormattedTB.structured_traceback(
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 1012, in structured_traceback
+    return VerboseTB.structured_traceback(
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 865, in structured_traceback
+    formatted_exception = self.format_exception_as_a_whole(etype, evalue, etb, number_of_lines_of_context,
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 818, in format_exception_as_a_whole
+    frames.append(self.format_record(r))
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 736, in format_record
+    result += ''.join(_format_traceback_lines(frame_info.lines, Colors, self.has_colors, lvals))
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/utils.py", line 145, in cached_property_wrapper
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/core.py", line 698, in lines
+    pieces = self.included_pieces
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/utils.py", line 145, in cached_property_wrapper
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/core.py", line 649, in included_pieces
+    pos = scope_pieces.index(self.executing_piece)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/utils.py", line 145, in cached_property_wrapper
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/core.py", line 628, in executing_piece
+    return only(
+  File "/usr/local/lib/python3.8/dist-packages/executing/executing.py", line 164, in only
+    raise NotOneValueFound('Expected one value, found 0')
+executing.executing.NotOneValueFound: Expected one value, found 0
+Unexpected exception formatting exception. Falling back to standard exception
+/tmp/ipykernel_906/641654691.py:2: UserWarning: `Model.predict_generator` is deprecated and will be removed in a future version. Please use `Model.predict`, which supports generators.
+  features = feature_extractor.predict_generator(training_generator)
+Unexpected exception formatting exception. Falling back to standard exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/interactiveshell.py", line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_906/641654691.py", line 2, in <cell line: 2>
+    features = feature_extractor.predict_generator(training_generator)
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 2276, in predict_generator
+    return self.predict(
+  File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 64, in error_handler
+    return fn(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 1951, in predict
+    data_handler = data_adapter.get_data_handler(
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/data_adapter.py", line 1399, in get_data_handler
+    return DataHandler(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/data_adapter.py", line 1149, in __init__
+    self._adapter = adapter_cls(
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/data_adapter.py", line 925, in __init__
+    super(KerasSequenceAdapter, self).__init__(
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/data_adapter.py", line 800, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "/usr/local/lib/python3.8/dist-packages/keras/engine/data_adapter.py", line 936, in _peek_and_restore
+    return x[0], x
+  File "/workspace/youtube-humpback-whale-classifier/classification/DataGenerator.py", line 43, in __getitem__
+    X, y = self.__data_generation(list_IDs_temp)
+  File "/workspace/youtube-humpback-whale-classifier/classification/DataGenerator.py", line 63, in __data_generation
+    X[i, ...], _ = read_frames_hdf5(ID)
+  File "/workspace/youtube-humpback-whale-classifier/video-download/hdf5_data_loading.py", line 47, in read_frames_hdf5
+    images = np.array(file["/images"]).astype("uint8")
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "/usr/local/lib/python3.8/dist-packages/h5py/_hl/dataset.py", line 1015, in __array__
+    self.read_direct(arr)
+  File "/usr/local/lib/python3.8/dist-packages/h5py/_hl/dataset.py", line 976, in read_direct
+    self.id.read(mspace, fspace, dest, dxpl=self._dxpl)
+KeyboardInterrupt
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/interactiveshell.py", line 1982, in showtraceback
+    stb = self.InteractiveTB.structured_traceback(
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 1118, in structured_traceback
+    return FormattedTB.structured_traceback(
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 1012, in structured_traceback
+    return VerboseTB.structured_traceback(
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 865, in structured_traceback
+    formatted_exception = self.format_exception_as_a_whole(etype, evalue, etb, number_of_lines_of_context,
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 818, in format_exception_as_a_whole
+    frames.append(self.format_record(r))
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/ultratb.py", line 736, in format_record
+    result += ''.join(_format_traceback_lines(frame_info.lines, Colors, self.has_colors, lvals))
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/utils.py", line 145, in cached_property_wrapper
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/core.py", line 698, in lines
+    pieces = self.included_pieces
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/utils.py", line 145, in cached_property_wrapper
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/core.py", line 649, in included_pieces
+    pos = scope_pieces.index(self.executing_piece)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/utils.py", line 145, in cached_property_wrapper
+    value = obj.__dict__[self.func.__name__] = self.func(obj)
+  File "/usr/local/lib/python3.8/dist-packages/stack_data/core.py", line 628, in executing_piece
+    return only(
+  File "/usr/local/lib/python3.8/dist-packages/executing/executing.py", line 164, in only
+    raise NotOneValueFound('Expected one value, found 0')
+executing.executing.NotOneValueFound: Expected one value, found 0
+Exception in thread ChkStopThr:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 170, in check_status
+    status_response = self._interface.communicate_stop_status()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface.py", line 127, in communicate_stop_status
+    resp = self._communicate_stop_status(status)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 395, in _communicate_stop_status
+    resp = self._communicate(req, local=True)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 152, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface.py", line 138, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 405, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Error in callback <function _WandbInit._resume_backend at 0x7f297f316af0> (for pre_run_cell):
+Unexpected exception formatting exception. Falling back to standard exception
+Error in callback <function _WandbInit._pause_backend at 0x7f297f316ca0> (for post_run_cell):
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/IPython/core/interactiveshell.py", line 3369, in run_code
+    exec(code_obj, self.user_global_ns, self.user_ns)
+  File "/tmp/ipykernel_906/1486209096.py", line 3, in <cell line: 3>
+    features = feature_extractor.predict(training_generator)
+  File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/workspace/youtube-humpback-whale-classifier/classification/DataGenerator.py", line 43, in __getitem__
+    X, y = self.__data_generation(list_IDs_temp)
+  File "/workspace/youtube-humpback-whale-classifier/classification/DataGenerator.py", line 68, in __data_generation
+Error in callback <function _WandbInit._resume_backend at 0x7f297f316af0> (for pre_run_cell):
+Error in callback <function _WandbInit._pause_backend at 0x7f297f316ca0> (for post_run_cell):
+Error in callback <function _WandbInit._resume_backend at 0x7f297f316af0> (for pre_run_cell):
+Error in callback <function _WandbInit._pause_backend at 0x7f297f316ca0> (for post_run_cell):
+Error in callback <function _WandbInit._resume_backend at 0x7f297f316af0> (for pre_run_cell):
