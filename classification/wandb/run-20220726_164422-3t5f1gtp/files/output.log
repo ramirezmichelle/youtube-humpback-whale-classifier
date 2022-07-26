@@ -1,0 +1,87 @@
+
+Video 0...
+Video 50...
+Video 100...
+Video 150...
+Video 200...
+Video 250...
+Video 300...
+Video 350...
+Finished extracting features from all 364 videos in 450.8314187526703 seconds.
+(291, 461, 2048)
+(73, 461, 2048)
+INFO:tensorflow:Mixed precision compatibility check (mixed_float16): OK
+Your GPUs will likely run quickly with dtype policy mixed_float16 as they all have compute capability of at least 7.0
+WARNING:tensorflow:Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm_2 will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm_2 will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+WARNING:tensorflow:Layer lstm_2 will not use cuDNN kernels since it doesn't meet the criteria. It will use a generic GPU kernel as fallback when running on GPU.
+Epoch 1/15
+
+
+
+
+
+
+
+8/8 [==============================] - 87s 9s/step - loss: 0.6166 - accuracy: 0.6940 - val_loss: 0.6309 - val_accuracy: 0.6102
+Epoch 2/15
+
+
+
+
+
+
+
+8/8 [==============================] - 60s 8s/step - loss: 0.4728 - accuracy: 0.7888 - val_loss: 0.4659 - val_accuracy: 0.7797
+Epoch 3/15
+
+
+
+
+
+
+
+8/8 [==============================] - 61s 8s/step - loss: 0.3400 - accuracy: 0.8664 - val_loss: 0.4870 - val_accuracy: 0.7458
+Epoch 4/15
+
+
+
+
+
+
+
+8/8 [==============================] - 60s 7s/step - loss: 0.2460 - accuracy: 0.9052 - val_loss: 0.4614 - val_accuracy: 0.7627
+Epoch 5/15
+
+
+
+
+
+
+
+8/8 [==============================] - 64s 8s/step - loss: 0.1387 - accuracy: 0.9569 - val_loss: 0.5898 - val_accuracy: 0.7119
+Done training.
+3/3 [==============================] - 4s 1s/step - loss: 0.5354 - accuracy: 0.7397
+Test Metrics - Loss: 0.5353636145591736, Accuracy: 0.7397260069847107
+Epoch 1/15
+
+8/8 [==============================] - 22s 783ms/step - loss: 0.6200 - accuracy: 0.6724 - val_loss: 0.5119 - val_accuracy: 0.7627
+Epoch 2/15
+8/8 [==============================] - 1s 191ms/step - loss: 0.4341 - accuracy: 0.8190 - val_loss: 0.4688 - val_accuracy: 0.7627
+Epoch 3/15
+8/8 [==============================] - 1s 188ms/step - loss: 0.2923 - accuracy: 0.8836 - val_loss: 0.4751 - val_accuracy: 0.7627
+Epoch 4/15
+8/8 [==============================] - 1s 191ms/step - loss: 0.1794 - accuracy: 0.9397 - val_loss: 0.5438 - val_accuracy: 0.7797
+Epoch 5/15
+8/8 [==============================] - 1s 191ms/step - loss: 0.1062 - accuracy: 0.9698 - val_loss: 0.7272 - val_accuracy: 0.7288
+Epoch 6/15
+8/8 [==============================] - 1s 189ms/step - loss: 0.0455 - accuracy: 0.9828 - val_loss: 0.7534 - val_accuracy: 0.7627
+Epoch 7/15
+8/8 [==============================] - 2s 192ms/step - loss: 0.0376 - accuracy: 0.9871 - val_loss: 0.9790 - val_accuracy: 0.7288
+Done training.
+3/3 [==============================] - 0s 72ms/step - loss: 0.8408 - accuracy: 0.6849
+Test Metrics - Loss: 0.8408470749855042, Accuracy: 0.6849315166473389
+wandb: Network error (ReadTimeout), entering retry loop.

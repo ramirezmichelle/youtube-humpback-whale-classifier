@@ -7,6 +7,7 @@
 
 import numpy as np
 import keras
+from keras.utils import np_utils
 
 #frame reading function
 import sys
@@ -15,14 +16,11 @@ from hdf5_data_loading import read_frames_hdf5
 
 class DataGenerator(keras.utils.all_utils.Sequence):
     'Generates data for Keras'
-    def __init__(self, list_IDs, labels, batch_size=32, dim=(32,32,32), n_channels=1,
-                 n_classes=10, shuffle=True):
+    def __init__(self, list_IDs, labels, batch_size=32, n_classes=2, shuffle=True):
         'Initialization'
-        self.dim = dim
         self.batch_size = batch_size
         self.labels = labels
         self.list_IDs = list_IDs
-        self.n_channels = n_channels
         self.n_classes = n_classes
         self.shuffle = shuffle
         self.on_epoch_end()
@@ -53,16 +51,21 @@ class DataGenerator(keras.utils.all_utils.Sequence):
     def __data_generation(self, list_IDs_temp):
         'Generates data containing batch_size samples' # X : (n_samples, *dim, n_channels)
         # Initialization
-        X = np.empty((self.batch_size, *self.dim, self.n_channels))
+        X = np.empty((self.batch_size, 461, 224, 224, 3))
         y = np.empty((self.batch_size), dtype=int)
 
         # Generate data
         for i, ID in enumerate(list_IDs_temp):
             # Store sample
             
-            X[i, ...], _ = read_frames_hdf5(ID)
+            frames, frame_labels = read_frames_hdf5(ID)
+            
+            X[i, ...] = frames
+            
+            if i % 50 == 0:
+                print(frames.shape)
 
             # Store class
             y[i] = self.labels[ID]
 
-        return X, keras.utils.to_categorical(y, num_classes=self.n_classes)
+        return X, keras.utils.np_utils.to_categorical(y, num_classes=self.n_classes)
