@@ -1,0 +1,31 @@
+2022-07-26 21:32:56.612441: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-26 21:33:01.153726: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-26 21:33:01.155976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-26 21:33:01.158005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-26 21:33:01.167273: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+4 Physical GPUs, 4 Logical GPUs
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 1168.3442537784576 seconds.
+2022-07-26 21:59:09.406830: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+Model: "feature_extractor"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ input_2 (InputLayer)        [(None, 224, 224, 3)]     0
+ tf.__operators__.getitem (S  (None, 224, 224, 3)      0
+ licingOpLambda)
+ tf.nn.bias_add (TFOpLambda)  (None, 224, 224, 3)      0
+ resnet50 (Functional)       (None, 2048)              23587712
+=================================================================
+Total params: 23,587,712
+Trainable params: 23,534,592
+Non-trainable params: 53,120
+_________________________________________________________________

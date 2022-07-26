@@ -1,0 +1,139 @@
+2022-07-26 21:10:34.052229: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-26 21:10:38.944477: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-26 21:10:38.947551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-26 21:10:38.951650: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-26 21:10:38.953582: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+4 Physical GPUs, 4 Logical GPUs
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 216.9815866947174 seconds.
+2022-07-26 21:16:27.077289: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-26 21:18:13.307074: W tensorflow/core/common_runtime/bfc_allocator.cc:462] Allocator (GPU_0_bfc) ran out of memory trying to allocate 94.10GiB (rounded to 101036802048)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2022-07-26 21:18:13.307149: I tensorflow/core/common_runtime/bfc_allocator.cc:1010] BFCAllocator dump for GPU_0_bfc
+2022-07-26 21:18:13.307168: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (256): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307181: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307193: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1024): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307205: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307217: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307229: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307241: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307253: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307265: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307277: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307289: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307301: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307315: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1048576): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307328: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307340: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307352: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307364: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307381: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307393: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307405: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307417: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (268435456): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:18:13.307432: I tensorflow/core/common_runtime/bfc_allocator.cc:1033] Bin for 94.10GiB was 256.00MiB, Chunk State:
+2022-07-26 21:18:13.307442: I tensorflow/core/common_runtime/bfc_allocator.cc:1071]      Summary of in-use Chunks by size:
+2022-07-26 21:18:13.307452: I tensorflow/core/common_runtime/bfc_allocator.cc:1078] Sum Total of in-use chunks: 0B
+2022-07-26 21:18:13.307463: I tensorflow/core/common_runtime/bfc_allocator.cc:1080] total_region_allocated_bytes_: 0 memory_limit_: 15361376256 available bytes: 15361376256 curr_region_allocation_bytes_: 2097152
+2022-07-26 21:18:13.307478: I tensorflow/core/common_runtime/bfc_allocator.cc:1086] Stats:
+Limit:                     15361376256
+InUse:                               0
+MaxInUse:                            0
+NumAllocs:                           0
+MaxAllocSize:                        0
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2022-07-26 21:18:13.307489: W tensorflow/core/common_runtime/bfc_allocator.cc:474] <allocator contains no memory>
+2022-07-26 21:23:10.794699: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-26 21:24:41.738271: W tensorflow/core/common_runtime/bfc_allocator.cc:462] Allocator (GPU_0_bfc) ran out of memory trying to allocate 94.10GiB (rounded to 101036802048)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2022-07-26 21:24:41.738338: I tensorflow/core/common_runtime/bfc_allocator.cc:1010] BFCAllocator dump for GPU_0_bfc
+2022-07-26 21:24:41.738360: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (256): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738373: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738385: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1024): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738397: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738409: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738421: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738432: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738445: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738457: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738469: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738481: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738493: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738507: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1048576): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738520: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738532: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738543: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738555: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738570: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738582: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738594: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738606: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (268435456): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:24:41.738623: I tensorflow/core/common_runtime/bfc_allocator.cc:1033] Bin for 94.10GiB was 256.00MiB, Chunk State:
+2022-07-26 21:24:41.738634: I tensorflow/core/common_runtime/bfc_allocator.cc:1071]      Summary of in-use Chunks by size:
+2022-07-26 21:24:41.738644: I tensorflow/core/common_runtime/bfc_allocator.cc:1078] Sum Total of in-use chunks: 0B
+2022-07-26 21:24:41.738654: I tensorflow/core/common_runtime/bfc_allocator.cc:1080] total_region_allocated_bytes_: 0 memory_limit_: 15361376256 available bytes: 15361376256 curr_region_allocation_bytes_: 2097152
+2022-07-26 21:24:41.738673: I tensorflow/core/common_runtime/bfc_allocator.cc:1086] Stats:
+Limit:                     15361376256
+InUse:                               0
+MaxInUse:                            0
+NumAllocs:                           0
+MaxAllocSize:                        0
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2022-07-26 21:24:41.738685: W tensorflow/core/common_runtime/bfc_allocator.cc:474] <allocator contains no memory>
+2022-07-26 21:25:12.246273: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-26 21:26:44.389424: W tensorflow/core/common_runtime/bfc_allocator.cc:462] Allocator (GPU_0_bfc) ran out of memory trying to allocate 94.10GiB (rounded to 101036802048)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2022-07-26 21:26:44.389512: I tensorflow/core/common_runtime/bfc_allocator.cc:1010] BFCAllocator dump for GPU_0_bfc
+2022-07-26 21:26:44.389539: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (256): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389553: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389565: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1024): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389577: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389589: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389601: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389613: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389625: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389637: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389649: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389661: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389673: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389703: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1048576): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389717: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389729: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389740: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389752: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389767: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389779: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389791: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389802: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (268435456): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-26 21:26:44.389826: I tensorflow/core/common_runtime/bfc_allocator.cc:1033] Bin for 94.10GiB was 256.00MiB, Chunk State:
+2022-07-26 21:26:44.389838: I tensorflow/core/common_runtime/bfc_allocator.cc:1071]      Summary of in-use Chunks by size:
+2022-07-26 21:26:44.389848: I tensorflow/core/common_runtime/bfc_allocator.cc:1078] Sum Total of in-use chunks: 0B
+2022-07-26 21:26:44.389859: I tensorflow/core/common_runtime/bfc_allocator.cc:1080] total_region_allocated_bytes_: 0 memory_limit_: 15361376256 available bytes: 15361376256 curr_region_allocation_bytes_: 2097152
+2022-07-26 21:26:44.389882: I tensorflow/core/common_runtime/bfc_allocator.cc:1086] Stats:
+Limit:                     15361376256
+InUse:                               0
+MaxInUse:                            0
+NumAllocs:                           0
+MaxAllocSize:                        0
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2022-07-26 21:26:44.389894: W tensorflow/core/common_runtime/bfc_allocator.cc:474] <allocator contains no memory>
