@@ -61,9 +61,6 @@ class DataGenerator(keras.utils.all_utils.Sequence):
             frames, frame_labels = read_frames_hdf5(ID)
             
             X[i, ...] = frames
-            
-            if i % 50 == 0:
-                print(frames.shape)
 
             # Store class
             y[i] = self.labels[ID]
