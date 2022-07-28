@@ -257,3 +257,48 @@ Exception: The wandb backend process has shutdown
 2022-07-27 22:56:01,511 INFO    MainThread:25884 [wandb_init.py:_pause_backend():374] pausing backend
 2022-07-27 22:56:01,511 INFO    MainThread:25884 [jupyter.py:save_ipynb():377] not saving jupyter notebook
 2022-07-27 22:56:27,868 INFO    MainThread:25884 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-27 22:58:20,106 INFO    MainThread:25884 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-27 22:58:20,106 INFO    MainThread:25884 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-27 22:58:20,242 INFO    MainThread:25884 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-27 22:58:20,300 INFO    MainThread:25884 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-27 22:58:20,301 INFO    MainThread:25884 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-27 22:58:20,423 INFO    MainThread:25884 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-27 22:58:20,488 ERROR   MainThread:25884 [wandb_init.py:init():1070] error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 1040, in init
+    wi.setup(kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 186, in setup
+    tel.feature.set_init_tags = True
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/lib/telemetry.py", line 41, in __exit__
+    self._run._telemetry_callback(self._obj)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 572, in _telemetry_callback
+    self._telemetry_flush()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 583, in _telemetry_flush
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 74, in _publish_telemetry
+    self._publish(rec)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_queue.py", line 49, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+2022-07-27 22:58:22,694 INFO    MainThread:25884 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-27 22:58:22,695 INFO    MainThread:25884 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-27 22:58:46,626 INFO    MainThread:25884 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-27 22:58:46,692 ERROR   MainThread:25884 [wandb_init.py:init():1070] error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 1040, in init
+    wi.setup(kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_init.py", line 186, in setup
+    tel.feature.set_init_tags = True
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/lib/telemetry.py", line 41, in __exit__
+    self._run._telemetry_callback(self._obj)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 572, in _telemetry_callback
+    self._telemetry_flush()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 583, in _telemetry_flush
+    self._backend.interface._publish_telemetry(self._telemetry_obj)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 74, in _publish_telemetry
+    self._publish(rec)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_queue.py", line 49, in _publish
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+2022-07-27 22:58:48,872 INFO    MainThread:25884 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-27 22:58:48,873 INFO    MainThread:25884 [jupyter.py:save_ipynb():377] not saving jupyter notebook
