@@ -1,0 +1,55 @@
+
+Num GPUs available:  8
+2022-07-29 19:59:08.876319: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-29 19:59:15.457031: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-07-29 19:59:15.459568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-07-29 19:59:15.461956: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-07-29 19:59:15.464259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-07-29 19:59:15.466560: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-29 19:59:15.468862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-29 19:59:15.471141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-29 19:59:15.487299: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB, pci bus id: 0000:8a:00.0, compute capability: 7.0
+8 Physical GPUs, 8 Logical GPUs
+Model: "feature_extractor"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ input_2 (InputLayer)        [(None, 224, 224, 3)]     0
+ tf.__operators__.getitem (S  (None, 224, 224, 3)      0
+ licingOpLambda)
+ tf.nn.bias_add (TFOpLambda)  (None, 224, 224, 3)      0
+ vgg19 (Functional)          (None, 512)               20024384
+=================================================================
+Total params: 20,024,384
+Trainable params: 20,024,384
+Non-trainable params: 0
+_________________________________________________________________
+2022-07-29 19:59:26.058640: W tensorflow/core/kernels/gpu_utils.cc:50] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2022-07-29 19:59:27.127316: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-07-29 19:59:28.305819: W tensorflow/core/common_runtime/bfc_allocator.cc:343] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+0
+50
+100
+150
+200
+250
+300
+350
+Done loading frames in 403.59353852272034 seconds.
+(364,)
+(364, 461, 512)
+(291, 461, 512)
+(73, 461, 512)
+Epoch 1/15
+8/8 [==============================] - 12s 446ms/step - loss: 0.7062 - accuracy: 0.6207 - val_loss: 0.5372 - val_accuracy: 0.7288
+Epoch 2/15
+8/8 [==============================] - 1s 137ms/step - loss: 0.4535 - accuracy: 0.8017 - val_loss: 0.4359 - val_accuracy: 0.8305
+Epoch 3/15
+8/8 [==============================] - 1s 133ms/step - loss: 0.2726 - accuracy: 0.8879 - val_loss: 0.4562 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 1s 133ms/step - loss: 0.1724 - accuracy: 0.9310 - val_loss: 0.4946 - val_accuracy: 0.7966
+Epoch 5/15
+8/8 [==============================] - 1s 134ms/step - loss: 0.1898 - accuracy: 0.9224 - val_loss: 0.5141 - val_accuracy: 0.7797
+Done training.
+3/3 [==============================] - 0s 42ms/step - loss: 0.4998 - accuracy: 0.7123
