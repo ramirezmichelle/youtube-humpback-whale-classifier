@@ -54,5 +54,28 @@ class CNN:
 
         outputs = feature_extractor(preprocessed)
         return keras.Model(inputs, outputs, name="feature_extractor")
+    
+    def ResNet101(self):
+        '''Returns InceptionV3 architecture pre-trained on ImageNet-1k dataset for feature extraction'''
+
+        #instantiate InceptionV3 as feature extractor 
+        #we don't include the top layer since we're not using this for 
+        #classification - just feature extraction)
+        feature_extractor = keras.applications.ResNet101(
+                                                            weights      = 'imagenet',
+                                                            include_top  = False,
+                                                            pooling      = 'avg',
+                                                            input_shape  = (self.IMG_SIZE, self.IMG_SIZE, 3)
+                                                        )
+
+
+        #required preprocessing for resnet. converts images from RGB to BGR and zero-centers each color channel (w/o scaling)
+        preprocess_input = keras.applications.resnet.preprocess_input
+
+        inputs = keras.Input((self.IMG_SIZE, self.IMG_SIZE, 3))
+        preprocessed = preprocess_input(inputs)
+
+        outputs = feature_extractor(preprocessed)
+        return keras.Model(inputs, outputs, name="feature_extractor")
 
 
