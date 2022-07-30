@@ -21,3 +21,232 @@ Loading frames for video 300...
 Loading frames for video 350...
 Done loading frames in 180.3727297782898 seconds.
 (364, 461, 224, 224, 3)
+(364,)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+Number of devices: 2
+2022-07-30 16:19:55.385874: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-30 16:21:33.787891: W tensorflow/core/common_runtime/bfc_allocator.cc:462] Allocator (GPU_0_bfc) ran out of memory trying to allocate 94.10GiB (rounded to 101036802048)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2022-07-30 16:21:33.787948: I tensorflow/core/common_runtime/bfc_allocator.cc:1010] BFCAllocator dump for GPU_0_bfc
+2022-07-30 16:21:33.787970: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (256): 	Total Chunks: 1, Chunks in use: 1. 256B allocated for chunks. 256B in use in bin. 4B client-requested in use in bin.
+2022-07-30 16:21:33.787985: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788000: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1024): 	Total Chunks: 1, Chunks in use: 1. 1.2KiB allocated for chunks. 1.2KiB in use in bin. 1.0KiB client-requested in use in bin.
+2022-07-30 16:21:33.788013: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788025: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788037: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788050: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788062: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788074: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788088: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788100: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788112: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788125: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1048576): 	Total Chunks: 1, Chunks in use: 0. 2.00MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788138: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788150: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788162: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788174: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788191: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788203: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788215: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788227: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (268435456): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:21:33.788242: I tensorflow/core/common_runtime/bfc_allocator.cc:1033] Bin for 94.10GiB was 256.00MiB, Chunk State:
+2022-07-30 16:21:33.788253: I tensorflow/core/common_runtime/bfc_allocator.cc:1046] Next region of size 2097152
+2022-07-30 16:21:33.788268: I tensorflow/core/common_runtime/bfc_allocator.cc:1066] InUse at 7f6eb4000000 of size 256 next 1
+2022-07-30 16:21:33.788279: I tensorflow/core/common_runtime/bfc_allocator.cc:1066] InUse at 7f6eb4000100 of size 1280 next 2
+2022-07-30 16:21:33.788290: I tensorflow/core/common_runtime/bfc_allocator.cc:1066] Free  at 7f6eb4000600 of size 2095616 next 18446744073709551615
+2022-07-30 16:21:33.788300: I tensorflow/core/common_runtime/bfc_allocator.cc:1071]      Summary of in-use Chunks by size:
+2022-07-30 16:21:33.788312: I tensorflow/core/common_runtime/bfc_allocator.cc:1074] 1 Chunks of size 256 totalling 256B
+2022-07-30 16:21:33.788324: I tensorflow/core/common_runtime/bfc_allocator.cc:1074] 1 Chunks of size 1280 totalling 1.2KiB
+2022-07-30 16:21:33.788335: I tensorflow/core/common_runtime/bfc_allocator.cc:1078] Sum Total of in-use chunks: 1.5KiB
+2022-07-30 16:21:33.788346: I tensorflow/core/common_runtime/bfc_allocator.cc:1080] total_region_allocated_bytes_: 2097152 memory_limit_: 15361376256 available bytes: 15359279104 curr_region_allocation_bytes_: 4194304
+2022-07-30 16:21:33.788362: I tensorflow/core/common_runtime/bfc_allocator.cc:1086] Stats:
+Limit:                     15361376256
+InUse:                            1536
+MaxInUse:                         1536
+NumAllocs:                           2
+MaxAllocSize:                     1280
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2022-07-30 16:21:33.788380: W tensorflow/core/common_runtime/bfc_allocator.cc:474] *___________________________________________________________________________________________________
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+Number of devices: 2
+2022-07-30 16:28:02.551697: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-30 16:29:40.913693: W tensorflow/core/common_runtime/bfc_allocator.cc:462] Allocator (GPU_0_bfc) ran out of memory trying to allocate 94.10GiB (rounded to 101036802048)requested by op _EagerConst
+If the cause is memory fragmentation maybe the environment variable 'TF_GPU_ALLOCATOR=cuda_malloc_async' will improve the situation.
+Current allocation summary follows.
+Current allocation summary follows.
+2022-07-30 16:29:40.913749: I tensorflow/core/common_runtime/bfc_allocator.cc:1010] BFCAllocator dump for GPU_0_bfc
+2022-07-30 16:29:40.913774: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (256): 	Total Chunks: 1, Chunks in use: 1. 256B allocated for chunks. 256B in use in bin. 4B client-requested in use in bin.
+2022-07-30 16:29:40.913791: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (512): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913805: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1024): 	Total Chunks: 1, Chunks in use: 1. 1.2KiB allocated for chunks. 1.2KiB in use in bin. 1.0KiB client-requested in use in bin.
+2022-07-30 16:29:40.913818: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2048): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913830: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4096): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913842: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8192): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913854: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16384): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913866: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (32768): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913878: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (65536): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913890: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (131072): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913902: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (262144): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913913: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (524288): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913926: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (1048576): 	Total Chunks: 1, Chunks in use: 0. 2.00MiB allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913938: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (2097152): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913950: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (4194304): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913962: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (8388608): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913974: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (16777216): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.913989: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (33554432): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.914001: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (67108864): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.914013: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (134217728): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.914025: I tensorflow/core/common_runtime/bfc_allocator.cc:1017] Bin (268435456): 	Total Chunks: 0, Chunks in use: 0. 0B allocated for chunks. 0B in use in bin. 0B client-requested in use in bin.
+2022-07-30 16:29:40.914042: I tensorflow/core/common_runtime/bfc_allocator.cc:1033] Bin for 94.10GiB was 256.00MiB, Chunk State:
+2022-07-30 16:29:40.914054: I tensorflow/core/common_runtime/bfc_allocator.cc:1046] Next region of size 2097152
+2022-07-30 16:29:40.914069: I tensorflow/core/common_runtime/bfc_allocator.cc:1066] InUse at 7f6eb4000000 of size 256 next 1
+2022-07-30 16:29:40.914079: I tensorflow/core/common_runtime/bfc_allocator.cc:1066] InUse at 7f6eb4000100 of size 1280 next 2
+2022-07-30 16:29:40.914090: I tensorflow/core/common_runtime/bfc_allocator.cc:1066] Free  at 7f6eb4000600 of size 2095616 next 18446744073709551615
+2022-07-30 16:29:40.914100: I tensorflow/core/common_runtime/bfc_allocator.cc:1071]      Summary of in-use Chunks by size:
+2022-07-30 16:29:40.914111: I tensorflow/core/common_runtime/bfc_allocator.cc:1074] 1 Chunks of size 256 totalling 256B
+2022-07-30 16:29:40.914123: I tensorflow/core/common_runtime/bfc_allocator.cc:1074] 1 Chunks of size 1280 totalling 1.2KiB
+2022-07-30 16:29:40.914134: I tensorflow/core/common_runtime/bfc_allocator.cc:1078] Sum Total of in-use chunks: 1.5KiB
+2022-07-30 16:29:40.914144: I tensorflow/core/common_runtime/bfc_allocator.cc:1080] total_region_allocated_bytes_: 2097152 memory_limit_: 15361376256 available bytes: 15359279104 curr_region_allocation_bytes_: 4194304
+2022-07-30 16:29:40.914162: I tensorflow/core/common_runtime/bfc_allocator.cc:1086] Stats:
+Limit:                     15361376256
+InUse:                            1536
+MaxInUse:                         1536
+NumAllocs:                           2
+MaxAllocSize:                     1280
+Reserved:                            0
+PeakReserved:                        0
+LargestFreeBlock:                    0
+2022-07-30 16:29:40.914176: W tensorflow/core/common_runtime/bfc_allocator.cc:474] *___________________________________________________________________________________________________
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+Number of devices: 2
+2022-07-30 16:31:09.951839: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-30 16:32:38.965987: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-30 16:35:23.457339: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_FLOAT
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+2022-07-30 16:36:16.788579: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/tmp/ipykernel_345745/1477258906.py", line 33, in test_step  *
+        predictions = model(images, training=False)
+    File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler  **
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+    ValueError: Input 0 of layer "feature_extractor" is incompatible with the layer: expected shape=(None, 224, 224, 3), found shape=(3, 461, 224, 224, 3)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+    File "/tmp/ipykernel_345745/1477258906.py", line 33, in test_step  *
+        predictions = model(images, training=False)
+    File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler  **
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
