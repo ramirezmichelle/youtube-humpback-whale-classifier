@@ -384,3 +384,26 @@ Traceback (most recent call last):
 TypeError: in user code:
     File "/tmp/ipykernel_345745/1503234255.py", line 33, in test_step  *
         predictions = model.predict_on_batch(images, training=False)
+    TypeError: predict_on_batch() got an unexpected keyword argument 'training'
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/tmp/ipykernel_345745/170654201.py", line 33, in test_step  *
+        predictions = model.predict_on_batch(images)
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 2175, in predict_on_batch  **
+        _disallow_inside_tf_function('predict_on_batch')
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 3266, in _disallow_inside_tf_function
+        raise RuntimeError(error_msg)
+    RuntimeError: Detected a call to `Model.predict_on_batch` inside a `tf.function`. `Model.predict_on_batch is a high-level endpoint that manages its own `tf.function`. Please move the call to `Model.predict_on_batch` outside of all enclosing `tf.function`s. Note that you can call a `Model` directly on `Tensor`s inside a `tf.function` like: `model(x)`.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+RuntimeError: in user code:
+    File "/tmp/ipykernel_345745/170654201.py", line 33, in test_step  *
+        predictions = model.predict_on_batch(images)
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 2175, in predict_on_batch  **
+        _disallow_inside_tf_function('predict_on_batch')
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/training.py", line 3266, in _disallow_inside_tf_function
+        raise RuntimeError(error_msg)
