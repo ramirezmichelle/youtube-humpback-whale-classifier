@@ -250,3 +250,137 @@ ValueError: in user code:
         raise e.with_traceback(filtered_tb) from None
     File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
         raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+    ValueError: Input 0 of layer "feature_extractor" is incompatible with the layer: expected shape=(None, 224, 224, 3), found shape=(3, 461, 224, 224, 3)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+Number of devices: 2
+2022-07-30 16:45:19.447591: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_FLOAT
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\025TensorSliceDataset:19"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/tmp/ipykernel_345745/1477258906.py", line 33, in test_step  *
+        predictions = model(images, training=False)
+    File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler  **
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+    ValueError: Input 0 of layer "feature_extractor" is incompatible with the layer: expected shape=(None, 224, 224, 3), found shape=(1, 461, 224, 224, 3)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+    File "/tmp/ipykernel_345745/1477258906.py", line 33, in test_step  *
+        predictions = model(images, training=False)
+    File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler  **
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+    ValueError: Input 0 of layer "feature_extractor" is incompatible with the layer: expected shape=(None, 224, 224, 3), found shape=(1, 461, 224, 224, 3)
+WARNING:tensorflow:Model was constructed with shape (None, 224, 224, 3) for input KerasTensor(type_spec=TensorSpec(shape=(None, 224, 224, 3), dtype=tf.float32, name='input_5'), name='input_5', description="created by layer 'input_5'"), but it was called on an input with incompatible shape (None, 461, 224, 224, 3).
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/tmp/ipykernel_345745/1503234255.py", line 33, in test_step  *
+        predictions = model.predict_on_batch(images, training=False)
+    TypeError: predict_on_batch() got an unexpected keyword argument 'training'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+TypeError: in user code:
+    File "/tmp/ipykernel_345745/1503234255.py", line 33, in test_step  *
+        predictions = model.predict_on_batch(images, training=False)
