@@ -1,0 +1,132 @@
+8 Physical GPUs, 8 Logical GPUs
+Loading frames for video 0...
+2022-07-31 18:31:50.138768: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-31 18:31:56.718024: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-07-31 18:31:56.720643: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-07-31 18:31:56.723046: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-07-31 18:31:56.725485: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-07-31 18:31:56.727850: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-31 18:31:56.730194: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-31 18:31:56.732514: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-31 18:31:56.734826: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 103.13946032524109 seconds.
+(364, 461, 224, 224, 3)
+(364,)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+Number of devices: 2
+2022-07-31 18:33:40.195592: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-31 18:35:06.494314: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-31 18:37:46.916193: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_FLOAT
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+2022-07-31 18:48:59.925018: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-31 18:54:30.113705: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-07-31 18:57:32.039158: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
