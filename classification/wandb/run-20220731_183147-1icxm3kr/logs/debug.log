@@ -61,3 +61,9 @@ config: {}
 2022-07-31 19:03:02,635 INFO    MainThread:4259 [wandb_init.py:_resume_backend():383] resuming backend
 2022-07-31 19:03:02,642 INFO    MainThread:4259 [wandb_init.py:_pause_backend():374] pausing backend
 2022-07-31 19:03:02,643 INFO    MainThread:4259 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-31 22:42:11,729 INFO    MainThread:4259 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-31 22:42:12,478 INFO    MainThread:4259 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-31 22:42:12,478 INFO    MainThread:4259 [jupyter.py:save_ipynb():377] not saving jupyter notebook
+2022-07-31 22:42:16,633 INFO    MainThread:4259 [wandb_init.py:_resume_backend():383] resuming backend
+2022-07-31 22:42:16,695 INFO    MainThread:4259 [wandb_init.py:_pause_backend():374] pausing backend
+2022-07-31 22:42:16,695 INFO    MainThread:4259 [jupyter.py:save_ipynb():377] not saving jupyter notebook
