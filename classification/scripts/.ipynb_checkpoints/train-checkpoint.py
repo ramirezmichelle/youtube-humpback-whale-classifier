@@ -64,7 +64,7 @@ def get_video_data(video_clip_title):
     video_frames = np.array(file["/images"]).astype("uint8")
     video_label = np.array(file["/meta"]).astype("uint8")[0]
     
-    return video_frames, 10 #video_label
+    return video_frames, video_label
 
 
 def load_frames_and_labels(video_names):
@@ -88,7 +88,7 @@ def load_frames_and_labels(video_names):
     # begin reading data in
     for i, clip_name in enumerate(clip_names):
         if i % 50 == 0:
-            print(f"Video {i}...")
+            print(f"Video {i} ...")
         frames, label = get_video_data(clip_name) 
         videos[i, ...] = frames
         labels[i] = label 
@@ -182,7 +182,7 @@ if __name__ == "__main__":
     #run commands here
     
     # don't let TF takeup all the gpu memory
-    limit_gpu_memory_growth()
+#     limit_gpu_memory_growth()
     
     #read in dataframes
     X, y = load_dataframes(NGC_WORKSPACE + "downloaded_videos.csv")
