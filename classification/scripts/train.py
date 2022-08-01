@@ -218,7 +218,7 @@ def replica_objects_to_numpy(replica_results, num_gpus):
         #convert list of tensors to list of numpy arrays
         results = []
         for tensor in tensors:
-            resuls.append(tensor.numpy())
+            results.append(tensor.numpy())
             
     else:
         #convert list of tensors from single gpu to list of np arrays
@@ -251,7 +251,7 @@ if __name__ == "__main__":
     print(f"Done loading videos in {stop-start} seconds.")
 
     # get video frame feature representations with CNN    
-    num_gpus = 1
+    num_gpus = 2
     cnn_choice = "resnet101"
     features, labels = feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice)
     print(f"Back from feature Extraction.\nFeatures: {features.shape}\nLabels: {labels.shape}")
