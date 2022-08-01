@@ -1,0 +1,421 @@
+
+Num GPUs available:  8
+8 Physical GPUs, 8 Logical GPUs
+2022-08-01 04:41:49.850601: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-08-01 04:41:56.438884: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-08-01 04:41:56.441499: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-08-01 04:41:56.443917: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-08-01 04:41:56.446487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-08-01 04:41:56.448858: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-08-01 04:41:56.451208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-08-01 04:41:56.453606: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-08-01 04:41:56.455913: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 59.180479288101196 seconds.
+(364, 461, 224, 224, 3)
+(364,)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3', '/job:localhost/replica:0/task:0/device:GPU:4', '/job:localhost/replica:0/task:0/device:GPU:5', '/job:localhost/replica:0/task:0/device:GPU:6', '/job:localhost/replica:0/task:0/device:GPU:7')
+Number of devices: 8
+2022-08-01 04:43:23.488658: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+Starting feature extraction...
+2022-08-01 04:44:31.223623: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:31.985714: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:32.980206: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:34.008965: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:35.015981: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:36.080117: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:36.779522: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:44:37.370217: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+INFO:tensorflow:Error reported to Coordinator: in user code:
+    File "/tmp/ipykernel_111420/559705018.py", line 10, in test_step  *
+        predictions = model(tf.squeeze(images), training=False)
+    File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler  **
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+    ValueError: Input 0 of layer "feature_extractor" is incompatible with the layer: expected shape=(None, 224, 224, 3), found shape=(0, 461, 224, 224, 3)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/training/coordinator.py", line 293, in stop_on_exception
+    yield
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/distribute/mirrored_run.py", line 342, in run
+    self.main_result = self.main_fn(*self.main_args, **self.main_kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/tensorflow/python/autograph/impl/api.py", line 692, in wrapper
+    raise e.ag_error_metadata.to_exception(e)
+ValueError: in user code:
+    File "/tmp/ipykernel_111420/559705018.py", line 10, in test_step  *
+        predictions = model(tf.squeeze(images), training=False)
+    File "/usr/local/lib/python3.8/dist-packages/keras/utils/traceback_utils.py", line 67, in error_handler  **
+        raise e.with_traceback(filtered_tb) from None
+    File "/usr/local/lib/python3.8/dist-packages/keras/engine/input_spec.py", line 264, in assert_input_compatibility
+        raise ValueError(f'Input {input_index} of layer "{layer_name}" is '
+    ValueError: Input 0 of layer "feature_extractor" is incompatible with the layer: expected shape=(None, 224, 224, 3), found shape=(0, 461, 224, 224, 3)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+2022-08-01 04:47:02.662554: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\025TensorSliceDataset:36"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+Starting feature extraction...
+Done extracting features in 101.2998719215393 seconds
+(364, 1)
+(364, 461, 2048)
+(291, 461, 2048)
+(73, 461, 2048)
+(291, 1)
+(73, 1)
+Epoch 1/15
+3/3 [==============================] - ETA: 0s - loss: 0.6392 - accuracy: 0.6701WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 12s 2s/step - loss: 0.6392 - accuracy: 0.6701
+Epoch 2/15
+
+3/3 [==============================] - ETA: 0s - loss: 0.4457 - accuracy: 0.7973WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.4457 - accuracy: 0.7973
+Epoch 3/15
+3/3 [==============================] - ETA: 0s - loss: 0.3792 - accuracy: 0.8282WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.3792 - accuracy: 0.8282
+Epoch 4/15
+3/3 [==============================] - ETA: 0s - loss: 0.3202 - accuracy: 0.8522WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.3202 - accuracy: 0.8522
+Epoch 5/15
+3/3 [==============================] - ETA: 0s - loss: 0.2712 - accuracy: 0.8694WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.2712 - accuracy: 0.8694
+Epoch 6/15
+3/3 [==============================] - ETA: 0s - loss: 0.2148 - accuracy: 0.9244WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.2148 - accuracy: 0.9244
+Epoch 7/15
+
+3/3 [==============================] - ETA: 0s - loss: 0.1882 - accuracy: 0.9244WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.1882 - accuracy: 0.9244
+Epoch 8/15
+3/3 [==============================] - ETA: 0s - loss: 0.1194 - accuracy: 0.9691WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.1194 - accuracy: 0.9691
+Epoch 9/15
+
+3/3 [==============================] - ETA: 0s - loss: 0.0813 - accuracy: 0.9622WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.0813 - accuracy: 0.9622
+Epoch 10/15
+3/3 [==============================] - ETA: 0s - loss: 0.0519 - accuracy: 0.9759WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.0519 - accuracy: 0.9759
+Epoch 11/15
+3/3 [==============================] - ETA: 0s - loss: 0.0554 - accuracy: 0.9828WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.0554 - accuracy: 0.9828
+Epoch 12/15
+
+3/3 [==============================] - ETA: 0s - loss: 0.0236 - accuracy: 0.9966WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.0236 - accuracy: 0.9966
+Epoch 13/15
+3/3 [==============================] - ETA: 0s - loss: 0.0216 - accuracy: 0.9931WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.0216 - accuracy: 0.9931
+Epoch 14/15========================] - ETA: 0s - loss: 0.0216 - accuracy: 0.9931WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - ETA: 0s - loss: 0.0085 - accuracy: 1.0000
+3/3 [==============================] - 4s 2s/step - loss: 0.0085 - accuracy: 1.0000NING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+Epoch 15/15
+3/3 [==============================] - ETA: 0s - loss: 0.0117 - accuracy: 0.9966000NING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+Done training.=====================] - ETA: 0s - loss: 0.0117 - accuracy: 0.9966WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+Test Metrics - Loss: 0.8273942470550537, Accuracy: 0.8219178318977356acy: 0.9966WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+(73, 1)1, 2048)Loss: 0.8273942470550537, Accuracy: 0.8219178318977356acy: 0.9966WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+(232, 1)
+(73, 1)1, 2048)Loss: 0.8273942470550537, Accuracy: 0.8219178318977356acy: 0.9966WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+(232, 461, 2048)
+(59, 461, 2048)
+(73, 461, 2048)
+(232, 1)
+(59, 1)
+(73, 1)
+Epoch 1/15
+
+
+8/8 [==============================] - 12s 562ms/step - loss: 0.7768 - accuracy: 0.6466 - val_loss: 0.4612 - val_accuracy: 0.7797
+Epoch 2/15
+8/8 [==============================] - 2s 256ms/step - loss: 0.3907 - accuracy: 0.8405 - val_loss: 0.5145 - val_accuracy: 0.7627
+Epoch 3/15
+
+8/8 [==============================] - 2s 246ms/step - loss: 0.2906 - accuracy: 0.8836 - val_loss: 0.4308 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 2s 248ms/step - loss: 0.2248 - accuracy: 0.9095 - val_loss: 0.3688 - val_accuracy: 0.8305
+Epoch 5/15
+8/8 [==============================] - 2s 237ms/step - loss: 0.1364 - accuracy: 0.9569 - val_loss: 0.3924 - val_accuracy: 0.8305
+Epoch 6/15
+8/8 [==============================] - 2s 249ms/step - loss: 0.2079 - accuracy: 0.9138 - val_loss: 0.4753 - val_accuracy: 0.8136
+Epoch 7/15
+8/8 [==============================] - 2s 242ms/step - loss: 0.1680 - accuracy: 0.9440 - val_loss: 0.6506 - val_accuracy: 0.7627
+Done training.
+3/3 [==============================] - 1s 56ms/step - loss: 0.5376 - accuracy: 0.8082
+Test Metrics - Loss: 0.5375568866729736, Accuracy: 0.8082191944122314
+Epoch 1/15
+
+15/15 [==============================] - 14s 350ms/step - loss: 0.6647 - accuracy: 0.6681 - val_loss: 0.4827 - val_accuracy: 0.7797
+Epoch 2/15
+15/15 [==============================] - 2s 151ms/step - loss: 0.3606 - accuracy: 0.8319 - val_loss: 0.4049 - val_accuracy: 0.7966
+Epoch 3/15
+
+15/15 [==============================] - 2s 147ms/step - loss: 0.3438 - accuracy: 0.8534 - val_loss: 0.4629 - val_accuracy: 0.7966
+Epoch 4/15
+15/15 [==============================] - 2s 152ms/step - loss: 0.2258 - accuracy: 0.9224 - val_loss: 0.5141 - val_accuracy: 0.7966
+Epoch 5/15
+15/15 [==============================] - 2s 148ms/step - loss: 0.1323 - accuracy: 0.9483 - val_loss: 0.4942 - val_accuracy: 0.7627
+Done training.
+5/5 [==============================] - 1s 42ms/step - loss: 0.5004 - accuracy: 0.7945
+Test Metrics - Loss: 0.5003505349159241, Accuracy: 0.7945205569267273
+Epoch 1/15
+8/8 [==============================] - 12s 541ms/step - loss: 0.6501 - accuracy: 0.6810 - val_loss: 0.4962 - val_accuracy: 0.8136
+Epoch 2/15
+
+8/8 [==============================] - 2s 248ms/step - loss: 0.4199 - accuracy: 0.7974 - val_loss: 0.5120 - val_accuracy: 0.7797
+Epoch 3/15
+8/8 [==============================] - 2s 247ms/step - loss: 0.3005 - accuracy: 0.8879 - val_loss: 0.4198 - val_accuracy: 0.8475
+Epoch 4/15
+
+8/8 [==============================] - 2s 249ms/step - loss: 0.1989 - accuracy: 0.9353 - val_loss: 0.4100 - val_accuracy: 0.8305
+Epoch 5/15
+8/8 [==============================] - 2s 256ms/step - loss: 0.1707 - accuracy: 0.9267 - val_loss: 0.4487 - val_accuracy: 0.7797
+Epoch 6/15
+8/8 [==============================] - 2s 246ms/step - loss: 0.1202 - accuracy: 0.9698 - val_loss: 0.5766 - val_accuracy: 0.8136
+Done training.
+3/3 [==============================] - 1s 52ms/step - loss: 0.4320 - accuracy: 0.7808
+Test Metrics - Loss: 0.43203961849212646, Accuracy: 0.7808219194412231
+Epoch 1/15
+
+8/8 [==============================] - 21s 800ms/step - loss: 0.6007 - accuracy: 0.7026 - val_loss: 0.4960 - val_accuracy: 0.7966
+Epoch 2/15
+8/8 [==============================] - 2s 250ms/step - loss: 0.4129 - accuracy: 0.8491 - val_loss: 0.4291 - val_accuracy: 0.7797
+Epoch 3/15
+
+8/8 [==============================] - 2s 231ms/step - loss: 0.3096 - accuracy: 0.8922 - val_loss: 0.4469 - val_accuracy: 0.8136
+Epoch 4/15
+8/8 [==============================] - 2s 236ms/step - loss: 0.2437 - accuracy: 0.9009 - val_loss: 0.8007 - val_accuracy: 0.6610
+Epoch 5/15
+8/8 [==============================] - 2s 230ms/step - loss: 0.1522 - accuracy: 0.9698 - val_loss: 0.4842 - val_accuracy: 0.8305
+Epoch 6/15
+
+8/8 [==============================] - 2s 233ms/step - loss: 0.1032 - accuracy: 0.9698 - val_loss: 0.5946 - val_accuracy: 0.7966
+Epoch 7/15
+8/8 [==============================] - 2s 229ms/step - loss: 0.0476 - accuracy: 0.9828 - val_loss: 0.5620 - val_accuracy: 0.7797
+Epoch 8/15
+8/8 [==============================] - 2s 239ms/step - loss: 0.0413 - accuracy: 0.9828 - val_loss: 0.5152 - val_accuracy: 0.8136
+Done training.
+3/3 [==============================] - 1s 62ms/step - loss: 0.5825 - accuracy: 0.7397
+Test Metrics - Loss: 0.5824511051177979, Accuracy: 0.7397260069847107
+Epoch 1/15
+
+
+8/8 [==============================] - 13s 713ms/step - loss: 0.7076 - accuracy: 0.6422 - val_loss: 0.5339 - val_accuracy: 0.7627
+Epoch 2/15
+
+8/8 [==============================] - 2s 252ms/step - loss: 0.4391 - accuracy: 0.7974 - val_loss: 0.5398 - val_accuracy: 0.7797
+Epoch 3/15
+8/8 [==============================] - 2s 248ms/step - loss: 0.3940 - accuracy: 0.8405 - val_loss: 0.5592 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 2s 250ms/step - loss: 0.2887 - accuracy: 0.8707 - val_loss: 0.4510 - val_accuracy: 0.8136
+Epoch 5/15
+8/8 [==============================] - 2s 242ms/step - loss: 0.2048 - accuracy: 0.9267 - val_loss: 0.4253 - val_accuracy: 0.8305
+Epoch 6/15
+8/8 [==============================] - 2s 255ms/step - loss: 0.1345 - accuracy: 0.9655 - val_loss: 0.3960 - val_accuracy: 0.8814
+Epoch 7/15
+
+8/8 [==============================] - 2s 245ms/step - loss: 0.0696 - accuracy: 0.9828 - val_loss: 0.9388 - val_accuracy: 0.7119
+Epoch 8/15
+8/8 [==============================] - 2s 253ms/step - loss: 0.0820 - accuracy: 0.9828 - val_loss: 0.7820 - val_accuracy: 0.7627
+Epoch 9/15
+8/8 [==============================] - 2s 243ms/step - loss: 0.0707 - accuracy: 0.9698 - val_loss: 0.5013 - val_accuracy: 0.8305
+Done training.
+3/3 [==============================] - 1s 51ms/step - loss: 0.4794 - accuracy: 0.8219

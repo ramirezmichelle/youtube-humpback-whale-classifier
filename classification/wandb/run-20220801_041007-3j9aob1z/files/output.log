@@ -250,3 +250,192 @@ Epoch 11/15
 8/8 [==============================] - 1s 179ms/step - loss: 0.0142 - accuracy: 1.0000 - val_loss: 0.8551 - val_accuracy: 0.8305
 Done training.
 3/3 [==============================] - 0s 55ms/step - loss: 0.5705 - accuracy: 0.8082
+Test Metrics - Loss: 0.5704569816589355, Accuracy: 0.8082191944122314
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+2022-08-01 04:28:29.409414: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:151"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+Starting feature extraction...
+2022-08-01 04:29:06.425401: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 04:29:07.030110: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+Done extracting features in 105.54161143302917 seconds
+(364, 1)
+(364, 461, 2048)
+(291, 461, 2048)
+(73, 461, 2048)
+(291, 1)
+(73, 1)
+Epoch 1/15
+3/3 [==============================] - ETA: 0s - loss: 0.6573 - accuracy: 0.6667WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 9s 327ms/step - loss: 0.6573 - accuracy: 0.6667
+Epoch 2/15
+3/3 [==============================] - ETA: 0s - loss: 0.4468 - accuracy: 0.8076WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 1s 327ms/step - loss: 0.4468 - accuracy: 0.8076
+Epoch 3/15
+3/3 [==============================] - ETA: 0s - loss: 0.3827 - accuracy: 0.8213WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 1s 309ms/step - loss: 0.3827 - accuracy: 0.8213
+291
+291
+291
+Epoch 1/15
+3/3 [==============================] - ETA: 0s - loss: 0.6063 - accuracy: 0.7045WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 12s 2s/step - loss: 0.6063 - accuracy: 0.7045
+Epoch 2/15
+3/3 [==============================] - ETA: 0s - loss: 0.3696 - accuracy: 0.8351WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.3696 - accuracy: 0.8351
+Epoch 3/15
+3/3 [==============================] - ETA: 0s - loss: 0.3196 - accuracy: 0.8660WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.3196 - accuracy: 0.8660
+Epoch 4/15
+3/3 [==============================] - ETA: 0s - loss: 0.2635 - accuracy: 0.8832WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.2635 - accuracy: 0.8832
+Epoch 5/15
+
+3/3 [==============================] - ETA: 0s - loss: 0.2285 - accuracy: 0.9072WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.2285 - accuracy: 0.9072
+Epoch 6/15
+3/3 [==============================] - ETA: 0s - loss: 0.1714 - accuracy: 0.9175WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.1714 - accuracy: 0.9175
+Epoch 7/15
+
+3/3 [==============================] - ETA: 0s - loss: 0.1071 - accuracy: 0.9725WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.1071 - accuracy: 0.9725
+Epoch 8/15
+3/3 [==============================] - ETA: 0s - loss: 0.1303 - accuracy: 0.9588WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.1303 - accuracy: 0.9588
+Epoch 9/15
+Epoch 10/15========================] - ETA: 0s - loss: 0.0713 - accuracy: 0.9794WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - 4s 2s/step - loss: 0.0713 - accuracy: 0.9794
+Epoch 10/15========================] - ETA: 0s - loss: 0.0713 - accuracy: 0.9794WARNING:tensorflow:Early stopping conditioned on metric `val_accuracy` which is not available. Available metrics are: loss,accuracy
+3/3 [==============================] - ETA: 0s - loss: 0.0454 - accuracy: 0.9794
+3/3 [==============================] - ETA: 0s - loss: 0.0454 - accuracy: 0.9794Error in callback <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
+3/3 [==============================] - ETA: 0s - loss: 0.0454 - accuracy: 0.9794Error in callback <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
+Exception in thread ChkStopThr:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 170, in check_status
+    status_response = self._interface.communicate_stop_status()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface.py", line 127, in communicate_stop_status
+    resp = self._communicate_stop_status(status)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 395, in _communicate_stop_status
+    resp = self._communicate(req, local=True)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+3/3 [==============================] - ETA: 0s - loss: 0.0454 - accuracy: 0.9794Error in callback <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/wandb_run.py", line 152, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface.py", line 138, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 405, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 226, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/usr/local/lib/python3.8/dist-packages/wandb/sdk/interface/interface_shared.py", line 231, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Error in callback <function _WandbInit._pause_backend at 0x7ff494cfa5e0> (for post_run_cell):back <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
+  %reload_ext autoreloadion _WandbInit._pause_backend at 0x7ff494cfa5e0> (for post_run_cell):back <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
+  %reload_ext autoreloadion _WandbInit._pause_backend at 0x7ff494cfa5e0> (for post_run_cell):back <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
+  %reload_ext autoreloadion _WandbInit._pause_backend at 0x7ff494cfa5e0> (for post_run_cell):back <function _WandbInit._resume_backend at 0x7ff494cfa4c0> (for pre_run_cell):
