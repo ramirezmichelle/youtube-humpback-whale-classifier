@@ -187,3 +187,158 @@ Test Metrics - Loss: 0.4394952952861786, Accuracy: 0.7808219194412231
 INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0',)
 Number of devices: 1
 2022-08-01 00:19:12.246120: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-08-01 00:20:55.273488: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-08-01 00:23:43.148799: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_FLOAT
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\026TensorSliceDataset:323"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+Starting feature extraction...
+Done extracting features in 465.33791422843933 seconds
+(364, 461, 2048)
+(364, 1)
+(291, 461, 2048)
+(73, 461, 2048)
+(291, 1)
+(73, 1)
+Epoch 1/15
+
+8/8 [==============================] - 12s 575ms/step - loss: 0.6181 - accuracy: 0.6724 - val_loss: 0.4739 - val_accuracy: 0.7966
+Epoch 2/15
+8/8 [==============================] - 1s 189ms/step - loss: 0.3779 - accuracy: 0.8276 - val_loss: 0.5004 - val_accuracy: 0.7966
+Epoch 3/15
+8/8 [==============================] - 1s 172ms/step - loss: 0.3139 - accuracy: 0.8405 - val_loss: 0.3848 - val_accuracy: 0.8814
+Epoch 4/15
+8/8 [==============================] - 1s 174ms/step - loss: 0.2419 - accuracy: 0.9052 - val_loss: 0.3485 - val_accuracy: 0.8475
+Epoch 5/15
+8/8 [==============================] - 1s 184ms/step - loss: 0.1743 - accuracy: 0.9310 - val_loss: 0.4304 - val_accuracy: 0.8475
+Epoch 6/15
+8/8 [==============================] - 1s 189ms/step - loss: 0.1039 - accuracy: 0.9612 - val_loss: 0.7816 - val_accuracy: 0.7966
+Done training.
+3/3 [==============================] - 0s 55ms/step - loss: 0.4256 - accuracy: 0.8082
+Test Metrics - Loss: 0.42560791969299316, Accuracy: 0.8082191944122314
+Epoch 1/15
+
+8/8 [==============================] - 13s 525ms/step - loss: 0.6348 - accuracy: 0.6640 - val_loss: 0.4252 - val_accuracy: 0.8182
+Epoch 2/15
+7/8 [=========================>....] - ETA: 0s - loss: 0.2508 - accuracy: 0.91070.8543 - val_loss: 0.4729 - val_accuracy: 0.7500
+Epoch 3/15
+8/8 [==============================] - 1s 190ms/step - loss: 0.1827 - accuracy: 0.9352 - val_loss: 0.5656 - val_accuracy: 0.7955
+Epoch 4/15
+8/8 [==============================] - 1s 190ms/step - loss: 0.1827 - accuracy: 0.9352 - val_loss: 0.5656 - val_accuracy: 0.7955
+Done training.
+3/3 [==============================] - 0s 52ms/step - loss: 0.4573 - accuracy: 0.7671
+Test Metrics - Loss: 0.4572600722312927, Accuracy: 0.767123281955719
+Epoch 1/15
+
+8/8 [==============================] - 13s 524ms/step - loss: 0.8048 - accuracy: 0.6422 - val_loss: 0.4682 - val_accuracy: 0.7966
+Epoch 2/15
+8/8 [==============================] - 1s 180ms/step - loss: 0.4524 - accuracy: 0.7845 - val_loss: 0.5178 - val_accuracy: 0.7627
+Epoch 3/15
+8/8 [==============================] - 1s 175ms/step - loss: 0.3887 - accuracy: 0.8233 - val_loss: 0.4307 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 1s 176ms/step - loss: 0.3400 - accuracy: 0.8491 - val_loss: 0.3906 - val_accuracy: 0.8305
+Epoch 5/15
+8/8 [==============================] - 1s 174ms/step - loss: 0.2860 - accuracy: 0.8879 - val_loss: 0.3801 - val_accuracy: 0.8305
+Epoch 6/15
+7/8 [=========================>....] - ETA: 0s - loss: 0.2093 - accuracy: 0.9420
+8/8 [==============================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Done training.
+8/8 [==============================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 1/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 1/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 1/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 1/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 3/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 5/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Epoch 5/15=========================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Done training.=====================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
+Done training.=====================] - 1s 184ms/step - loss: 0.1647 - accuracy: 0.9353 - val_loss: 0.5360 - val_accuracy: 0.7627
