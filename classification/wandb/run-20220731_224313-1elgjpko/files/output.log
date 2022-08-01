@@ -138,3 +138,84 @@ Starting feature extraction...
 2022-07-31 23:02:21.002173: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
 Done extracting features in 338.34453105926514 seconds
 182
+(364, 1)
+(291, 461, 2048)
+(73, 461, 2048)
+(291, 1)
+(73, 1)
+Epoch 1/15
+Epoch 1/15
+8/8 [==============================] - 13s 583ms/step - loss: 0.9349 - accuracy: 0.4569 - val_loss: 0.7971 - val_accuracy: 0.4576
+Epoch 2/15
+8/8 [==============================] - 2s 203ms/step - loss: 0.6571 - accuracy: 0.6293 - val_loss: 0.6971 - val_accuracy: 0.6102
+Epoch 3/15
+8/8 [==============================] - 2s 196ms/step - loss: 0.5623 - accuracy: 0.6940 - val_loss: 0.8822 - val_accuracy: 0.4407
+Epoch 4/15
+8/8 [==============================] - 1s 192ms/step - loss: 0.5135 - accuracy: 0.7414 - val_loss: 0.9183 - val_accuracy: 0.4746
+Epoch 5/15
+8/8 [==============================] - 2s 204ms/step - loss: 0.4751 - accuracy: 0.7845 - val_loss: 0.9209 - val_accuracy: 0.3898
+Done training.
+3/3 [==============================] - 0s 63ms/step - loss: 0.6654 - accuracy: 0.6164
+Test Metrics - Loss: 0.6654444336891174, Accuracy: 0.6164383292198181
+Epoch 1/15
+
+8/8 [==============================] - 12s 566ms/step - loss: 0.9315 - accuracy: 0.4828 - val_loss: 0.7031 - val_accuracy: 0.5763
+Epoch 2/15
+8/8 [==============================] - 2s 205ms/step - loss: 0.6410 - accuracy: 0.6250 - val_loss: 0.7119 - val_accuracy: 0.5593
+Epoch 3/15
+8/8 [==============================] - 2s 206ms/step - loss: 0.5493 - accuracy: 0.7284 - val_loss: 0.7812 - val_accuracy: 0.6271
+Epoch 4/15
+8/8 [==============================] - 2s 195ms/step - loss: 0.5064 - accuracy: 0.7284 - val_loss: 0.8700 - val_accuracy: 0.5593
+Epoch 5/15
+8/8 [==============================] - 2s 196ms/step - loss: 0.4733 - accuracy: 0.7457 - val_loss: 0.9261 - val_accuracy: 0.5424
+Epoch 6/15
+8/8 [==============================] - 1s 188ms/step - loss: 0.3210 - accuracy: 0.8491 - val_loss: 0.9878 - val_accuracy: 0.5424
+Done training.
+3/3 [==============================] - 0s 56ms/step - loss: 0.6924 - accuracy: 0.6301
+Test Metrics - Loss: 0.692439615726471, Accuracy: 0.6301369667053223
+Model: "feature_extractor"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ input_7 (InputLayer)        [(None, 224, 224, 3)]     0
+ tf.__operators__.getitem_1   (None, 224, 224, 3)      0
+ (SlicingOpLambda)
+ tf.nn.bias_add_1 (TFOpLambd  (None, 224, 224, 3)      0
+ a)
+ resnet101 (Functional)      (None, 2048)              42658176
+=================================================================
+Total params: 42,658,176
+Trainable params: 42,552,832
+Non-trainable params: 105,344
+_________________________________________________________________
+0
+50
+100
+150
+200
+250
+300
+350
+Done loading frames in 508.0274567604065 seconds.
+(364,)
+(364, 461, 2048)
+(291, 461, 2048)
+(73, 461, 2048)
+(291, 1)
+(73, 1)
+Epoch 1/15
+8/8 [==============================] - 13s 581ms/step - loss: 0.7406 - accuracy: 0.5991 - val_loss: 0.4869 - val_accuracy: 0.7627
+Epoch 2/15
+8/8 [==============================] - 2s 208ms/step - loss: 0.4034 - accuracy: 0.8362 - val_loss: 0.5048 - val_accuracy: 0.7797
+Epoch 3/15
+8/8 [==============================] - 2s 201ms/step - loss: 0.3738 - accuracy: 0.8190 - val_loss: 0.5323 - val_accuracy: 0.7627
+Epoch 4/15
+4/8 [==============>...............] - ETA: 0s - loss: 0.3756 - accuracy: 0.8047
+7/8 [=========================>....] - ETA: 0s - loss: 0.2268 - accuracy: 0.88840.8190 - val_loss: 0.5323 - val_accuracy: 0.7627
+1/8 [==>...........................] - ETA: 0s - loss: 0.0854 - accuracy: 0.96880.8836 - val_loss: 0.3969 - val_accuracy: 0.8644
+8/8 [==============================] - 1s 187ms/step - loss: 0.1141 - accuracy: 0.9655 - val_loss: 0.2952 - val_accuracy: 0.8983
+8/8 [==============================] - ETA: 0s - loss: 0.0919 - accuracy: 0.97410.9655 - val_loss: 0.2952 - val_accuracy: 0.8983
+8/8 [==============================] - 1s 191ms/step - loss: 0.0919 - accuracy: 0.9741 - val_loss: 1.0164 - val_accuracy: 0.5932
+3/3 [==============================] - 0s 57ms/step - loss: 0.4791 - accuracy: 0.84931 - val_loss: 1.0164 - val_accuracy: 0.5932
+3/3 [==============================] - 0s 57ms/step - loss: 0.4791 - accuracy: 0.84931 - val_loss: 1.0164 - val_accuracy: 0.5932
+3/3 [==============================] - 0s 57ms/step - loss: 0.4791 - accuracy: 0.84931 - val_loss: 1.0164 - val_accuracy: 0.5932

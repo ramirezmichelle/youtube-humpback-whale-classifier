@@ -1,0 +1,189 @@
+
+Num GPUs available:  8
+2022-07-31 23:41:09.895023: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-07-31 23:41:16.736100: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-07-31 23:41:16.738743: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-07-31 23:41:16.741172: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-07-31 23:41:16.743557: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-07-31 23:41:16.745934: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-07-31 23:41:16.748289: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-07-31 23:41:16.750611: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-07-31 23:41:16.752941: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+8 Physical GPUs, 8 Logical GPUs
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 1135.237377166748 seconds.
+(364, 461, 224, 224, 3)
+(364,)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1')
+Number of devices: 2
+2022-08-01 00:00:34.150723: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-08-01 00:01:55.409752: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-08-01 00:04:39.237645: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+Starting feature extraction...
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_FLOAT
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_FLOAT
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+2022-08-01 00:04:57.654576: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
+2022-08-01 00:07:59.778426: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-01 00:08:00.082186: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+Done extracting features in 352.1387915611267 seconds
+(364, 1)
+(364, 461, 2048)
+(291, 461, 2048)
+(73, 461, 2048)
+(291, 1)
+(73, 1)
+Epoch 1/15
+8/8 [==============================] - 13s 583ms/step - loss: 0.7229 - accuracy: 0.6767 - val_loss: 0.5235 - val_accuracy: 0.6780
+Epoch 2/15
+8/8 [==============================] - 2s 195ms/step - loss: 0.5117 - accuracy: 0.7672 - val_loss: 0.4327 - val_accuracy: 0.8136
+Epoch 3/15
+8/8 [==============================] - 2s 192ms/step - loss: 0.3433 - accuracy: 0.8491 - val_loss: 0.3725 - val_accuracy: 0.8305
+Epoch 4/15
+8/8 [==============================] - 1s 180ms/step - loss: 0.2806 - accuracy: 0.8621 - val_loss: 0.4305 - val_accuracy: 0.8136
+Epoch 5/15
+8/8 [==============================] - 1s 187ms/step - loss: 0.1766 - accuracy: 0.9397 - val_loss: 0.3527 - val_accuracy: 0.8305
+Epoch 6/15
+8/8 [==============================] - 1s 185ms/step - loss: 0.1059 - accuracy: 0.9612 - val_loss: 0.4367 - val_accuracy: 0.7627
+Done training.
+3/3 [==============================] - 0s 56ms/step - loss: 0.4395 - accuracy: 0.7945
+Test Metrics - Loss: 0.4394817650318146, Accuracy: 0.7945205569267273
+Epoch 1/15
+
+8/8 [==============================] - 12s 544ms/step - loss: 0.7476 - accuracy: 0.6466 - val_loss: 0.4464 - val_accuracy: 0.7966
+Epoch 2/15
+8/8 [==============================] - 1s 193ms/step - loss: 0.4094 - accuracy: 0.8405 - val_loss: 0.3787 - val_accuracy: 0.7966
+Epoch 3/15
+8/8 [==============================] - 1s 192ms/step - loss: 0.3802 - accuracy: 0.8362 - val_loss: 0.4217 - val_accuracy: 0.7966
+Epoch 4/15
+8/8 [==============================] - 1s 192ms/step - loss: 0.2887 - accuracy: 0.8750 - val_loss: 0.4165 - val_accuracy: 0.7966
+Done training.
+3/3 [==============================] - 0s 58ms/step - loss: 0.4784 - accuracy: 0.7808
+Test Metrics - Loss: 0.47841209173202515, Accuracy: 0.7808219194412231
+Epoch 1/15
+8/8 [==============================] - 13s 565ms/step - loss: 0.7311 - accuracy: 0.6422 - val_loss: 0.4476 - val_accuracy: 0.7797
+Epoch 2/15
+8/8 [==============================] - 2s 197ms/step - loss: 0.4087 - accuracy: 0.7974 - val_loss: 0.4456 - val_accuracy: 0.8136
+Epoch 3/15
+8/8 [==============================] - 1s 192ms/step - loss: 0.3531 - accuracy: 0.8664 - val_loss: 0.4382 - val_accuracy: 0.7627
+Epoch 4/15
+8/8 [==============================] - 2s 203ms/step - loss: 0.2663 - accuracy: 0.8922 - val_loss: 0.3145 - val_accuracy: 0.8644
+Epoch 5/15
+8/8 [==============================] - 2s 209ms/step - loss: 0.1928 - accuracy: 0.9095 - val_loss: 0.4438 - val_accuracy: 0.8305
+Epoch 6/15
+8/8 [==============================] - 2s 218ms/step - loss: 0.1618 - accuracy: 0.9267 - val_loss: 0.5478 - val_accuracy: 0.7966
+Epoch 7/15
+8/8 [==============================] - 2s 243ms/step - loss: 0.1460 - accuracy: 0.9353 - val_loss: 0.5262 - val_accuracy: 0.8305
+Done training.
+3/3 [==============================] - 0s 55ms/step - loss: 0.4395 - accuracy: 0.7808
+Test Metrics - Loss: 0.4394952952861786, Accuracy: 0.7808219194412231
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0',)
+Number of devices: 1
+2022-08-01 00:19:12.246120: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 101036802048 exceeds 10% of free system memory.
