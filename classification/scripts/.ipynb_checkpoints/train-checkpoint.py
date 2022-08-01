@@ -18,7 +18,7 @@ from sklearn import metrics
 from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn.model_selection import train_test_split
 
-# from cnn import FeatureExtractor
+from cnn import FeatureExtractor
 
 import h5py
 from pathlib import Path
@@ -95,13 +95,34 @@ def load_frames_and_labels(video_names):
 
     return videos, labels
 
+def get_feature_extractor(cnn_model, frame_dim=(224, 224)): #fix to allow frame_dim tuple (H, W)
+    """Returns keras CNN architecture to use as feature extractor"""
+
+    base_models = FeatureExtractor(frame_dim[0], frame_dim[1])
+
+    if cnn_model == "vgg16":
+        return base_models.VGG16()
+    
+    elif cnn_model == "vgg19":
+        return base_models.VGG19()
+    
+    elif cnn_model == "resnet50":
+        return base_models.ResNet50()
+    
+    elif cnn_model == "resnet101":
+        return base_models.ResNet101()
+
+    elif cnn_model == "inception":
+        return base_models.InceptionV3()
+
+    
 # def get_feature_representations(cnn, frames):
 #     """Uses a CNN to extract feature representations from video frames dataset."""
    
 #     #get the size of features outputted at last layer of cnn
-#     feature_dim = cnn.layers[-1].output_shape[1] 
 #     num_videos = frames.shape[0]
-#     frames_per_video = 461
+#     frames_per_video = frames.shape[1]
+#     feature_dim = cnn.layers[-1].output_shape[1] 
     
 #     #init empty array to store features
 #     features = np.empty((num_videos, frames_per_video, feature_dim), dtype=np.float32)
@@ -112,94 +133,129 @@ def load_frames_and_labels(video_names):
     
 #     return features
 
-# def get_feature_extractor(cnn_model, frame_dim=(224, 224)): #fix to allow frame_dim tuple (H, W)
-#     """Returns keras CNN architecture to use as feature extractor"""
-
-#     base_models = FeatureExtractor(frame_dim)
-
-#     if cnn_model == "vgg16":
-#         return base_models.VGG16()
+def create_tf_dataset(videos, labels, batch_size):
+    """Store video frames and labels in a tf.data.Dataset"""
     
-#     elif cnn_model == "vgg19":
-#         return base_models.VGG19()
+    # we set CPU context to avoid memory alloc. errors
+    # since tensorflow wants to copy dataset into GPU
+    with tf.device("/device:CPU:0"):
+        dataset = tf.data.Dataset.from_tensor_slices((videos, labels)).batch(batch_size)
+        dataset = dataset.prefetch(2)
+        
+    return dataset
+
+
+def feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice):
     
-#     elif cnn_model == "resnet50":
-#         return base_models.ResNet50()
+    #check for correct amoung of GPUs
+    if num_gpus < 1:
+        print(f"{num_gpus} GPUs is not enough to perform feature extraction in GPU mode. \
+        Consider switching to CPU.")
+        return
     
-#     elif cnn_model == "resnet101":
-#         return base_models.ResNet101()
+    # create TF strategy with selected num_gpus 
+    print(f'Setting TensorFlow Mirrored Strategy with {num_gpus} GPUs...')
+    active_gpus = select_gpus(num_gpus)
+    strategy = tf.distribute.MirroredStrategy(active_gpus)
+    print ('Number of devices in strategy: {}'.format(strategy.num_replicas_in_sync))
+    
+    # keep batch size at 1 to avoid memory alloc. issues since tensors are large
+    BATCH_SIZE_PER_REPLICA = 1
+    GLOBAL_BATCH_SIZE = BATCH_SIZE_PER_REPLICA * strategy.num_replicas_in_sync
+    
+    # store data in TF dataset with batch + prefetch
+    print("Creating TF Dataset...")
+    dataset = create_tf_dataset(videos, video_labels, GLOBAL_BATCH_SIZE)
+    
+    # creates a distributed dataset aligned with our TF strategy
+    print("Creating TF DISTRIBUTED Dataset...")
+    dist_dataset = strategy.experimental_distribute_dataset(dataset)
+    
+    # create a feature extractor on each active GPU in our TF strategy
+    print("Creating CNN Model on Each Active Replica (GPU)")
+    with strategy.scope():
+        cnn_model = get_feature_extractor(cnn_choice)
+        
+    @tf.function
+    def distributed_test_step(dataset_inputs):
+        """ Distributes data inputs and invokes feature extraction on each GPU """
+        return strategy.run(test_step, args=(dataset_inputs,))
 
-#     elif cnn_model == "inception":
-#         return base_models.InceptionV3()
+    def test_step(inputs):
+        """ Returns feature representations on inputs """
+        images, label = inputs
+        predictions = cnn_model(tf.squeeze(images), training=False)
+        return predictions, label
+        
+    print("Beginning Feature Extraction in GPU Mode...")
+    start = time.time()
+    
+    distributed_features = []
+    distributed_labels = []
+    for batch in dist_dataset:
+        batch_features, batch_labels = distributed_test_step(batch)
+        distributed_features.append(batch_features)
+        distributed_labels.append(batch_labels)
 
+    stop = time.time()
+    print(f'Done getting video frame feature representations in {stop-start} seconds.')
+    
+    print("Formatting Results into Numpy Arrays...")
+    features = replica_objects_to_numpy(distributed_features, num_gpus)
+    labels = replica_objects_to_numpy(distributed_labels, num_gpus)
+    
+    return features, labels
 
-# def get_data_splits(X, y, features, labels):
-#     """Splits features and labels into train and test sets"""
-#     X_train, X_test, _ , _ = train_test_split(X, y, test_size = 0.20, random_state = 42)
+def replica_objects_to_numpy(replica_results, num_gpus):
+    """ Converts a list of TF Replica Objects into a Numpy ND array """
+    
+    if num_gpus > 1:
+        # turn PerReplica objects from multi gpu's into list of tensors
+        tensors = []
+        for replica_obj in replica_results:
+            tensors += list(replica_obj.values)
 
-#     train_index, test_index = list(X_train.index), list(X_test.index)
+        #convert list of tensors to list of numpy arrays
+        results = []
+        for tensor in tensors:
+            resuls.append(tensor.numpy())
+            
+    else:
+        #convert list of tensors from single gpu to list of np arrays
+        results = []
+        for tensor in replica_results:
+            results.append(tensor.numpy())
+    
+    return np.array(results)
 
-#     train_features, train_labels = features[train_index], labels[train_index]
-#     test_features, test_labels = features[test_index], labels[test_index]
+def select_gpus(num_gpus):
+    return [f'/GPU:{i}' for i in range(num_gpus)]
 
-#     train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
-#     test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
-
-#     return (train_features, train_labels), (test_features, test_labels)
-
-# def train(X_train, y_train): #Consider separating model architecture + placing in rnn file
-#     """Train the RNN model using the video frame feature representations"""
-#     features_input       = keras.Input((461, 512))
-#     x                    = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True))(features_input)
-#     x                    = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True))(x)
-#     x                    = attention(return_sequences=False)(x)
-#     x                    = Dropout(0.2)(x)
-#     output               = keras.layers.Dense(2, activation="softmax")(x) #2 bc 2 class categories (0,1)
-#     model                = keras.Model(features_input, output)
-
-#     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
-
-#     my_callbacks    = [keras.callbacks.EarlyStopping(monitor="val_accuracy", 
-#                                                     patience=3,
-#                                                     mode="max",
-#                                                     min_delta = 0.01,
-#                                                     restore_best_weights=True)]
-#     history = model.fit(X_train, 
-#                         y_train,
-#                         validation_split = 0.2,
-#                         epochs = 15,
-#                         callbacks = my_callbacks,
-#                         verbose= 1)
-
-#     print('Done training.')
-
-# def test(X_test, y_test):
-#     """Test our model on our test set"""
-#     loss, accuracy = model.evaluate(X_test, y_test)
-#     print(f"Test Metrics - Loss: {loss}, Accuracy: {accuracy}")
 
 if __name__ == "__main__":
-    #run commands here
+    #parse args here
+    #[ADD CODE HERE...]
     
     # don't let TF takeup all the gpu memory
-#     limit_gpu_memory_growth()
+    limit_gpu_memory_growth()
     
     #read in dataframes
     X, y = load_dataframes(NGC_WORKSPACE + "downloaded_videos.csv")
 
     # get our data ready
-    print('loading data...')
+    print('Loading data...')
+    start = time.time()
     video_names = list(X.renamed_title)
-    videos, labels = load_frames_and_labels(video_names) 
-    print(videos.shape)
-    print(labels.shape)
+    videos, video_labels = load_frames_and_labels(video_names) 
+    stop = time.time()
+    print(f"Done loading videos in {stop-start} seconds.")
 
-#     # get video frame feature representations with CNN
-#     start = time.time()
-#     feature_extractor = get_feature_extractor("resnet101")
-#     features = get_feature_representations(feature_extractor, videos)
-#     stop = time.time()
-#     print(f'Done getting video frame feature representations in {stop-start} seconds.')
+    # get video frame feature representations with CNN    
+    num_gpus = 1
+    cnn_choice = "resnet101"
+    features, labels = feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice)
+    print(f"Back from feature Extraction.\nFeatures: {features.shape}\nLabels: {labels.shape}")
+
 
 #     # split data
 #     (X_train, y_train), (X_test, y_test) = get_data_splits(X, y, features, labels)

@@ -5,7 +5,7 @@ workspace_path = '/mount/data'
 class FeatureExtractor:
     
     '''Class to contain various types of CNN-based Feature Extractors'''
-    def __init__(self, (IMG_HEIGHT, IMG_WIDTH)):
+    def __init__(self, IMG_HEIGHT, IMG_WIDTH):
         self.IMG_SIZE_H = IMG_HEIGHT
         self.IMG_SIZE_W = IMG_WIDTH
         
