@@ -19,13 +19,14 @@ from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn.model_selection import train_test_split
 
 from cnn import FeatureExtractor
+from rnn import attention
+import argparse
 
 import h5py
 from pathlib import Path
 
 NGC_WORKSPACE = '/mount/data/'
 HDF5_DIR = Path(NGC_WORKSPACE + "frames_hdf5/")
-
 
 def limit_gpu_memory_growth():
     """Function to limit gpu memory growth. Prevents TensorFlow 
@@ -133,6 +134,11 @@ def get_feature_extractor(cnn_model, frame_dim=(224, 224)): #fix to allow frame_
     
 #     return features
 
+def select_gpus(num_gpus):
+    """ Create a list of GPU devices to use with TF Strategy """
+    return [f'/GPU:{i}' for i in range(num_gpus)]
+
+
 def create_tf_dataset(videos, labels, batch_size):
     """Store video frames and labels in a tf.data.Dataset"""
     
@@ -228,15 +234,88 @@ def replica_objects_to_numpy(replica_results, num_gpus):
     
     return np.array(results)
 
-def select_gpus(num_gpus):
-    return [f'/GPU:{i}' for i in range(num_gpus)]
 
-
-if __name__ == "__main__":
-    #parse args here
-    #[ADD CODE HERE...]
+def get_data_splits(X, y, features, labels, batch_size=32):
+    """ Create train, validation, and test TF datasets with batching + prefetching. 
+    We use train_test_split to keep classes balanced in each split."""
     
-    # don't let TF takeup all the gpu memory
+    X_0, X_test, y_0, y_test = train_test_split(X, y, test_size = 0.20, random_state = 42)
+    X_train, X_val, y_train, y_val = train_test_split(X_0, y_0, test_size = 0.20, random_state = 42)
+
+    train_index = list(X_train.index)
+    test_index = list(X_test.index)
+    val_index = list(X_val.index)
+
+    train_features, train_labels = features[train_index], labels[train_index]
+    val_features, val_labels     = features[val_index], labels[val_index]
+    test_features, test_labels   = features[test_index], labels[test_index]
+
+    # reshape label arrays from (n_videos) to (n_videos, 1)
+    train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
+    val_labels = np.reshape(val_labels, (val_labels.shape[0], 1))
+    test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
+    
+    # Batch the input data
+    buffer_size_train = train_features.shape[0]
+    buffer_size_val = val_features.shape[0]
+    buffer_size_test = test_features.shape[0]
+
+    # Create Datasets from the batches
+    train_dataset = tf.data.Dataset.from_tensor_slices((train_features, train_labels)).shuffle(buffer_size_train).batch(batch_size)
+    val_dataset = tf.data.Dataset.from_tensor_slices((val_features, val_labels)).shuffle(buffer_size_val).batch(batch_size)
+    test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).shuffle(buffer_size_test).batch(batch_size)
+
+    train_dataset = train_dataset.prefetch(2)
+    val_dataset = val_dataset.prefetch(2)
+    test_dataset = test_dataset.prefetch(2)
+
+    return train_dataset, val_dataset, test_dataset
+
+def train_rnn(train_dataset, val_dataset, test_dataset):
+    """ Create RNN model and run training and evaluation. """
+    
+    features_input       = keras.Input((461, 2048))
+    x                    = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True))(features_input)
+    x                    = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True))(x)
+    x                    = attention(return_sequences=False)(x)
+    x                    = keras.layers.Dropout(0.2)(x)
+    output               = keras.layers.Dense(2, activation="softmax")(x) #2 bc 2 class categories (0,1)
+    model                = keras.Model(features_input, output)
+
+    model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+
+    my_callbacks = [keras.callbacks.EarlyStopping(monitor="val_accuracy", 
+                                                  patience=3,
+                                                  mode="max",
+                                                  min_delta = 0.01,
+                                                  restore_best_weights=True)]
+
+    history = model.fit(train_dataset,
+                        validation_data = val_dataset,
+                        epochs = 15,
+                        callbacks = my_callbacks,
+                        verbose= 1)
+
+
+    print('Done training.')
+
+    loss, accuracy = model.evaluate(test_dataset)
+    print(f"Test Metrics - Loss: {loss}, Accuracy: {accuracy}")
+    
+    return history, loss, accuracy
+
+def main():
+    #parse args here
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--num_gpu", default=0, type=int)
+    parser.add_argument("--cnn_model", default="resnet101", type=str)
+    
+    args = parser.parse_args()
+    
+    print(f"NUM GPUS: {args.num_gpu}")
+    print(f"CNN: {args.cnn_model}")    
+    
+    # don't let TF take up all the gpu memory
     limit_gpu_memory_growth()
     
     #read in dataframes
@@ -251,17 +330,21 @@ if __name__ == "__main__":
     print(f"Done loading videos in {stop-start} seconds.")
 
     # get video frame feature representations with CNN    
-    num_gpus = 2
-    cnn_choice = "resnet101"
-    features, labels = feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice)
+    features, labels = feature_extraction_gpu(args.num_gpu, videos, video_labels, args.cnn_model)
     print(f"Back from feature Extraction.\nFeatures: {features.shape}\nLabels: {labels.shape}")
 
+    # split data
+    print("Splitting + batching features and labels for RNN ...")
+    train_dataset, val_dataset, test_dataset = get_data_splits(X, y, features, labels)
+    print(train_dataset)
+    print(val_dataset)
+    print(test_dataset)
 
-#     # split data
-#     (X_train, y_train), (X_test, y_test) = get_data_splits(X, y, features, labels)
+    #train RNN
+    print("Training RNN ...")
+    train_rnn(train_dataset, val_dataset, test_dataset)
 
-#     #train RNN
-#     train(X_train, y_train)
+    return
 
-#     #test RNN
-#     test(X_test, y_test)
+if __name__ == "__main__":
+    main()
