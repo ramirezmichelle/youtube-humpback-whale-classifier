@@ -38,7 +38,7 @@ def limit_gpu_memory_growth():
         try:
             for gpu in gpus:
                 tf.config.experimental.set_memory_growth(gpu, True)
-            print(f"Memory growth is now the same across all {len(gpus)} GPUs.")
+            print(f"Memory growth is now the same across all {len(gpus)} available GPUs.")
         except RuntimeError as e:
             # Memory growth must be set before GPUs have been initialized
             print(e)
@@ -271,10 +271,10 @@ def get_data_splits(X, y, features, labels, batch_size=32):
 
     return train_dataset, val_dataset, test_dataset
 
-def train_rnn(train_dataset, val_dataset, test_dataset):
+def train_rnn(train_dataset, val_dataset, test_dataset, feature_dim):
     """ Create RNN model and run training and evaluation. """
     
-    features_input       = keras.Input((461, 2048))
+    features_input       = keras.Input((461, feature_dim))
     x                    = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True))(features_input)
     x                    = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True))(x)
     x                    = attention(return_sequences=False)(x)
@@ -342,7 +342,7 @@ def main():
 
     #train RNN
     print("Training RNN ...")
-    train_rnn(train_dataset, val_dataset, test_dataset)
+    train_rnn(train_dataset, val_dataset, test_dataset, features.shape[2])
 
     return
 
