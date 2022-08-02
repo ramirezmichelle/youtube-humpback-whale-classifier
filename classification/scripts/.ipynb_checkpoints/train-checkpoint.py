@@ -1,6 +1,7 @@
 from tensorflow_docs.vis import embed
 from tensorflow import keras
 from imutils import paths
+import argparse
 
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -17,10 +18,11 @@ import time
 from sklearn import metrics
 from sklearn.model_selection import KFold, StratifiedKFold
 from sklearn.model_selection import train_test_split
+from tabulate import tabulate
 
 from cnn import FeatureExtractor
 from rnn import attention
-import argparse
+import wandb
 
 import h5py
 from pathlib import Path
@@ -204,13 +206,14 @@ def feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice):
         distributed_labels.append(batch_labels)
 
     stop = time.time()
+    duration = stop - start
     print(f'Done getting video frame feature representations in {stop-start} seconds.')
     
     print("Formatting Results into Numpy Arrays...")
     features = replica_objects_to_numpy(distributed_features, num_gpus)
     labels = replica_objects_to_numpy(distributed_labels, num_gpus)
     
-    return features, labels
+    return features, labels, duration
 
 def replica_objects_to_numpy(replica_results, num_gpus):
     """ Converts a list of TF Replica Objects into a Numpy ND array """
@@ -290,30 +293,55 @@ def train_rnn(train_dataset, val_dataset, test_dataset, feature_dim):
                                                   min_delta = 0.01,
                                                   restore_best_weights=True)]
 
+    # train model
     history = model.fit(train_dataset,
                         validation_data = val_dataset,
                         epochs = 15,
                         callbacks = my_callbacks,
                         verbose= 1)
 
-
-    print('Done training.')
-
-    loss, accuracy = model.evaluate(test_dataset)
-    print(f"Test Metrics - Loss: {loss}, Accuracy: {accuracy}")
+    # evaluate trained model on test data
+    loss, accuracy = model.evaluate(test_dataset)    
+    f1 = get_F1_score(test_dataset, model)
     
-    return history, loss, accuracy
+    return history, loss, accuracy, f1
+
+def get_F1_score(test_dataset, model):
+    """ Get F1 Score for trained model """
+    
+    probabilities = model.predict(test_dataset)
+    y_pred = np.array([np.argmax(p) for p in probabilities])
+    y_true = np.concatenate([label for _, label in test_dataset], axis=0)
+
+    return metrics.f1_score(y_true, y_pred)
+
+def print_final_info(cnn, loss, accuracy, f1, duration):
+    """ Print presentation info at process completion. """
+    
+    videos_per_sec = 364/duration
+    row_data = [[cnn, accuracy, loss, f1, duration, videos_per_sec]]
+    
+    print(tabulate(row_data, headers = ["CNN","Accuracy (Test)", "Loss (Test)", "F1 Score", "Time to Extract Features (sec)", "Videos/Second (Feat. Ext.)"]))
+    return
 
 def main():
     #parse args here
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_gpu", default=0, type=int)
     parser.add_argument("--cnn_model", default="resnet101", type=str)
+    parser.add_argument("--wandb_run", default="just another run", type=str)
     
     args = parser.parse_args()
     
     print(f"NUM GPUS: {args.num_gpu}")
-    print(f"CNN: {args.cnn_model}")    
+    print(f"CNN: {args.cnn_model}")   
+    print(f"wandb run name: {args.wandb_run}")   
+    
+    #start logging info
+    os.environ["WANDB_API_KEY"] = "53f9fb8ccf6dd926fcfa46f72943e2d7c43494a9"
+    wandb.login()
+    wandb.init(project="whale-classification")
+    wandb.run.name = args.wandb_run
     
     # don't let TF take up all the gpu memory
     limit_gpu_memory_growth()
@@ -330,7 +358,7 @@ def main():
     print(f"Done loading videos in {stop-start} seconds.")
 
     # get video frame feature representations with CNN    
-    features, labels = feature_extraction_gpu(args.num_gpu, videos, video_labels, args.cnn_model)
+    features, labels, feature_extraction_duration = feature_extraction_gpu(args.num_gpu, videos, video_labels, args.cnn_model)
     print(f"Back from feature Extraction.\nFeatures: {features.shape}\nLabels: {labels.shape}")
 
     # split data
@@ -342,8 +370,10 @@ def main():
 
     #train RNN
     print("Training RNN ...")
-    train_rnn(train_dataset, val_dataset, test_dataset, features.shape[2])
-
+    history, loss, accuracy, f1 = train_rnn(train_dataset, val_dataset, test_dataset, features.shape[2])
+    
+    print_final_info(args.cnn_model, loss, accuracy, f1, feature_extraction_duration)
+    wandb.finish()
     return
 
 if __name__ == "__main__":

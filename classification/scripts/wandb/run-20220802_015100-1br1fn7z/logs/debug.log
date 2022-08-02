@@ -1,0 +1,124 @@
+2022-08-02 01:51:00,817 INFO    MainThread:87537 [wandb_setup.py:_flush():76] Configure stats pid to 87537
+2022-08-02 01:51:00,817 INFO    MainThread:87537 [wandb_setup.py:_flush():76] Loading settings from /root/.config/wandb/settings
+2022-08-02 01:51:00,817 INFO    MainThread:87537 [wandb_setup.py:_flush():76] Loading settings from /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/settings
+2022-08-02 01:51:00,817 INFO    MainThread:87537 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'api_key': '***REDACTED***'}
+2022-08-02 01:51:00,817 INFO    MainThread:87537 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'classification/scripts/train.py', 'program': 'train.py'}
+2022-08-02 01:51:00,818 INFO    MainThread:87537 [wandb_init.py:_log_setup():461] Logging user logs to /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220802_015100-1br1fn7z/logs/debug.log
+2022-08-02 01:51:00,818 INFO    MainThread:87537 [wandb_init.py:_log_setup():462] Logging internal logs to /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220802_015100-1br1fn7z/logs/debug-internal.log
+2022-08-02 01:51:00,818 INFO    MainThread:87537 [wandb_init.py:init():495] calling init triggers
+2022-08-02 01:51:00,818 INFO    MainThread:87537 [wandb_init.py:init():498] wandb.init called with sweep_config: {}
+config: {}
+2022-08-02 01:51:00,818 INFO    MainThread:87537 [wandb_init.py:init():548] starting backend
+2022-08-02 01:51:00,818 INFO    MainThread:87537 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-08-02 01:51:00,835 INFO    MainThread:87537 [backend.py:ensure_launched():217] starting backend process...
+2022-08-02 01:51:00,851 INFO    MainThread:87537 [backend.py:ensure_launched():222] started backend process with pid: 87681
+2022-08-02 01:51:00,852 INFO    MainThread:87537 [wandb_init.py:init():558] backend started and connected
+2022-08-02 01:51:00,859 INFO    MainThread:87537 [wandb_init.py:init():634] updated telemetry
+2022-08-02 01:51:00,884 INFO    MainThread:87537 [wandb_init.py:init():665] communicating run to backend with 30 second timeout
+2022-08-02 01:51:02,249 INFO    MainThread:87537 [wandb_run.py:_on_init():1919] communicating current version
+2022-08-02 01:51:02,293 INFO    MainThread:87537 [wandb_run.py:_on_init():1923] got version response 
+2022-08-02 01:51:02,294 INFO    MainThread:87537 [wandb_init.py:init():700] starting run threads in backend
+2022-08-02 01:51:02,415 INFO    MainThread:87537 [wandb_run.py:_console_start():1893] atexit reg
+2022-08-02 01:51:02,415 INFO    MainThread:87537 [wandb_run.py:_redirect():1766] redirect: SettingsConsole.REDIRECT
+2022-08-02 01:51:02,416 INFO    MainThread:87537 [wandb_run.py:_redirect():1771] Redirecting console.
+2022-08-02 01:51:02,418 INFO    MainThread:87537 [wandb_run.py:_redirect():1827] Redirects installed.
+2022-08-02 01:51:02,418 INFO    MainThread:87537 [wandb_init.py:init():732] run started, returning control to user process
+2022-08-02 01:51:02,419 INFO    MainThread:87537 [wandb_run.py:_finish():1680] finishing run epg/whale-classification-inception/1br1fn7z
+2022-08-02 01:51:02,419 INFO    MainThread:87537 [wandb_run.py:_atexit_cleanup():1862] got exitcode: 0
+2022-08-02 01:51:02,423 INFO    MainThread:87537 [wandb_run.py:_restore():1834] restore
+2022-08-02 01:51:04,924 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 862
+  total_bytes: 862
+}
+
+2022-08-02 01:51:05,105 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 862
+  total_bytes: 862
+}
+
+2022-08-02 01:51:05,272 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 862
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:05,374 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 862
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:05,476 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:05,577 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:05,678 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:05,779 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:05,880 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:06,208 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+
+2022-08-02 01:51:06,467 INFO    MainThread:87537 [wandb_run.py:_on_finish():1991] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 4
+}
+pusher_stats {
+  uploaded_bytes: 5099
+  total_bytes: 5099
+}
+local_info {
+}
+
+2022-08-02 01:51:07,626 INFO    MainThread:87537 [wandb_run.py:_footer_history_summary_info():3099] rendering history
+2022-08-02 01:51:07,626 INFO    MainThread:87537 [wandb_run.py:_footer_history_summary_info():3131] rendering summary
+2022-08-02 01:51:07,629 INFO    MainThread:87537 [wandb_run.py:_footer_sync_info():3055] logging synced files
