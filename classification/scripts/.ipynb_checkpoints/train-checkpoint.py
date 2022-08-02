@@ -118,23 +118,6 @@ def get_feature_extractor(cnn_model, frame_dim=(224, 224)): #fix to allow frame_
     elif cnn_model == "inception":
         return base_models.InceptionV3()
 
-    
-# def get_feature_representations(cnn, frames):
-#     """Uses a CNN to extract feature representations from video frames dataset."""
-   
-#     #get the size of features outputted at last layer of cnn
-#     num_videos = frames.shape[0]
-#     frames_per_video = frames.shape[1]
-#     feature_dim = cnn.layers[-1].output_shape[1] 
-    
-#     #init empty array to store features
-#     features = np.empty((num_videos, frames_per_video, feature_dim), dtype=np.float32)
-    
-#     #get feature representations from each video's set of frames (fed as a batch to cnn)
-#     for i, frame_batch in enumerate(frames):
-#         features[i, ...] = cnn.predict_on_batch(next(iter(frame_batch)))
-    
-#     return features
 
 def select_gpus(num_gpus):
     """ Create a list of GPU devices to use with TF Strategy """
@@ -151,6 +134,33 @@ def create_tf_dataset(videos, labels, batch_size):
         dataset = dataset.prefetch(2)
         
     return dataset
+
+
+def feature_extraction_cpu(videos, video_labels, cnn_choice):
+    """Uses a CNN to extract feature representations from video frames dataset."""
+   
+    with tf.device("/device:CPU:0"):
+        #create feature extractor
+        cnn_model = get_feature_extractor(cnn_choice)
+
+        #get the size of features outputted at last layer of cnn
+        num_videos = videos.shape[0]
+        frames_per_video = videos.shape[1]
+        feature_dim = cnn_model.layers[-1].output_shape[1] 
+
+        #init empty array to store features
+        features = np.empty((num_videos, frames_per_video, feature_dim), dtype=np.uint8)
+
+        #get feature representations from each video's set of frames (fed as a batch to cnn)
+        start = time.time()
+        for i, frame_batch in enumerate(videos):
+            features[i, ...] = cnn_model.predict_on_batch(frame_batch)
+        
+        stop = time.time()
+        duration = stop - start
+        print(f'Done getting video frame feature representations in {stop-start} seconds (CPU mode).')
+    
+    return features, video_labels, duration
 
 
 def feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice):
@@ -357,8 +367,12 @@ def main():
     stop = time.time()
     print(f"Done loading videos in {stop-start} seconds.")
 
-    # get video frame feature representations with CNN    
-    features, labels, feature_extraction_duration = feature_extraction_gpu(args.num_gpu, videos, video_labels, args.cnn_model)
+    # get video frame feature representations with CNN
+    if args.num_gpu >= 1:
+        features, labels, feature_extraction_duration = feature_extraction_gpu(args.num_gpu, videos, video_labels, args.cnn_model)
+    else:
+        features, labels, feature_extraction_duration = feature_extraction_cpu(videos, video_labels, args.cnn_model)
+        
     print(f"Back from feature Extraction.\nFeatures: {features.shape}\nLabels: {labels.shape}")
 
     # split data

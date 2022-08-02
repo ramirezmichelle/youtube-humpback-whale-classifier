@@ -1,0 +1,154 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+2022-08-02 04:00:29.554065: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-08-02 04:00:35.932496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-08-02 04:00:35.935005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-08-02 04:00:35.937337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-08-02 04:00:35.939642: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-08-02 04:00:35.941949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-08-02 04:00:35.944244: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-08-02 04:00:35.946562: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-08-02 04:00:35.948851: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB, pci bus id: 0000:8a:00.0, compute capability: 7.0
+Done loading videos in 69.72908926010132 seconds.
+Setting TensorFlow Mirrored Strategy with 2 GPUs...
+Number of devices in strategy: 2
+Creating TF Dataset...
+Creating TF DISTRIBUTED Dataset...
+Creating CNN Model on Each Active Replica (GPU)
+Beginning Feature Extraction in GPU Mode...
+2022-08-02 04:00:55.269427: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+2022-08-02 04:01:05.956664: W tensorflow/core/kernels/gpu_utils.cc:50] Failed to allocate memory for convolution redzone checking; skipping this check. This is benign and only means that we won't check cudnn for out-of-bounds reads and writes. This message will only be printed once.
+2022-08-02 04:01:07.473725: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-02 04:01:07.805566: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-02 04:01:08.884739: W tensorflow/core/common_runtime/bfc_allocator.cc:343] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+2022-08-02 04:01:09.409677: W tensorflow/core/common_runtime/bfc_allocator.cc:343] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+Done getting video frame feature representations in 137.17281579971313 seconds.
+Formatting Results into Numpy Arrays...
+Back from feature Extraction.
+Features: (364, 461, 512)
+Labels: (364, 1)
+Splitting + batching features and labels for RNN ...
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 512), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 512), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 512), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+Training RNN ...
+Epoch 1/15
+
+8/8 [==============================] - 12s 456ms/step - loss: 0.6539 - accuracy: 0.7069 - val_loss: 0.5311 - val_accuracy: 0.7797
+Epoch 2/15
+8/8 [==============================] - 1s 162ms/step - loss: 0.3644 - accuracy: 0.8664 - val_loss: 0.4325 - val_accuracy: 0.7966
+Epoch 3/15
+8/8 [==============================] - 1s 147ms/step - loss: 0.3199 - accuracy: 0.8750 - val_loss: 0.7339 - val_accuracy: 0.6949
+Epoch 4/15
+8/8 [==============================] - 1s 157ms/step - loss: 0.2017 - accuracy: 0.9440 - val_loss: 0.4305 - val_accuracy: 0.8305
+Epoch 5/15
+8/8 [==============================] - 1s 149ms/step - loss: 0.1441 - accuracy: 0.9526 - val_loss: 0.4875 - val_accuracy: 0.7797
+Epoch 6/15
+8/8 [==============================] - 1s 159ms/step - loss: 0.0547 - accuracy: 0.9871 - val_loss: 0.3669 - val_accuracy: 0.8305
+Epoch 7/15
+8/8 [==============================] - 1s 150ms/step - loss: 0.0605 - accuracy: 0.9784 - val_loss: 0.7275 - val_accuracy: 0.7119
+3/3 [==============================] - 0s 45ms/step - loss: 0.6317 - accuracy: 0.7808
+CNN      Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)
+-----  -----------------  -------------  ----------  --------------------------------  ----------------------------
+vgg16           0.780822        0.63166    0.511628                           137.173                       2.65359
