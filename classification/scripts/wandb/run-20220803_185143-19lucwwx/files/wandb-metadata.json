@@ -1,0 +1,28 @@
+{
+    "os": "Linux-5.4.0-105-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2022-08-03T18:51:46.886672",
+    "startedAt": "2022-08-03T18:51:43.432132",
+    "docker": null,
+    "gpu": "Tesla V100-SXM2-16GB-N",
+    "gpu_count": 8,
+    "cpu_count": 80,
+    "cuda": null,
+    "args": [
+        "--num_gpu=0",
+        "--cnn_model=vgg16",
+        "--wandb_run=vgg16 - 0 GPUs"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "classification/scripts/train.py",
+    "git": {
+        "remote": "https://github.com/ramirezmichelle/youtube-humpback-whale-classifier",
+        "commit": "bd7028da0289c68e5dc7f816babefa52e1ee60d6"
+    },
+    "email": "micheller@nvidia.com",
+    "root": "/workspace/youtube-humpback-whale-classifier",
+    "host": "3202204",
+    "username": "root",
+    "executable": "/usr/bin/python"
+}

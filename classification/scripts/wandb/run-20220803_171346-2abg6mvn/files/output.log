@@ -1,0 +1,51 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+Done loading videos in 813.4397423267365 seconds.
+Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg19/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5
+42999808/80134624 [===============>..............] - ETA: 0s
+2022-08-03 17:27:23.196417: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-08-03 17:27:29.545866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-08-03 17:27:29.548355: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-08-03 17:27:29.550662: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-08-03 17:27:29.552952: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-08-03 17:27:29.555308: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-08-03 17:27:29.557617: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-08-03 17:27:29.559902: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+80142336/80134624 [==============================] - 1s 0us/step
+80150528/80134624 [==============================] - 1s 0us/step
+Done getting video frame feature representations in 4067.0407984256744 seconds (CPU mode).
+Back from feature Extraction.
+Features: (364, 461, 512)
+Labels: (364,)
+Splitting + batching features and labels for RNN ...
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 512), dtype=tf.uint8, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 512), dtype=tf.uint8, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 512), dtype=tf.uint8, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+Training RNN ...
+Epoch 1/15
+2022-08-03 18:35:29.110556: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+
+8/8 [==============================] - 12s 430ms/step - loss: 0.6591 - accuracy: 0.6897 - val_loss: 0.4206 - val_accuracy: 0.7797
+Epoch 2/15
+8/8 [==============================] - 1s 132ms/step - loss: 0.3663 - accuracy: 0.8362 - val_loss: 0.5620 - val_accuracy: 0.6780
+Epoch 3/15
+8/8 [==============================] - 1s 132ms/step - loss: 0.2723 - accuracy: 0.8922 - val_loss: 0.4402 - val_accuracy: 0.8305
+Epoch 4/15
+8/8 [==============================] - 1s 134ms/step - loss: 0.1446 - accuracy: 0.9353 - val_loss: 0.4339 - val_accuracy: 0.7966
+Epoch 5/15
+8/8 [==============================] - 1s 132ms/step - loss: 0.0708 - accuracy: 0.9871 - val_loss: 0.4932 - val_accuracy: 0.8136
+Epoch 6/15
+8/8 [==============================] - 1s 133ms/step - loss: 0.0396 - accuracy: 0.9871 - val_loss: 0.5497 - val_accuracy: 0.8305
+3/3 [==============================] - 0s 39ms/step - loss: 0.6255 - accuracy: 0.7534
+CNN      Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)
+-----  -----------------  -------------  ----------  --------------------------------  ----------------------------
+vgg19           0.753425       0.625519        0.55                           4067.04                        0.0895
