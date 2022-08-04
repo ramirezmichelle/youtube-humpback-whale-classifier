@@ -1,0 +1,166 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+Done loading videos in 73.2935700416565 seconds.
+Setting TensorFlow Mirrored Strategy with 8 GPUs...
+2022-08-04 15:12:10.515945: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-08-04 15:12:17.035190: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-08-04 15:12:17.037840: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-08-04 15:12:17.040224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-08-04 15:12:17.042641: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-08-04 15:12:17.045010: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-08-04 15:12:17.047364: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+Number of devices in strategy: 8
+Creating TF Dataset...
+Creating TF DISTRIBUTED Dataset...
+2022-08-04 15:12:17.049731: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-08-04 15:12:17.052062: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+2022-08-04 15:12:17.162646: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 25259200512 exceeds 10% of free system memory.
+2022-08-04 15:12:28.433467: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 25259200512 exceeds 10% of free system memory.
+2022-08-04 15:12:36.328723: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+Creating CNN Model on Each Active Replica (GPU)
+Beginning Feature Extraction in GPU Mode...
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+2022-08-04 15:12:56.910950: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 25259200512 exceeds 10% of free system memory.
+2022-08-04 15:13:35.355106: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:36.178866: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:37.262522: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:38.345528: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:39.333764: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:40.279015: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:41.028365: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-04 15:13:41.618135: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+Done getting video frame feature representations in 106.3403627872467 seconds.
+Formatting Results into Numpy Arrays...
+Back from feature Extraction.
+Features: (364, 461, 2048)
+Labels: (364, 1)
+Splitting + batching features and labels for RNN ...
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 2048), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 2048), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<PrefetchDataset element_spec=(TensorSpec(shape=(None, 461, 2048), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+Training RNN ...
+Epoch 1/15
+
+
+8/8 [==============================] - 13s 583ms/step - loss: 0.6649 - accuracy: 0.6681 - val_loss: 0.5607 - val_accuracy: 0.6441
+Epoch 2/15
+8/8 [==============================] - 2s 248ms/step - loss: 0.3920 - accuracy: 0.8276 - val_loss: 0.4182 - val_accuracy: 0.7797
+Epoch 3/15
+
+8/8 [==============================] - 2s 242ms/step - loss: 0.2789 - accuracy: 0.8750 - val_loss: 0.4296 - val_accuracy: 0.8136
+Epoch 4/15
+8/8 [==============================] - 2s 248ms/step - loss: 0.1838 - accuracy: 0.9397 - val_loss: 0.3877 - val_accuracy: 0.8305
+Epoch 5/15
+
+8/8 [==============================] - 2s 246ms/step - loss: 0.1397 - accuracy: 0.9440 - val_loss: 0.3379 - val_accuracy: 0.8644
+Epoch 6/15
+8/8 [==============================] - 2s 247ms/step - loss: 0.0829 - accuracy: 0.9612 - val_loss: 0.5267 - val_accuracy: 0.7797
+Epoch 7/15
+8/8 [==============================] - 2s 255ms/step - loss: 0.0507 - accuracy: 0.9784 - val_loss: 0.5042 - val_accuracy: 0.8475
+Epoch 8/15
+
+8/8 [==============================] - 2s 252ms/step - loss: 0.0476 - accuracy: 0.9871 - val_loss: 0.5516 - val_accuracy: 0.8644
+3/3 [==============================] - 1s 50ms/step - loss: 0.4125 - accuracy: 0.8493
+CNN          Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)    Frames/Second (Feat. Ext.)
+---------  -----------------  -------------  ----------  --------------------------------  ----------------------------  ----------------------------
+resnet101           0.849315       0.412518    0.545455                            106.34                       3.42297                       1577.99

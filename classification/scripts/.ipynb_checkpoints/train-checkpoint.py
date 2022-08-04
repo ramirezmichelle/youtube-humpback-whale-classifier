@@ -339,9 +339,10 @@ def print_final_info(cnn, loss, accuracy, f1, duration):
     """ Print presentation info at process completion. """
     
     videos_per_sec = 364/duration
-    row_data = [[cnn, accuracy, loss, f1, duration, videos_per_sec]]
+    frames_per_sec = (364*461)/duration
+    row_data = [[cnn, accuracy, loss, f1, duration, videos_per_sec, frames_per_sec]]
     
-    print(tabulate(row_data, headers = ["CNN","Accuracy (Test)", "Loss (Test)", "F1 Score", "Time to Extract Features (sec)", "Videos/Second (Feat. Ext.)"]))
+    print(tabulate(row_data, headers = ["CNN","Accuracy (Test)", "Loss (Test)", "F1 Score", "Time to Extract Features (sec)", "Videos/Second (Feat. Ext.)", "Frames/Second (Feat. Ext.)"]))
     return
 
 def main():
