@@ -347,3 +347,18 @@
 2022-08-04 00:07:20,518 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
 2022-08-04 00:07:36,429 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
 2022-08-04 00:07:36,429 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:07:52,171 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:07:52,171 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:08:07,864 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:08:07,864 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:08:23,489 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:08:23,489 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:08:39,083 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:08:39,083 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:08:54,667 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:08:54,667 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:09:10,527 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:09:10,528 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:09:26,126 DEBUG   HandlerThread:111891 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-04 00:09:26,126 DEBUG   SenderThread:111891 [sender.py:send_request():250] send_request: stop_status
+2022-08-04 00:09:38,069 WARNING MainThread:111891 [internal.py:wandb_internal():153] Internal process interrupt: 1
