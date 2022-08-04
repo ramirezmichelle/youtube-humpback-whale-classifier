@@ -198,12 +198,20 @@ def feature_extraction_gpu(num_gpus, videos, video_labels, cnn_choice):
     def distributed_test_step(dataset_inputs):
         """ Distributes data inputs and invokes feature extraction on each GPU """
         return strategy.run(test_step, args=(dataset_inputs,))
-
+    
     def test_step(inputs):
         """ Returns feature representations on inputs """
         images, label = inputs
-        predictions = cnn_model(tf.squeeze(images), training=False)
-        return predictions, label
+
+        #in the case that data does not divide evenly across GPUs,
+        #TF creates a placeholder tensor so all GPUs have something to process
+        #however this tensor will be empty and have shape (0, 461, 224, 224, 3)
+        #so instead of running prediction, we return None values and filter these out later
+        try:
+            predictions = cnn_model(tf.squeeze(images), training=False)
+            return predictions, label
+        except ValueError:
+            return None, None
         
     print("Beginning Feature Extraction in GPU Mode...")
     start = time.time()
@@ -237,7 +245,9 @@ def replica_objects_to_numpy(replica_results, num_gpus):
         #convert list of tensors to list of numpy arrays
         results = []
         for tensor in tensors:
-            results.append(tensor.numpy())
+            #filter out empty tensors generated during data distribution
+            if tensor is not None: 
+                results.append(tensor.numpy())
             
     else:
         #convert list of tensors from single gpu to list of np arrays
