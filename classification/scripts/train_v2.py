@@ -188,7 +188,7 @@ def feature_extraction_gpu(num_gpus, dataset, cnn_choice, augment_data=False):
     print ('Number of devices in strategy: {}'.format(strategy.num_replicas_in_sync))
     
     # keep batch size at 1 to avoid memory alloc. issues since tensors are large
-    BATCH_SIZE_PER_REPLICA = 1
+    BATCH_SIZE_PER_REPLICA = 16
     GLOBAL_BATCH_SIZE = BATCH_SIZE_PER_REPLICA * strategy.num_replicas_in_sync
     
     # store data in TF dataset with batch + prefetch

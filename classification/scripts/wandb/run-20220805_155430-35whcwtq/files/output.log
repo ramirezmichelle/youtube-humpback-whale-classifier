@@ -1,0 +1,21 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Traceback (most recent call last):
+  File "train_v2.py", line 407, in <module>
+    main()
+  File "train_v2.py", line 355, in main
+    videos, video_labels = load_frames_and_labels(video_names)
+  File "train_v2.py", line 95, in load_frames_and_labels
+    frames, label = get_video_data(clip_name)
+  File "train_v2.py", line 63, in get_video_data
+    file = h5py.File(HDF5_DIR / f"{video_clip_title}.h5", "r+")
+  File "/usr/local/lib/python3.8/dist-packages/h5py/_hl/files.py", line 507, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+  File "/usr/local/lib/python3.8/dist-packages/h5py/_hl/files.py", line 222, in make_fid
+    fid = h5f.open(name, h5f.ACC_RDWR, fapl=fapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 106, in h5py.h5f.open
+BlockingIOError: [Errno 11] Unable to open file (unable to lock file, errno = 11, error message = 'Resource temporarily unavailable')
