@@ -270,42 +270,6 @@ def replica_objects_to_numpy(replica_results, num_gpus):
     return np.array(results)
 
 
-# def get_data_splits(X, y, features, labels, batch_size=32):
-#     """ Create train, validation, and test TF datasets with batching + prefetching. 
-#     We use train_test_split to keep classes balanced in each split."""
-    
-#     X_0, X_test, y_0, y_test = train_test_split(X, y, test_size = 0.20, random_state = 42)
-#     X_train, X_val, y_train, y_val = train_test_split(X_0, y_0, test_size = 0.20, random_state = 42)
-
-#     train_index = list(X_train.index)
-#     test_index = list(X_test.index)
-#     val_index = list(X_val.index)
-
-#     train_features, train_labels = features[train_index], labels[train_index]
-#     val_features, val_labels     = features[val_index], labels[val_index]
-#     test_features, test_labels   = features[test_index], labels[test_index]
-
-#     # reshape label arrays from (n_videos) to (n_videos, 1)
-#     train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
-#     val_labels = np.reshape(val_labels, (val_labels.shape[0], 1))
-#     test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
-    
-#     # Batch the input data
-#     buffer_size_train = train_features.shape[0]
-#     buffer_size_val = val_features.shape[0]
-#     buffer_size_test = test_features.shape[0]
-
-#     # Create Datasets from the batches
-#     train_dataset = tf.data.Dataset.from_tensor_slices((train_features, train_labels)).shuffle(buffer_size_train).batch(batch_size)
-#     val_dataset = tf.data.Dataset.from_tensor_slices((val_features, val_labels)).shuffle(buffer_size_val).batch(batch_size)
-#     test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).shuffle(buffer_size_test).batch(batch_size)
-
-#     train_dataset = train_dataset.prefetch(2)
-#     val_dataset = val_dataset.prefetch(2)
-#     test_dataset = test_dataset.prefetch(2)
-
-#     return train_dataset, val_dataset, test_dataset
-
 def train_rnn(train_dataset, val_dataset, test_dataset, feature_dim):
     """ Create RNN model and run training and evaluation. """
     
