@@ -309,6 +309,8 @@ def replica_objects_to_numpy(replica_results, num_gpus):
 def train_rnn(train_dataset, val_dataset, test_dataset, feature_dim):
     """ Create RNN model and run training and evaluation. """
     
+    tf.keras.mixed_precision.set_global_policy('float64')
+    
     features_input       = keras.Input((461, feature_dim))
     x                    = keras.layers.Bidirectional(keras.layers.LSTM(256, return_sequences=True))(features_input)
     x                    = keras.layers.Bidirectional(keras.layers.LSTM(128, return_sequences=True))(x)
@@ -329,7 +331,7 @@ def train_rnn(train_dataset, val_dataset, test_dataset, feature_dim):
     history = model.fit(train_dataset,
                         validation_data = val_dataset,
                         epochs = 15,
-#                         callbacks = my_callbacks,
+                        callbacks = my_callbacks,
                         verbose= 1)
 
     # evaluate trained model on test data
@@ -426,13 +428,8 @@ def main():
         BATCH_SIZE = 32
         
         train_dataset = tf.data.Dataset.from_tensor_slices((train_features, train_labels)).shuffle(BUFFER_SIZE_TRAIN).batch(BATCH_SIZE)
-        val_dataset = tf.data.Dataset.from_tensor_slices((val_features, val_labels)).shuffle(BUFFER_SIZE_VAL).batch(BATCH_SIZE)    
-        test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).shuffle(BUFFER_SIZE_TEST).batch(BATCH_SIZE)
-        
-    
-    print(train_dataset)
-    print(val_dataset)
-    print(test_dataset)
+        val_dataset = tf.data.Dataset.from_tensor_slices((val_features, val_labels)).batch(BATCH_SIZE)    
+        test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).batch(BATCH_SIZE)
 
     #train RNN
     print("Training RNN ...")

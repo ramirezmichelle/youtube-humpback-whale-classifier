@@ -20,7 +20,7 @@ class FeatureExtractor:
                                         ]
                                     )
 
-        return data_augmentation(x, training=True).numpy().astype("uint8")
+        return data_augmentation(x, training=True)
     
     def InceptionV3(self):
         '''Returns InceptionV3 architecture pre-trained on ImageNet-1k dataset for feature extraction'''

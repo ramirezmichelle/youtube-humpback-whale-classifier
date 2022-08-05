@@ -1,0 +1,132 @@
+2022-08-05 07:59:09,532 INFO    MainThread:419436 [internal.py:wandb_internal():90] W&B internal server running at pid: 419436, started at: 2022-08-05 07:59:09.532511
+2022-08-05 07:59:09,535 INFO    WriterThread:419436 [datastore.py:open_for_write():75] open: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/run-iibif699.wandb
+2022-08-05 07:59:09,537 DEBUG   SenderThread:419436 [sender.py:send():236] send: header
+2022-08-05 07:59:09,537 DEBUG   SenderThread:419436 [sender.py:send():236] send: run
+2022-08-05 07:59:09,661 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: check_version
+2022-08-05 07:59:09,665 INFO    SenderThread:419436 [dir_watcher.py:__init__():216] watching files in: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files
+2022-08-05 07:59:09,666 INFO    SenderThread:419436 [sender.py:_start_run_threads():815] run started: iibif699 with start time 1659686348
+2022-08-05 07:59:09,666 DEBUG   SenderThread:419436 [sender.py:send():236] send: summary
+2022-08-05 07:59:09,666 INFO    SenderThread:419436 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-05 07:59:09,666 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: check_version
+2022-08-05 07:59:09,707 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: run_start
+2022-08-05 07:59:09,714 DEBUG   HandlerThread:419436 [meta.py:__init__():35] meta init
+2022-08-05 07:59:09,715 DEBUG   HandlerThread:419436 [meta.py:__init__():49] meta init done
+2022-08-05 07:59:09,715 DEBUG   HandlerThread:419436 [meta.py:probe():209] probe
+2022-08-05 07:59:09,722 DEBUG   HandlerThread:419436 [meta.py:_setup_git():199] setup git
+2022-08-05 07:59:09,741 DEBUG   HandlerThread:419436 [meta.py:_setup_git():206] setup git done
+2022-08-05 07:59:09,741 DEBUG   HandlerThread:419436 [meta.py:_save_pip():53] save pip
+2022-08-05 07:59:09,742 DEBUG   HandlerThread:419436 [meta.py:_save_pip():67] save pip done
+2022-08-05 07:59:09,742 DEBUG   HandlerThread:419436 [meta.py:probe():247] probe done
+2022-08-05 07:59:09,826 DEBUG   SenderThread:419436 [sender.py:send():236] send: files
+2022-08-05 07:59:09,826 INFO    SenderThread:419436 [sender.py:_save_file():952] saving file wandb-metadata.json with policy now
+2022-08-05 07:59:09,832 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 07:59:09,833 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 07:59:09,917 DEBUG   SenderThread:419436 [sender.py:send():236] send: telemetry
+2022-08-05 07:59:09,917 DEBUG   SenderThread:419436 [sender.py:send():236] send: telemetry
+2022-08-05 07:59:10,038 DEBUG   SenderThread:419436 [sender.py:send():236] send: run
+2022-08-05 07:59:10,193 INFO    Thread-11 :419436 [upload_job.py:push():138] Uploaded file /tmp/tmpkhca57glwandb/29b7g0gb-wandb-metadata.json
+2022-08-05 07:59:10,196 INFO    SenderThread:419436 [sender.py:send_run():711] updated run: iibif699
+2022-08-05 07:59:10,669 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/config.yaml
+2022-08-05 07:59:10,669 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/output.log
+2022-08-05 07:59:10,669 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/wandb-metadata.json
+2022-08-05 07:59:10,669 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/requirements.txt
+2022-08-05 07:59:10,670 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/wandb-summary.json
+2022-08-05 07:59:12,667 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/output.log
+2022-08-05 07:59:25,041 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 07:59:25,041 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 07:59:38,456 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 07:59:40,123 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 07:59:40,124 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 07:59:40,678 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/config.yaml
+2022-08-05 07:59:55,325 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 07:59:55,325 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:00:09,092 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:00:10,411 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:00:10,411 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:00:25,520 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:00:25,520 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:00:39,722 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:00:40,632 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:00:40,803 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:00:55,937 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:00:55,937 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:01:10,370 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:01:11,026 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:01:11,026 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:01:26,138 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:01:26,138 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:01:41,014 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:01:41,226 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:01:41,226 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:01:56,319 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:01:56,320 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:02:11,416 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:02:11,416 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:02:11,666 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:02:26,562 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:02:26,563 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:02:33,745 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/output.log
+2022-08-05 08:02:41,646 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:02:41,647 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:02:42,296 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:02:56,753 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:02:56,753 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:03:11,838 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:03:11,838 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:03:12,913 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:03:26,923 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:03:26,923 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:03:42,015 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:03:42,016 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:03:43,557 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:03:57,107 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:03:57,108 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:04:12,198 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:04:12,198 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:04:14,181 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:04:27,283 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:04:27,283 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:04:42,364 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:04:42,364 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:04:44,818 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:04:57,450 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:04:57,450 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:05:12,535 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:05:12,535 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:05:15,461 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:05:27,629 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:05:27,629 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:05:42,751 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:05:42,751 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:05:46,096 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:05:48,825 INFO    Thread-7  :419436 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220805_075908-iibif699/files/output.log
+2022-08-05 08:05:57,848 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:05:57,849 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:06:16,740 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:06:17,848 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:06:17,849 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:06:32,933 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:06:32,933 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:06:47,371 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:06:48,019 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:06:48,019 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:07:03,108 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:07:03,108 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:07:17,998 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:07:18,214 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:07:18,214 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:07:33,298 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:07:33,299 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:07:48,384 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:07:48,384 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:07:48,625 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:08:03,471 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:08:03,472 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:08:18,557 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:08:18,557 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:08:19,258 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
+2022-08-05 08:08:33,656 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:08:33,657 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:08:48,743 DEBUG   HandlerThread:419436 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-05 08:08:48,743 DEBUG   SenderThread:419436 [sender.py:send_request():250] send_request: stop_status
+2022-08-05 08:08:49,892 DEBUG   SenderThread:419436 [sender.py:send():236] send: stats
