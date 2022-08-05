@@ -1,0 +1,376 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+Done loading videos in 71.30255436897278 seconds.
+Splitting videos into train, val, and test...
+2022-08-05 05:31:33.562883: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-08-05 05:31:39.928525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14204 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+2022-08-05 05:31:39.931020: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14204 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-08-05 05:31:39.933349: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14204 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-08-05 05:31:39.935644: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14204 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-08-05 05:31:39.937942: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14204 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-08-05 05:31:39.940231: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14204 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+Done splitting.
+<TensorSliceDataset element_spec=(TensorSpec(shape=(461, 224, 224, 3), dtype=tf.uint8, name=None), TensorSpec(shape=(), dtype=tf.uint8, name=None))> <TensorSliceDataset element_spec=(TensorSpec(shape=(461, 224, 224, 3), dtype=tf.uint8, name=None), TensorSpec(shape=(), dtype=tf.uint8, name=None))> <TensorSliceDataset element_spec=(TensorSpec(shape=(461, 224, 224, 3), dtype=tf.uint8, name=None), TensorSpec(shape=(), dtype=tf.uint8, name=None))>
+Setting TensorFlow Mirrored Strategy with 1 GPUs...
+Number of devices in strategy: 1
+Creating TF Dataset...
+Creating TF DISTRIBUTED Dataset...
+Creating CNN Model on Each Active Replica (GPU)
+2022-08-05 05:31:39.942526: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14204 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-08-05 05:31:39.944807: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14204 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+2022-08-05 05:31:55.541431: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 232
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+Beginning Feature Extraction in GPU Mode...
+2022-08-05 05:32:15.155537: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+Done getting video frame feature representations in 209.6812813282013 seconds.
+Formatting Results into Numpy Arrays...
+Setting TensorFlow Mirrored Strategy with 1 GPUs...
+Number of devices in strategy: 1
+Creating TF Dataset...
+Creating TF DISTRIBUTED Dataset...
+Creating CNN Model on Each Active Replica (GPU)
+2022-08-05 05:35:36.811927: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 59
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:1"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 55.23294448852539 seconds.
+Formatting Results into Numpy Arrays...
+2022-08-05 05:36:42.422459: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 73
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:2"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+Setting TensorFlow Mirrored Strategy with 1 GPUs...
+Number of devices in strategy: 1
+Creating TF Dataset...
+Creating TF DISTRIBUTED Dataset...
+Creating CNN Model on Each Active Replica (GPU)
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 67.37447214126587 seconds.
+Formatting Results into Numpy Arrays...
+Back from feature Extraction.
+Train Features: (232, 461, 2048) || Train Labels: (232, 1)
+Val Features: (59, 461, 2048) || Val Labels: (59, 1)
+Test Features: (73, 461, 2048) || Test Labels: (73, 1)
+Splitting + batching features and labels for RNN ...
+<BatchDataset element_spec=(TensorSpec(shape=(None, 461, 2048), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<BatchDataset element_spec=(TensorSpec(shape=(None, 461, 2048), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+<BatchDataset element_spec=(TensorSpec(shape=(None, 461, 2048), dtype=tf.float32, name=None), TensorSpec(shape=(None, 1), dtype=tf.uint8, name=None))>
+Training RNN ...
+Epoch 1/15
+8/8 [==============================] - 12s 559ms/step - loss: 0.6637 - accuracy: 0.6724 - val_loss: 0.6045 - val_accuracy: 0.6949
+Epoch 2/15
+
+8/8 [==============================] - 2s 258ms/step - loss: 0.3880 - accuracy: 0.8405 - val_loss: 0.4379 - val_accuracy: 0.8305
+Epoch 3/15
+8/8 [==============================] - 2s 262ms/step - loss: 0.2820 - accuracy: 0.8879 - val_loss: 0.4868 - val_accuracy: 0.7966
+Epoch 4/15
+
+8/8 [==============================] - 2s 258ms/step - loss: 0.2760 - accuracy: 0.8793 - val_loss: 0.5178 - val_accuracy: 0.8136
+Epoch 5/15
+8/8 [==============================] - 2s 258ms/step - loss: 0.1599 - accuracy: 0.9440 - val_loss: 0.4660 - val_accuracy: 0.7966
+Epoch 6/15
+
+8/8 [==============================] - 2s 257ms/step - loss: 0.1085 - accuracy: 0.9655 - val_loss: 0.5610 - val_accuracy: 0.8136
+Epoch 7/15
+8/8 [==============================] - 2s 259ms/step - loss: 0.1024 - accuracy: 0.9655 - val_loss: 0.4235 - val_accuracy: 0.8814
+Epoch 8/15
+
+8/8 [==============================] - 2s 260ms/step - loss: 0.0798 - accuracy: 0.9784 - val_loss: 0.6962 - val_accuracy: 0.8136
+Epoch 9/15
+8/8 [==============================] - 2s 257ms/step - loss: 0.1084 - accuracy: 0.9612 - val_loss: 0.5981 - val_accuracy: 0.8305
+Epoch 10/15
+
+8/8 [==============================] - 2s 265ms/step - loss: 0.1057 - accuracy: 0.9612 - val_loss: 1.1170 - val_accuracy: 0.7119
+Epoch 11/15
+8/8 [==============================] - 2s 254ms/step - loss: 0.0572 - accuracy: 0.9741 - val_loss: 0.7466 - val_accuracy: 0.7627
+Epoch 12/15
+8/8 [==============================] - 2s 260ms/step - loss: 0.0508 - accuracy: 0.9828 - val_loss: 0.9451 - val_accuracy: 0.7627
+Epoch 13/15
+8/8 [==============================] - 2s 259ms/step - loss: 0.0332 - accuracy: 0.9914 - val_loss: 0.8322 - val_accuracy: 0.8644
+Epoch 14/15
+8/8 [==============================] - 2s 255ms/step - loss: 0.0331 - accuracy: 0.9871 - val_loss: 0.8541 - val_accuracy: 0.8475
+Epoch 15/15
+8/8 [==============================] - 2s 262ms/step - loss: 0.0654 - accuracy: 0.9741 - val_loss: 0.7004 - val_accuracy: 0.8814
+3/3 [==============================] - 1s 63ms/step - loss: 0.7410 - accuracy: 0.8082
+CNN          Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)    Frames/Second (Feat. Ext.)
+---------  -----------------  -------------  ----------  --------------------------------  ----------------------------  ----------------------------
+resnet101           0.808219       0.740996         0.5                           209.681                       1.10644                       510.069
