@@ -14,9 +14,9 @@ class FeatureExtractor:
     def augment_inputs(self, x):
         data_augmentation =  keras.Sequential(
                                         [
-                                            keras.layers.RandomFlip(seed=43),
+                                            keras.layers.RandomFlip(mode="horizontal_and_vertical", seed=43),
                                             keras.layers.RandomRotation(0.1, seed=43),
-                                            keras.layers.RandomZoom(0.2, seed=43),
+                                            keras.layers.RandomZoom(0.2, seed=43)
                                         ]
                                     )
 
