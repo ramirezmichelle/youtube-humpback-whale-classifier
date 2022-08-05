@@ -195,7 +195,7 @@ def feature_extraction_gpu(num_gpus, dataset, cnn_choice, augment_data=False):
     print("Creating TF Dataset...")
     with tf.device("/device:CPU:0"):
         dataset = dataset.batch(GLOBAL_BATCH_SIZE)
-        dataset = dataset.prefetch(2 * strategy.num_replicas_in_sync)
+        dataset = dataset.prefetch(2) #* strategy.num_replicas_in_sync)
     
     # creates a distributed dataset aligned with our TF strategy
     print("Creating TF DISTRIBUTED Dataset...")
@@ -381,7 +381,6 @@ def main():
 
     # split data
     print("Splitting + batching features and labels for RNN ...")
-    #train_dataset, val_dataset, test_dataset = get_data_splits(X, y, features, labels)
     train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
     val_labels = np.reshape(val_labels, (val_labels.shape[0], 1))
     test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
