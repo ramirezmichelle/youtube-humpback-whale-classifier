@@ -188,7 +188,7 @@ def feature_extraction_gpu(num_gpus, dataset, cnn_choice, augment_data=False):
     print ('Number of devices in strategy: {}'.format(strategy.num_replicas_in_sync))
     
     # keep batch size at 1 to avoid memory alloc. issues since tensors are large
-    BATCH_SIZE_PER_REPLICA = 16
+    BATCH_SIZE_PER_REPLICA = 1
     GLOBAL_BATCH_SIZE = BATCH_SIZE_PER_REPLICA * strategy.num_replicas_in_sync
     
     # store data in TF dataset with batch + prefetch
@@ -286,7 +286,7 @@ def train_rnn(train_dataset, val_dataset, test_dataset, feature_dim):
     model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 
     my_callbacks = [keras.callbacks.EarlyStopping(monitor="val_accuracy", 
-                                                  patience=3,
+                                                  patience=5,
                                                   mode="max",
                                                   min_delta = 0.01,
                                                   restore_best_weights=True)]
@@ -313,11 +313,15 @@ def get_F1_score(test_dataset, model):
 
     return metrics.f1_score(y_true, y_pred)
 
-def print_final_info(cnn, loss, accuracy, f1, duration):
+def print_final_info(cnn, loss, accuracy, f1, train_duration, val_duration):
     """ Print presentation info at process completion. """
     
-    videos_per_sec = 232/duration
-    frames_per_sec = (232*461)/duration
+    total_videos = 232 + 59
+    total_frames = total_videos * 461
+    duration = train_duration + val_duration
+    
+    videos_per_sec = total_videos/duration
+    frames_per_sec = total_frames/duration
     row_data = [[cnn, accuracy, loss, f1, duration, videos_per_sec, frames_per_sec]]
     
     print(tabulate(row_data, headers = ["CNN","Accuracy (Test)", "Loss (Test)", "F1 Score", "Time to Extract Features (sec)", "Videos/Second (Feat. Ext.)", "Frames/Second (Feat. Ext.)"]))
@@ -326,20 +330,20 @@ def print_final_info(cnn, loss, accuracy, f1, duration):
 def main():
     #parse args here
     parser = argparse.ArgumentParser()
-    parser.add_argument("--num_gpu", default=0, type=int)
+    parser.add_argument("--num_gpus", default=0, type=int)
     parser.add_argument("--cnn_model", default="resnet101", type=str)
     parser.add_argument("--wandb_run", default="just another run", type=str)
     
     args = parser.parse_args()
     
-    print(f"NUM GPUS: {args.num_gpu}")
+    print(f"NUM GPUS: {args.num_gpus}")
     print(f"CNN: {args.cnn_model}")   
     print(f"wandb run name: {args.wandb_run}")   
     
     #start logging info
     os.environ["WANDB_API_KEY"] = "53f9fb8ccf6dd926fcfa46f72943e2d7c43494a9"
     wandb.login()
-    wandb.init(project="whale-classification")
+    wandb.init(project="whale-classification-presentation")
     wandb.run.name = args.wandb_run
     
     # don't let TF take up all the gpu memory
@@ -360,18 +364,17 @@ def main():
     print("Splitting videos into train, val, and test...")
     train_dataset, val_dataset, test_dataset = split_video_dataset(X, y, videos, video_labels)
     print("Done splitting.")
-    print(train_dataset, val_dataset, test_dataset)
     
     # get video frame feature representations with CNN for each dataset split
-    if args.num_gpu >= 1:
-        train_features, train_labels, train_feature_duration = feature_extraction_gpu(args.num_gpu, train_dataset, args.cnn_model, augment_data=True)
-        val_features, val_labels, _ = feature_extraction_gpu(args.num_gpu, val_dataset, args.cnn_model, augment_data=True)
-        test_features, test_labels, _ = feature_extraction_gpu(args.num_gpu, test_dataset, args.cnn_model)
+    if args.num_gpus >= 1:
+        train_features, train_labels, train_duration_cnn = feature_extraction_gpu(args.num_gpus, train_dataset, args.cnn_model, augment_data=True)
+        val_features, val_labels, val_duration_cnn = feature_extraction_gpu(args.num_gpus, val_dataset, args.cnn_model, augment_data=True)
+        test_features, test_labels, _ = feature_extraction_gpu(args.num_gpus, test_dataset, args.cnn_model)
 
     else:
         frames_per_video = videos.shape[1]
-        train_features, train_labels, train_feature_duration = feature_extraction_cpu(train_dataset, frames_per_video, args.cnn_model, augment_data=True)
-        val_features, val_labels, _ = feature_extraction_cpu(val_dataset, frames_per_video, args.cnn_model, augment_data=True)
+        train_features, train_labels, train_duration_cnn = feature_extraction_cpu(train_dataset, frames_per_video, args.cnn_model, augment_data=True)
+        val_features, val_labels, val_duration_cnn = feature_extraction_cpu(val_dataset, frames_per_video, args.cnn_model, augment_data=True)
         test_features, test_labels, _ = feature_extraction_cpu(test_dataset, frames_per_video, args.cnn_model)
         
     print("Back from feature Extraction.")
@@ -384,6 +387,7 @@ def main():
     train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
     val_labels = np.reshape(val_labels, (val_labels.shape[0], 1))
     test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
+    
     with tf.device("/device:CPU:0"):
         BUFFER_SIZE_TRAIN = train_features.shape[0]
         BUFFER_SIZE_VAL = val_features.shape[0]
@@ -398,7 +402,7 @@ def main():
     print("Training RNN ...")
     history, loss, accuracy, f1 = train_rnn(train_dataset, val_dataset, test_dataset, train_features.shape[2])
     
-    print_final_info(args.cnn_model, loss, accuracy, f1, train_feature_duration)
+    print_final_info(args.cnn_model, loss, accuracy, f1, train_duration_cnn, val_duration_cnn)
     wandb.finish()
     
     return

@@ -1,0 +1,174 @@
+2022-08-06 15:29:49,409 INFO    MainThread:167223 [internal.py:wandb_internal():90] W&B internal server running at pid: 167223, started at: 2022-08-06 15:29:49.409387
+2022-08-06 15:29:49,411 INFO    WriterThread:167223 [datastore.py:open_for_write():75] open: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/run-mfxdkib6.wandb
+2022-08-06 15:29:49,414 DEBUG   SenderThread:167223 [sender.py:send():236] send: header
+2022-08-06 15:29:49,414 DEBUG   SenderThread:167223 [sender.py:send():236] send: run
+2022-08-06 15:29:49,601 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: check_version
+2022-08-06 15:29:49,606 INFO    SenderThread:167223 [dir_watcher.py:__init__():216] watching files in: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files
+2022-08-06 15:29:49,606 INFO    SenderThread:167223 [sender.py:_start_run_threads():815] run started: mfxdkib6 with start time 1659799788
+2022-08-06 15:29:49,606 DEBUG   SenderThread:167223 [sender.py:send():236] send: summary
+2022-08-06 15:29:49,606 INFO    SenderThread:167223 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-06 15:29:49,606 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: check_version
+2022-08-06 15:29:49,663 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: run_start
+2022-08-06 15:29:49,670 DEBUG   HandlerThread:167223 [meta.py:__init__():35] meta init
+2022-08-06 15:29:49,670 DEBUG   HandlerThread:167223 [meta.py:__init__():49] meta init done
+2022-08-06 15:29:49,670 DEBUG   HandlerThread:167223 [meta.py:probe():209] probe
+2022-08-06 15:29:49,677 DEBUG   HandlerThread:167223 [meta.py:_setup_git():199] setup git
+2022-08-06 15:29:49,696 DEBUG   HandlerThread:167223 [meta.py:_setup_git():206] setup git done
+2022-08-06 15:29:49,696 DEBUG   HandlerThread:167223 [meta.py:_save_pip():53] save pip
+2022-08-06 15:29:49,697 DEBUG   HandlerThread:167223 [meta.py:_save_pip():67] save pip done
+2022-08-06 15:29:49,697 DEBUG   HandlerThread:167223 [meta.py:probe():247] probe done
+2022-08-06 15:29:49,779 DEBUG   SenderThread:167223 [sender.py:send():236] send: files
+2022-08-06 15:29:49,779 INFO    SenderThread:167223 [sender.py:_save_file():952] saving file wandb-metadata.json with policy now
+2022-08-06 15:29:49,786 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:29:49,786 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:29:49,880 DEBUG   SenderThread:167223 [sender.py:send():236] send: telemetry
+2022-08-06 15:29:49,987 DEBUG   SenderThread:167223 [sender.py:send():236] send: telemetry
+2022-08-06 15:29:49,988 DEBUG   SenderThread:167223 [sender.py:send():236] send: run
+2022-08-06 15:29:50,119 INFO    Thread-11 :167223 [upload_job.py:push():138] Uploaded file /tmp/tmp7ay8q17gwandb/1mj7jr3t-wandb-metadata.json
+2022-08-06 15:29:50,133 INFO    SenderThread:167223 [sender.py:send_run():711] updated run: mfxdkib6
+2022-08-06 15:29:50,609 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/config.yaml
+2022-08-06 15:29:50,609 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:29:50,609 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/wandb-metadata.json
+2022-08-06 15:29:50,609 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/wandb-summary.json
+2022-08-06 15:29:50,609 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_created():269] file/dir created: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/requirements.txt
+2022-08-06 15:29:52,607 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:00,610 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:04,989 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:30:04,989 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:30:08,613 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:16,616 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:18,389 DEBUG   SenderThread:167223 [sender.py:send():236] send: stats
+2022-08-06 15:30:20,617 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/config.yaml
+2022-08-06 15:30:20,871 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:30:20,871 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:30:25,619 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:33,622 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:36,172 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:30:36,173 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:30:41,625 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:48,991 DEBUG   SenderThread:167223 [sender.py:send():236] send: stats
+2022-08-06 15:30:49,628 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:30:51,310 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:30:51,311 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:30:51,629 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:06,959 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:31:06,959 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:31:18,639 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:19,784 DEBUG   SenderThread:167223 [sender.py:send():236] send: stats
+2022-08-06 15:31:20,639 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:24,641 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:26,642 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:28,780 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: stop_status
+2022-08-06 15:31:28,780 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: stop_status
+2022-08-06 15:31:32,644 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:41,875 DEBUG   SenderThread:167223 [sender.py:send():236] send: telemetry
+2022-08-06 15:31:42,648 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:44,509 DEBUG   SenderThread:167223 [sender.py:send():236] send: exit
+2022-08-06 15:31:44,509 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:44,510 INFO    SenderThread:167223 [sender.py:send_exit():372] handling exit code: 1
+2022-08-06 15:31:44,510 INFO    SenderThread:167223 [sender.py:send_exit():374] handling runtime: 114
+2022-08-06 15:31:44,511 INFO    SenderThread:167223 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-06 15:31:44,511 INFO    SenderThread:167223 [sender.py:send_exit():380] send defer
+2022-08-06 15:31:44,511 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:44,512 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,512 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 0
+2022-08-06 15:31:44,512 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,513 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 0
+2022-08-06 15:31:44,513 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 1
+2022-08-06 15:31:44,513 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,513 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 1
+2022-08-06 15:31:44,557 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,557 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 1
+2022-08-06 15:31:44,558 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 2
+2022-08-06 15:31:44,558 DEBUG   SenderThread:167223 [sender.py:send():236] send: stats
+2022-08-06 15:31:44,558 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,559 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 2
+2022-08-06 15:31:44,559 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,559 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 2
+2022-08-06 15:31:44,559 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 3
+2022-08-06 15:31:44,559 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,559 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 3
+2022-08-06 15:31:44,560 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,560 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 3
+2022-08-06 15:31:44,560 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 4
+2022-08-06 15:31:44,560 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,560 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 4
+2022-08-06 15:31:44,560 DEBUG   SenderThread:167223 [sender.py:send():236] send: summary
+2022-08-06 15:31:44,561 INFO    SenderThread:167223 [sender.py:_save_file():952] saving file wandb-summary.json with policy end
+2022-08-06 15:31:44,561 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,561 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 4
+2022-08-06 15:31:44,561 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 5
+2022-08-06 15:31:44,562 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,562 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 5
+2022-08-06 15:31:44,562 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,562 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 5
+2022-08-06 15:31:44,613 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:44,648 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:44,649 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/wandb-summary.json
+2022-08-06 15:31:44,684 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 6
+2022-08-06 15:31:44,685 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:44,685 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:44,685 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 6
+2022-08-06 15:31:44,685 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:44,686 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 6
+2022-08-06 15:31:44,686 INFO    SenderThread:167223 [dir_watcher.py:finish():353] shutting down directory watcher
+2022-08-06 15:31:44,786 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:45,649 INFO    Thread-7  :167223 [dir_watcher.py:_on_file_modified():286] file/dir modified: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/config.yaml
+2022-08-06 15:31:45,649 INFO    SenderThread:167223 [dir_watcher.py:finish():383] scan: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files
+2022-08-06 15:31:45,650 INFO    SenderThread:167223 [dir_watcher.py:finish():397] scan save: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/requirements.txt requirements.txt
+2022-08-06 15:31:45,650 INFO    SenderThread:167223 [dir_watcher.py:finish():397] scan save: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/wandb-metadata.json wandb-metadata.json
+2022-08-06 15:31:45,650 INFO    SenderThread:167223 [dir_watcher.py:finish():397] scan save: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/wandb-summary.json wandb-summary.json
+2022-08-06 15:31:45,655 INFO    SenderThread:167223 [dir_watcher.py:finish():397] scan save: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/config.yaml config.yaml
+2022-08-06 15:31:45,660 INFO    SenderThread:167223 [dir_watcher.py:finish():397] scan save: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log output.log
+2022-08-06 15:31:45,665 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 7
+2022-08-06 15:31:45,665 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:45,670 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:45,671 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 7
+2022-08-06 15:31:45,672 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:45,672 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 7
+2022-08-06 15:31:45,672 INFO    SenderThread:167223 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-06 15:31:45,777 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:45,780 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:45,882 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:45,883 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:45,984 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:45,984 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:46,038 INFO    Thread-14 :167223 [upload_job.py:push():138] Uploaded file /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/config.yaml
+2022-08-06 15:31:46,040 INFO    Thread-13 :167223 [upload_job.py:push():138] Uploaded file /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/wandb-summary.json
+2022-08-06 15:31:46,045 INFO    Thread-15 :167223 [upload_job.py:push():138] Uploaded file /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/output.log
+2022-08-06 15:31:46,056 INFO    Thread-12 :167223 [upload_job.py:push():138] Uploaded file /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/files/requirements.txt
+2022-08-06 15:31:46,085 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:46,085 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:46,186 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:46,186 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:46,256 INFO    Thread-6  :167223 [sender.py:transition_state():393] send defer: 8
+2022-08-06 15:31:46,257 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:46,257 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 8
+2022-08-06 15:31:46,257 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:46,257 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 8
+2022-08-06 15:31:46,287 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:46,516 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 9
+2022-08-06 15:31:46,516 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:46,516 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:46,516 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 9
+2022-08-06 15:31:46,517 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:46,517 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 9
+2022-08-06 15:31:46,517 INFO    SenderThread:167223 [sender.py:transition_state():393] send defer: 10
+2022-08-06 15:31:46,518 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: defer
+2022-08-06 15:31:46,518 DEBUG   SenderThread:167223 [sender.py:send():236] send: final
+2022-08-06 15:31:46,518 INFO    HandlerThread:167223 [handler.py:handle_request_defer():163] handle defer: 10
+2022-08-06 15:31:46,518 DEBUG   SenderThread:167223 [sender.py:send():236] send: footer
+2022-08-06 15:31:46,518 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: defer
+2022-08-06 15:31:46,518 INFO    SenderThread:167223 [sender.py:send_request_defer():389] handle sender defer: 10
+2022-08-06 15:31:46,617 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: poll_exit
+2022-08-06 15:31:46,618 DEBUG   SenderThread:167223 [sender.py:send_request():250] send_request: poll_exit
+2022-08-06 15:31:46,618 INFO    SenderThread:167223 [file_pusher.py:join():176] waiting for file pusher
+2022-08-06 15:31:46,896 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: sampled_history
+2022-08-06 15:31:46,897 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: get_summary
+2022-08-06 15:31:46,898 DEBUG   HandlerThread:167223 [handler.py:handle_request():140] handle_request: shutdown
+2022-08-06 15:31:46,898 INFO    HandlerThread:167223 [handler.py:finish():806] shutting down handler
+2022-08-06 15:31:47,518 INFO    WriterThread:167223 [datastore.py:close():279] close: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220806_152948-mfxdkib6/run-mfxdkib6.wandb
+2022-08-06 15:31:47,795 INFO    SenderThread:167223 [sender.py:finish():1114] shutting down sender
+2022-08-06 15:31:47,796 INFO    SenderThread:167223 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-06 15:31:47,796 INFO    SenderThread:167223 [file_pusher.py:join():176] waiting for file pusher
+2022-08-06 15:31:47,798 INFO    MainThread:167223 [internal.py:handle_exit():80] Internal process exited

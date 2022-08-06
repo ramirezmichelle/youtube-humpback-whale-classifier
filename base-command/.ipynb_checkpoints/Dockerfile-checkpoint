@@ -15,6 +15,7 @@ RUN pip install imageio \
     git+https://github.com/tensorflow/docs \
     wandb \ 
     decord \ 
-    moviepy
+    moviepy \
+    tabulate
 
 
