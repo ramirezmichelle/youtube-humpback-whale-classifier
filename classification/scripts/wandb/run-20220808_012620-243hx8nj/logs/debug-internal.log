@@ -1,0 +1,4 @@
+2022-08-08 01:26:21,782 INFO    MainThread:227746 [internal.py:wandb_internal():90] W&B internal server running at pid: 227746, started at: 2022-08-08 01:26:21.781929
+2022-08-08 01:26:21,784 INFO    WriterThread:227746 [datastore.py:open_for_write():75] open: /workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220808_012620-243hx8nj/run-243hx8nj.wandb
+2022-08-08 01:26:21,786 DEBUG   SenderThread:227746 [sender.py:send():236] send: header
+2022-08-08 01:26:21,786 DEBUG   SenderThread:227746 [sender.py:send():236] send: run
