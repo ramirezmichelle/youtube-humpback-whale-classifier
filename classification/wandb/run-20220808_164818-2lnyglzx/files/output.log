@@ -1,0 +1,217 @@
+2022-08-08 16:48:36.564163: I tensorflow/core/platform/cpu_feature_guard.cc:152] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  SSE3 SSE4.1 SSE4.2 AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-08-08 16:48:43.139608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14649 MB memory:  -> device: 0, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:06:00.0, compute capability: 7.0
+8 Physical GPUs, 8 Logical GPUs
+Loading frames for video 0...
+Loading frames for video 50...
+Loading frames for video 100...
+Loading frames for video 150...
+Loading frames for video 200...
+Loading frames for video 250...
+Loading frames for video 300...
+Loading frames for video 350...
+Done loading frames in 207.59453129768372 seconds.
+(364, 461, 224, 224, 3)
+(364,)
+INFO:tensorflow:Using MirroredStrategy with devices ('/job:localhost/replica:0/task:0/device:GPU:0', '/job:localhost/replica:0/task:0/device:GPU:1', '/job:localhost/replica:0/task:0/device:GPU:2', '/job:localhost/replica:0/task:0/device:GPU:3')
+Number of devices: 4
+2022-08-08 16:48:43.142269: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:1 with 14649 MB memory:  -> device: 1, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:07:00.0, compute capability: 7.0
+2022-08-08 16:48:43.144740: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:2 with 14649 MB memory:  -> device: 2, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0a:00.0, compute capability: 7.0
+2022-08-08 16:48:43.147108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:3 with 14649 MB memory:  -> device: 3, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:0b:00.0, compute capability: 7.0
+2022-08-08 16:48:43.149479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:4 with 14649 MB memory:  -> device: 4, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:85:00.0, compute capability: 7.0
+2022-08-08 16:48:43.151853: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:5 with 14649 MB memory:  -> device: 5, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:86:00.0, compute capability: 7.0
+2022-08-08 16:48:43.154165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:6 with 14649 MB memory:  -> device: 6, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:89:00.0, compute capability: 7.0
+2022-08-08 16:48:43.156479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:7 with 14649 MB memory:  -> device: 7, name: Tesla V100-SXM2-16GB-N, pci bus id: 0000:8a:00.0, compute capability: 7.0
+2022-08-08 16:55:38.411265: W tensorflow/core/grappler/optimizers/data/auto_shard.cc:776] AUTO sharding policy will apply DATA sharding policy as it failed to apply FILE sharding policy because of the following reason: Found an unshardable source dataset: name: "TensorSliceDataset/_2"
+op: "TensorSliceDataset"
+input: "Placeholder/_0"
+input: "Placeholder/_1"
+attr {
+  key: "Toutput_types"
+  value {
+    list {
+      type: DT_UINT8
+      type: DT_UINT8
+    }
+  }
+}
+attr {
+  key: "_cardinality"
+  value {
+    i: 364
+  }
+}
+attr {
+  key: "is_files"
+  value {
+    b: false
+  }
+}
+attr {
+  key: "metadata"
+  value {
+    s: "\n\024TensorSliceDataset:0"
+  }
+}
+attr {
+  key: "output_shapes"
+  value {
+    list {
+      shape {
+        dim {
+          size: 461
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 224
+        }
+        dim {
+          size: 3
+        }
+      }
+      shape {
+      }
+    }
+  }
+}
+experimental_type {
+  type_id: TFT_PRODUCT
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+  args {
+    type_id: TFT_DATASET
+    args {
+      type_id: TFT_PRODUCT
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+      args {
+        type_id: TFT_TENSOR
+        args {
+          type_id: TFT_UINT8
+        }
+      }
+    }
+  }
+}
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+INFO:tensorflow:Reduce to /job:localhost/replica:0/task:0/device:CPU:0 then broadcast to ('/job:localhost/replica:0/task:0/device:CPU:0',).
+Starting feature extraction...
+images: Tensor("dataset_inputs:0", shape=(1, 461, 224, 224, 3), dtype=uint8)
+images: Tensor("dataset_inputs_1:0", shape=(1, 461, 224, 224, 3), dtype=uint8)
+images: Tensor("dataset_inputs_2:0", shape=(1, 461, 224, 224, 3), dtype=uint8)
+images: Tensor("dataset_inputs_3:0", shape=(1, 461, 224, 224, 3), dtype=uint8)
+2022-08-08 16:56:34.851789: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-08 16:56:35.771463: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-08 16:56:36.730612: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+2022-08-08 16:56:37.209479: I tensorflow/stream_executor/cuda/cuda_dnn.cc:379] Loaded cuDNN version 8400
+Done extracting features in 109.16109108924866 seconds
+(364, 1)
+(364, 461, 2048)
+(232, 461, 2048)
+(59, 461, 2048)
+(73, 461, 2048)
+(232, 1)
+(59, 1)
+(73, 1)
+Epoch 1/15
+
+
+8/8 [==============================] - 13s 565ms/step - loss: 0.6287 - accuracy: 0.6767 - val_loss: 0.5223 - val_accuracy: 0.7966
+Epoch 2/15
+8/8 [==============================] - 2s 250ms/step - loss: 0.4193 - accuracy: 0.7974 - val_loss: 0.4694 - val_accuracy: 0.7966
+Epoch 3/15
+
+8/8 [==============================] - 2s 268ms/step - loss: 0.2992 - accuracy: 0.8879 - val_loss: 0.4778 - val_accuracy: 0.8136
+Epoch 4/15
+8/8 [==============================] - 2s 246ms/step - loss: 0.2433 - accuracy: 0.8966 - val_loss: 0.8825 - val_accuracy: 0.7119
+Epoch 5/15
+
+8/8 [==============================] - 2s 252ms/step - loss: 0.2257 - accuracy: 0.9138 - val_loss: 0.4698 - val_accuracy: 0.8305
+Epoch 6/15
+8/8 [==============================] - 2s 256ms/step - loss: 0.1102 - accuracy: 0.9612 - val_loss: 0.5123 - val_accuracy: 0.7966
+Epoch 7/15
+
+8/8 [==============================] - 2s 253ms/step - loss: 0.1057 - accuracy: 0.9569 - val_loss: 0.4992 - val_accuracy: 0.8644
+Epoch 8/15
+8/8 [==============================] - 2s 261ms/step - loss: 0.0666 - accuracy: 0.9784 - val_loss: 0.7281 - val_accuracy: 0.8136
+Epoch 9/15
+
+8/8 [==============================] - 2s 257ms/step - loss: 0.0423 - accuracy: 0.9828 - val_loss: 0.6203 - val_accuracy: 0.8136
+Epoch 10/15
+8/8 [==============================] - 2s 246ms/step - loss: 0.0247 - accuracy: 0.9957 - val_loss: 0.6355 - val_accuracy: 0.8136
+Epoch 11/15
+
+8/8 [==============================] - 2s 256ms/step - loss: 0.1013 - accuracy: 0.9569 - val_loss: 0.6112 - val_accuracy: 0.7966
+Epoch 12/15
+8/8 [==============================] - 2s 267ms/step - loss: 0.0892 - accuracy: 0.9569 - val_loss: 0.7707 - val_accuracy: 0.7966
+Done training.
+3/3 [==============================] - 1s 56ms/step - loss: 0.6816 - accuracy: 0.7945
+Test Metrics - Loss: 0.6816282272338867, Accuracy: 0.7945205569267273
+Done training.
+3/3 [==============================] - 2s 27ms/step - loss: 0.6820 - accuracy: 0.5479
+Test Metrics - Loss: 0.6820061802864075, Accuracy: 0.5479452013969421
+Epoch 1/15
+8/8 [==============================] - 6s 284ms/step - loss: 0.6458 - accuracy: 0.5948 - val_loss: 0.5456 - val_accuracy: 0.7966
+Epoch 2/15
+8/8 [==============================] - 1s 151ms/step - loss: 0.5713 - accuracy: 0.6681 - val_loss: 0.5058 - val_accuracy: 0.7458
+Epoch 3/15
+8/8 [==============================] - 1s 150ms/step - loss: 0.5273 - accuracy: 0.7328 - val_loss: 0.4920 - val_accuracy: 0.7797
+Epoch 4/15
+8/8 [==============================] - 1s 151ms/step - loss: 0.4919 - accuracy: 0.7586 - val_loss: 0.4768 - val_accuracy: 0.7797
+Epoch 5/15
+8/8 [==============================] - 1s 148ms/step - loss: 0.4613 - accuracy: 0.8017 - val_loss: 0.4680 - val_accuracy: 0.7797
+Epoch 6/15
+8/8 [==============================] - 1s 149ms/step - loss: 0.3991 - accuracy: 0.8319 - val_loss: 0.4794 - val_accuracy: 0.7797
+Done training.
+3/3 [==============================] - 1s 27ms/step - loss: 0.5696 - accuracy: 0.6986
+Test Metrics - Loss: 0.5696296095848083, Accuracy: 0.698630154132843
+Epoch 1/15
+
+
+8/8 [==============================] - 12s 545ms/step - loss: 0.5663 - accuracy: 0.7198 - val_loss: 0.4019 - val_accuracy: 0.8136
+Epoch 2/15
+8/8 [==============================] - 2s 251ms/step - loss: 0.3991 - accuracy: 0.8405 - val_loss: 0.4815 - val_accuracy: 0.7797
+Epoch 3/15
+
+8/8 [==============================] - 2s 256ms/step - loss: 0.3379 - accuracy: 0.8491 - val_loss: 0.4549 - val_accuracy: 0.7797
+Epoch 4/15
+8/8 [==============================] - 2s 252ms/step - loss: 0.2769 - accuracy: 0.8707 - val_loss: 0.4495 - val_accuracy: 0.7966
+Epoch 5/15
+
+8/8 [==============================] - 2s 248ms/step - loss: 0.2460 - accuracy: 0.8922 - val_loss: 0.5307 - val_accuracy: 0.7966
+Epoch 6/15
+8/8 [==============================] - 2s 247ms/step - loss: 0.1934 - accuracy: 0.9052 - val_loss: 0.5656 - val_accuracy: 0.7797
+Done training.
+3/3 [==============================] - 1s 54ms/step - loss: 0.4651 - accuracy: 0.7808
+Test Metrics - Loss: 0.4651145339012146, Accuracy: 0.7808219194412231
+(73, 3)
