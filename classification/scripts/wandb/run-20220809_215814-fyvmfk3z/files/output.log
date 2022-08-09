@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "train_v3.py", line 143, in <module>
+    main()
+  File "train_v3.py", line 83, in main
+    X, y = load_dataframes()
+  File "/workspace/youtube-humpback-whale-classifier/classification/scripts/load_data.py", line 14, in load_dataframes
+    data = pd.read_csv(dataset_path)
+NameError: name 'pd' is not defined
+Memory growth is now the same across all 8 available GPUs.

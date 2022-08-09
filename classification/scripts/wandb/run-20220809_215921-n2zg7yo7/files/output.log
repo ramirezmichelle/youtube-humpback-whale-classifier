@@ -1,0 +1,10 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Traceback (most recent call last):
+  File "train_v3.py", line 142, in <module>
+    main()
+  File "train_v3.py", line 88, in main
+    videos, video_labels = load_frames_and_labels(video_names)
+  File "/workspace/youtube-humpback-whale-classifier/classification/scripts/load_data.py", line 50, in load_frames_and_labels
+    videos = np.empty((N, 461, 224, 224, 3), dtype=np.uint8)
+NameError: name 'np' is not defined
