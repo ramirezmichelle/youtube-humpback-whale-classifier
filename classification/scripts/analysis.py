@@ -27,7 +27,7 @@ def get_test_results(X, y):
     """ Create a dataframe of all test videos and their true and predicted labels"""
     test_index = load_test_indices()
 
-    y_pred, y_true = get_predicted_labels
+#     y_pred, y_true = get_predicted_labels()
     test_results = pd.DataFrame({'File': X.loc[test_index].renamed_title.tolist(), 
                                  'True Relevant Label': y.loc[test_index].tolist(),
                                  'Pred Relevant Label': list(map(bool, y_pred))})
