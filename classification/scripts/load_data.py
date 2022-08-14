@@ -100,6 +100,14 @@ def split_video_dataset(X, y, videos, labels):
     
     return train_dataset, val_dataset, test_dataset
 
+def get_test_video_names(X):
+    """Retrieves the temp saved test indices split to get the names of videos in our test set."""
+    test_index = load_test_indices()
+    test_video_names = X.loc[test_index].renamed_title.tolist()
+    delete_test_indices()
+    return test_video_names
+
+
 def save_test_indices(test_index):
     """Save test indices for access during analysis at model evaluation."""
 
@@ -127,6 +135,6 @@ def delete_test_indices():
         
     os.rmdir('temp_data')  
     return
-    
+
     
     

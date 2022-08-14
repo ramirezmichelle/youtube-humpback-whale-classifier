@@ -3,7 +3,6 @@ from sklearn import metrics
 from tabulate import tabulate
 import wandb
 
-from load_data import load_test_indices
 
 def get_predicted_labels(dataset, model):
     "Generate predicted probabilites and get predicted class (0 or 1). \
@@ -23,13 +22,12 @@ def get_F1_score(test_dataset, model):
     return metrics.f1_score(y_true, y_pred)
 
 
-def get_test_results(X, y):
+def get_test_results(test_dataset, test_video_names):
     """ Create a dataframe of all test videos and their true and predicted labels"""
-    test_index = load_test_indices()
 
-#     y_pred, y_true = get_predicted_labels()
-    test_results = pd.DataFrame({'File': X.loc[test_index].renamed_title.tolist(), 
-                                 'True Relevant Label': y.loc[test_index].tolist(),
+    y_pred, y_true = get_predicted_labels(test_dataset)
+    test_results = pd.DataFrame({'File': test_video_names, 
+                                 'True Relevant Label': list(map(bool, y_true)),
                                  'Pred Relevant Label': list(map(bool, y_pred))})
     
     return test_results
