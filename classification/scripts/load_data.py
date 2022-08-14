@@ -20,6 +20,7 @@ def load_dataframes(dataset_path = "/mount/data/downloaded_videos.csv"):
     
     return X, y
 
+
 def get_video_data(video_clip_title):
     """ Reads video frames in from HDF5 file.
         Yields numpy array of shape (461, 224, 224, 3)
@@ -63,15 +64,24 @@ def load_frames_and_labels(video_names):
     return videos, labels
 
 
-def split_video_dataset(X, y, videos, labels):
-    """ Takes numpy video frames and labels and uses sklearn's train_test_split to generate
-    a train, validation, and test dataset, each with balanced class proportions """
+def get_index_splits(X, y):
+    """ Uses sklearn's train_test_split to generate train, test, 
+    and validation splits, each with balanced class proportions """
+    
     X_0, X_test, y_0, y_test = train_test_split(X, y, test_size = 0.20, random_state = 42)
     X_train, X_val, y_train, y_val = train_test_split(X_0, y_0, test_size = 0.20, random_state = 42)
 
     train_index = list(X_train.index)
     test_index = list(X_test.index)
     val_index = list(X_val.index)
+    
+    return train_index, test_index, val_index
+    
+    
+def split_video_dataset(X, y, videos, labels):
+    """ Splits video dataset (numpy) into train, test, and validation sets. """
+    
+    train_index, test_index, val_index = get_index_splits(X, y)
 
     train_videos, train_labels = videos[train_index], labels[train_index]
     val_videos, val_labels     = videos[val_index], labels[val_index]
