@@ -25,14 +25,13 @@ def get_F1_score(test_dataset, model):
 
 def get_test_results(X, y):
     """ Create a dataframe of all test videos and their true and predicted labels"""
-    test_indices = load_test_indices()
-    print(test_indices)
-    return
-#     test_results = pd.DataFrame({'File': X.loc[test_index].renamed_title.tolist(), 
-#                                  'True Relevant Label': y.loc[test_index].tolist(),
-#                                  'Pred Relevant Label': list(map(bool, y_pred))})
+    test_index = load_test_indices()
+
+    test_results = pd.DataFrame({'File': X.loc[test_index].renamed_title.tolist(), 
+                                 'True Relevant Label': y.loc[test_index].tolist(),
+                                 'Pred Relevant Label': list(map(bool, y_pred))})
     
-#     return test_results
+    return test_results
 
 
 # def get_false_positives(test_results):

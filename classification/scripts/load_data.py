@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import h5py
 import os
+import glob
 from pathlib import Path
 
 NGC_WORKSPACE = '/mount/data/'
@@ -101,28 +102,30 @@ def split_video_dataset(X, y, videos, labels):
 
 def save_test_indices(test_index):
     """Save test indices for access during analysis at model evaluation."""
-#     with open('/temp_data/test_index.npy', 'wb') as f:
-#         np.save(f, test_index)
-#     return
 
-    with open("/temp_data/test_index", "wb") as fp:
+    if not os.path.exists("temp_data"):
+        os.mkdir("temp_data")
+        
+    with open("temp_data/test_index", "wb") as fp:
         pickle.dump(test_index, fp)
     return
 
 def load_test_indices():
     """Load in test indices for access during analysis at model evaluation."""
-#     with open('/temp_data/test_index.npy', 'rb') as f:
-#         test_index = np.load(f)
-#     return test_index
 
-    with open("/temp_data/test_index", "rb") as fp:
+    with open("temp_data/test_index", "rb") as fp:
         test_index = pickle.load(fp)
     return test_index
 
 
 def delete_test_indices():
     """Clean up and remove saved numpy array file with test indices after usage.""" 
-    os.remove('/temp_data/test_index')
+    
+    files = glob.glob('temp_data/*')
+    for f in files:
+        os.remove(f)
+        
+    os.rmdir('temp_data')  
     return
     
     
