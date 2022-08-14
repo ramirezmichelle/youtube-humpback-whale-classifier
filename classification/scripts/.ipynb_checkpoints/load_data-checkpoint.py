@@ -105,6 +105,7 @@ def get_test_video_names(X):
     test_index = load_test_indices()
     test_video_names = X.loc[test_index].renamed_title.tolist()
     delete_test_indices()
+    
     return test_video_names
 
 
