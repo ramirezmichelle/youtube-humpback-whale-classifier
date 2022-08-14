@@ -1,7 +1,9 @@
 import tensorflow as tf
 import pandas as pd
 import numpy as np
+import pickle
 import h5py
+import os
 from pathlib import Path
 
 NGC_WORKSPACE = '/mount/data/'
@@ -91,5 +93,37 @@ def split_video_dataset(X, y, videos, labels):
         train_dataset = tf.data.Dataset.from_tensor_slices((train_videos, train_labels))
         val_dataset = tf.data.Dataset.from_tensor_slices((val_videos, val_labels))    
         test_dataset = tf.data.Dataset.from_tensor_slices((test_videos, test_labels))
-        
+    
+    # save test indices for consistent analyses at model evaluation later
+    save_test_indices(test_index)
+    
     return train_dataset, val_dataset, test_dataset
+
+def save_test_indices(test_index):
+    """Save test indices for access during analysis at model evaluation."""
+#     with open('/temp_data/test_index.npy', 'wb') as f:
+#         np.save(f, test_index)
+#     return
+
+    with open("/temp_data/test_index", "wb") as fp:
+        pickle.dump(test_index, fp)
+    return
+
+def load_test_indices():
+    """Load in test indices for access during analysis at model evaluation."""
+#     with open('/temp_data/test_index.npy', 'rb') as f:
+#         test_index = np.load(f)
+#     return test_index
+
+    with open("/temp_data/test_index", "rb") as fp:
+        test_index = pickle.load(fp)
+    return test_index
+
+
+def delete_test_indices():
+    """Clean up and remove saved numpy array file with test indices after usage.""" 
+    os.remove('/temp_data/test_index')
+    return
+    
+    
+    

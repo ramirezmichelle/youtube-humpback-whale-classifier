@@ -65,46 +65,48 @@ def main():
     #split videos into train, val, test datasets
     train_dataset, val_dataset, test_dataset = split_video_dataset(X, y, videos, video_labels)
     
-    # get video frame feature representations with CNN for each dataset split
-    if args.num_gpus >= 1:
-        train_features, train_labels, train_duration_cnn = feature_extraction_gpu(args.num_gpus, train_dataset, args.cnn_model, augment_data=True)
-        val_features, val_labels, val_duration_cnn = feature_extraction_gpu(args.num_gpus, val_dataset, args.cnn_model, augment_data=True)
-        test_features, test_labels, _ = feature_extraction_gpu(args.num_gpus, test_dataset, args.cnn_model)
-
-    else:
-        frames_per_video = videos.shape[1]
-        train_features, train_labels, train_duration_cnn = feature_extraction_cpu(train_dataset, frames_per_video, args.cnn_model, augment_data=True)
-        val_features, val_labels, val_duration_cnn = feature_extraction_cpu(val_dataset, frames_per_video, args.cnn_model, augment_data=True)
-        test_features, test_labels, _ = feature_extraction_cpu(test_dataset, frames_per_video, args.cnn_model)
-        
-    print("Back from feature Extraction.")
-    print(f"Train Features: {train_features.shape} || Train Labels: {train_labels.shape}")
-    print(f"Val Features: {val_features.shape} || Val Labels: {val_labels.shape}")
-    print(f"Test Features: {test_features.shape} || Test Labels: {test_labels.shape}")
-
-    # split and batch data for RNN 
-    train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
-    val_labels = np.reshape(val_labels, (val_labels.shape[0], 1))
-    test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
+    get_test_results(X, y)
     
-    with tf.device("/device:CPU:0"):
-        BUFFER_SIZE_TRAIN = train_features.shape[0]
-        BUFFER_SIZE_VAL = val_features.shape[0]
-        BUFFER_SIZE_TEST = test_features.shape[0]
-        BATCH_SIZE = 32
+#     # get video frame feature representations with CNN for each dataset split
+#     if args.num_gpus >= 1:
+#         train_features, train_labels, train_duration_cnn = feature_extraction_gpu(args.num_gpus, train_dataset, args.cnn_model, augment_data=True)
+#         val_features, val_labels, val_duration_cnn = feature_extraction_gpu(args.num_gpus, val_dataset, args.cnn_model, augment_data=True)
+#         test_features, test_labels, _ = feature_extraction_gpu(args.num_gpus, test_dataset, args.cnn_model)
+
+#     else:
+#         frames_per_video = videos.shape[1]
+#         train_features, train_labels, train_duration_cnn = feature_extraction_cpu(train_dataset, frames_per_video, args.cnn_model, augment_data=True)
+#         val_features, val_labels, val_duration_cnn = feature_extraction_cpu(val_dataset, frames_per_video, args.cnn_model, augment_data=True)
+#         test_features, test_labels, _ = feature_extraction_cpu(test_dataset, frames_per_video, args.cnn_model)
         
-        train_dataset = tf.data.Dataset.from_tensor_slices((train_features, train_labels)).shuffle(BUFFER_SIZE_TRAIN).batch(BATCH_SIZE)
-        val_dataset = tf.data.Dataset.from_tensor_slices((val_features, val_labels)).batch(BATCH_SIZE)    
-        test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).batch(BATCH_SIZE)
+#     print("Back from feature Extraction.")
+#     print(f"Train Features: {train_features.shape} || Train Labels: {train_labels.shape}")
+#     print(f"Val Features: {val_features.shape} || Val Labels: {val_labels.shape}")
+#     print(f"Test Features: {test_features.shape} || Test Labels: {test_labels.shape}")
+
+#     # split and batch data for RNN 
+#     train_labels = np.reshape(train_labels, (train_labels.shape[0], 1))
+#     val_labels = np.reshape(val_labels, (val_labels.shape[0], 1))
+#     test_labels = np.reshape(test_labels, (test_labels.shape[0], 1))
+    
+#     with tf.device("/device:CPU:0"):
+#         BUFFER_SIZE_TRAIN = train_features.shape[0]
+#         BUFFER_SIZE_VAL = val_features.shape[0]
+#         BUFFER_SIZE_TEST = test_features.shape[0]
+#         BATCH_SIZE = 32
+        
+#         train_dataset = tf.data.Dataset.from_tensor_slices((train_features, train_labels)).shuffle(BUFFER_SIZE_TRAIN).batch(BATCH_SIZE)
+#         val_dataset = tf.data.Dataset.from_tensor_slices((val_features, val_labels)).batch(BATCH_SIZE)    
+#         test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).batch(BATCH_SIZE)
 
     #train RNN
-    model = train_rnn(train_dataset, val_dataset, train_features.shape[2])
+#     model = train_rnn(train_dataset, val_dataset, train_features.shape[2])
     
     # evaluate trained model on test data
-    loss, accuracy = model.evaluate(test_dataset)    
-    f1 = get_F1_score(test_dataset, model)
+#     loss, accuracy = model.evaluate(test_dataset)    
+#     f1 = get_F1_score(test_dataset, model)
     
-    display_results(args.cnn_model, loss, accuracy, f1, train_duration_cnn, val_duration_cnn)
+#     display_results(args.cnn_model, loss, accuracy, f1, train_duration_cnn, val_duration_cnn)
     
     if args.wandb_api_key:
         wandb.finish()
