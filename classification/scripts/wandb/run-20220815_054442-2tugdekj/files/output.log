@@ -1,0 +1,66 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+Done loading videos in 59.82231402397156 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 50.358030796051025 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 23.011401176452637 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 22.181267023086548 seconds.
+Back from feature Extraction.
+Train Features: (232, 461, 2048) || Train Labels: (232, 1)
+Val Features: (59, 461, 2048) || Val Labels: (59, 1)
+Test Features: (73, 461, 2048) || Test Labels: (73, 1)
+Epoch 1/15
+
+
+8/8 [==============================] - 13s 652ms/step - loss: 0.8528 - accuracy: 0.6121 - val_loss: 0.4736 - val_accuracy: 0.7966
+Epoch 2/15
+
+8/8 [==============================] - 3s 345ms/step - loss: 0.4147 - accuracy: 0.8060 - val_loss: 0.5340 - val_accuracy: 0.7797
+Epoch 3/15
+
+8/8 [==============================] - 3s 348ms/step - loss: 0.3547 - accuracy: 0.8405 - val_loss: 0.4088 - val_accuracy: 0.8305
+Epoch 4/15
+8/8 [==============================] - 3s 344ms/step - loss: 0.3119 - accuracy: 0.8707 - val_loss: 0.4574 - val_accuracy: 0.8136
+Epoch 5/15
+
+8/8 [==============================] - 3s 343ms/step - loss: 0.2587 - accuracy: 0.9052 - val_loss: 0.4617 - val_accuracy: 0.8136
+Epoch 6/15
+8/8 [==============================] - 3s 343ms/step - loss: 0.2668 - accuracy: 0.8664 - val_loss: 0.4411 - val_accuracy: 0.7966
+Epoch 7/15
+
+8/8 [==============================] - 3s 344ms/step - loss: 0.1414 - accuracy: 0.9569 - val_loss: 0.4580 - val_accuracy: 0.8644
+Epoch 8/15
+
+8/8 [==============================] - 3s 342ms/step - loss: 0.1380 - accuracy: 0.9569 - val_loss: 0.4693 - val_accuracy: 0.8305
+Epoch 9/15
+
+8/8 [==============================] - 3s 344ms/step - loss: 0.1755 - accuracy: 0.9310 - val_loss: 0.6793 - val_accuracy: 0.7458
+Epoch 10/15
+
+8/8 [==============================] - 3s 344ms/step - loss: 0.1291 - accuracy: 0.9483 - val_loss: 0.6632 - val_accuracy: 0.7627
+Epoch 11/15
+8/8 [==============================] - 3s 345ms/step - loss: 0.1499 - accuracy: 0.9440 - val_loss: 0.5673 - val_accuracy: 0.8475
+Epoch 12/15
+
+8/8 [==============================] - 3s 347ms/step - loss: 0.1019 - accuracy: 0.9526 - val_loss: 0.6048 - val_accuracy: 0.8305
+3/3 [==============================] - 1s 82ms/step - loss: 0.5944 - accuracy: 0.7945
+CNN         Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)    Frames/Second (Feat. Ext.)
+--------  -----------------  -------------  ----------  --------------------------------  ----------------------------  ----------------------------
+resnet50           0.794521       0.594386    0.819277                           73.3694                       3.96623                       1828.43
+Done Logging WandB metrics.

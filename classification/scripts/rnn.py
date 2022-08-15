@@ -4,6 +4,9 @@ from keras.layers import *
 from keras.models import *
 from keras import backend as K
 
+import wandb
+from wandb.keras import WandbCallback
+
 class attention(Layer):
     def __init__(self, return_sequences=True):
         self.return_sequences = return_sequences
@@ -47,7 +50,7 @@ def train_rnn(train_dataset, val_dataset, feature_dim):
                                                   mode="max",
                                                   min_delta = 0.01,
                                                   restore_best_weights=True)]
-
+ 
     # train model
     history = model.fit(train_dataset,
                         validation_data = val_dataset,
@@ -56,4 +59,4 @@ def train_rnn(train_dataset, val_dataset, feature_dim):
                         verbose= 1)
 
     
-    return model
+    return model, history

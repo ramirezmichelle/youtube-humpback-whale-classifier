@@ -80,21 +80,28 @@ def display_misclassifications_wandb(dataset, video_names, model):
     fp_df = get_false_positives(results_df)
     return
     
-# def display_model_train_wandb():
+def display_model_train_wandb(history):
 #     #log training and validation metrics on wandb
-#     for epoch, train_loss in enumerate(history.history['loss']):
-#         wandb.log({'training_loss': train_loss, "epoch": epoch})
+#     for train_loss in history.history['loss']:
+#         wandb.log({ "Train Loss": train_loss})
 
-#     for epoch, train_acc in enumerate(history.history['accuracy']):
-#         wandb.log({'training_accuracy': train_acc, "epoch": epoch})
+#     for train_acc in history.history['accuracy']:
+#         wandb.log({'Train Acc': train_acc})
 
-#     for epoch, val_loss in enumerate(history.history['val_loss']):
-#         wandb.log({'val_loss': val_loss, "epoch": epoch})
+#     for val_loss in history.history['val_loss']:
+#         wandb.log({'Val Loss': val_loss})
 
-#     for epoch, val_acc in enumerate(history.history['val_accuracy']):
-#         wandb.log({'val_accuracy': val_acc, "epoch": epoch})
+#     for val_acc in history.history['val_accuracy']:
+#         wandb.log({'Val Acc': val_acc})
+    
+    for i in range(len(history.history['loss'])):
+        wandb.log({
+        "Train Loss": history.history['loss'][i],
+        "Train Acc": history.history['accuracy'][i],
+        "Valid Loss": history.history['val_loss'][i],
+        "Valid Acc": history.history['val_accuracy'][i]})
 
-#     print('Done Logging WandB metrics.')
+    print('Done Logging WandB metrics.')
 
 
 def display_results(cnn, loss, accuracy, f1, train_duration, val_duration):

@@ -28,7 +28,7 @@ def limit_gpu_memory_growth():
 
             
 def main():
-    #parse args here
+    # parse args
     parser = argparse.ArgumentParser()
     parser.add_argument("--num_gpus", default=0, type=int)
     parser.add_argument("--cnn_model", default="resnet101", type=str)
@@ -41,7 +41,7 @@ def main():
     print(f"CNN: {args.cnn_model}")   
     print(f"wandb run name: {args.wandb_run}")   
     
-    #start logging info
+    # start wandb session 
     if args.wandb_api_key:
         os.environ["WANDB_API_KEY"] = args.wandb_api_key
         wandb.login()
@@ -51,7 +51,7 @@ def main():
     # don't let TF take up all the gpu memory
     limit_gpu_memory_growth()
     
-    #read in dataframes
+    # read in dataframes
     X, y = load_dataframes()
 
     # get our data ready
@@ -62,7 +62,7 @@ def main():
     stop = time.time()
     print(f"Done loading videos in {stop-start} seconds.")
 
-    #split videos into train, val, test datasets
+    # split videos into train, val, test datasets
     train_dataset, val_dataset, test_dataset = split_video_dataset(X, y, videos, video_labels)
     
     # get video frame feature representations with CNN for each dataset split
@@ -98,7 +98,7 @@ def main():
         test_dataset = tf.data.Dataset.from_tensor_slices((test_features, test_labels)).batch(BATCH_SIZE)
 
     # train RNN
-    model = train_rnn(train_dataset, val_dataset, train_features.shape[2])
+    model, history = train_rnn(train_dataset, val_dataset, train_features.shape[2])
     
     # evaluate trained model on test data
     loss, accuracy = model.evaluate(test_dataset)    
@@ -107,7 +107,11 @@ def main():
     # print metrics for model run on test data
     display_results(args.cnn_model, loss, accuracy, f1, train_duration_cnn, val_duration_cnn)
     
+    # visualizing model information on wandb for further evaluation
     if args.wandb_api_key:
+        # visualize rnn model training metrics on wandb
+        display_model_train_wandb(history)
+        
         # visualize misclassifications on wandb
         test_video_names = get_test_video_names(X)
         display_misclassifications_wandb(test_dataset, test_video_names, model)

@@ -1,0 +1,95 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+Done loading videos in 62.719178915023804 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 49.68499779701233 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 22.882486820220947 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 23.56406259536743 seconds.
+Back from feature Extraction.
+Train Features: (232, 461, 2048) || Train Labels: (232, 1)
+Val Features: (59, 461, 2048) || Val Labels: (59, 1)
+Test Features: (73, 461, 2048) || Test Labels: (73, 1)
+is_wandb_enabled is True
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/profiler/internal/flops_registry.py:138: tensor_shape_from_node_def_name (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.tensor_shape_from_node_def_name`
+Epoch 1/15
+
+8/8 [==============================] - ETA: 0s - loss: 0.6353 - accuracy: 0.7155
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Can't save model in the h5py format. The model will be saved as as an W&B Artifact in the 'tf' format.
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98e85a280> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98e631490> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa94171b760> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98dea4070> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+8/8 [==============================] - 44s 5s/step - loss: 0.6353 - accuracy: 0.7155 - val_loss: 0.4561 - val_accuracy: 0.7627
+Epoch 2/15
+8/8 [==============================] - 3s 353ms/step - loss: 0.3794 - accuracy: 0.8362 - val_loss: 0.4605 - val_accuracy: 0.7627
+Epoch 3/15
+
+8/8 [==============================] - ETA: 0s - loss: 0.3017 - accuracy: 0.8836
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Can't save model in the h5py format. The model will be saved as as an W&B Artifact in the 'tf' format.
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98e85a280> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98e631490> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa94171b760> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98dea4070> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+8/8 [==============================] - 33s 5s/step - loss: 0.3017 - accuracy: 0.8836 - val_loss: 0.4367 - val_accuracy: 0.8136
+Epoch 4/15
+8/8 [==============================] - ETA: 0s - loss: 0.2062 - accuracy: 0.9138
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Can't save model in the h5py format. The model will be saved as as an W&B Artifact in the 'tf' format.
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98e85a280> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98e631490> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa94171b760> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7fa98dea4070> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+8/8 [==============================] - 34s 5s/step - loss: 0.2062 - accuracy: 0.9138 - val_loss: 0.3796 - val_accuracy: 0.8475
+Epoch 5/15
+8/8 [==============================] - 3s 354ms/step - loss: 0.1182 - accuracy: 0.9741 - val_loss: 0.5869 - val_accuracy: 0.7797
+Epoch 6/15
+
+8/8 [==============================] - 3s 344ms/step - loss: 0.1003 - accuracy: 0.9612 - val_loss: 0.5164 - val_accuracy: 0.7797
+Epoch 7/15
+
+8/8 [==============================] - 3s 347ms/step - loss: 0.0543 - accuracy: 0.9828 - val_loss: 0.5179 - val_accuracy: 0.8475
+Epoch 8/15
+
+8/8 [==============================] - 3s 346ms/step - loss: 0.0338 - accuracy: 0.9871 - val_loss: 0.6647 - val_accuracy: 0.8305
+Epoch 9/15
+
+8/8 [==============================] - 3s 351ms/step - loss: 0.0209 - accuracy: 0.9957 - val_loss: 0.7408 - val_accuracy: 0.8644
+Epoch 10/15
+
+8/8 [==============================] - 3s 343ms/step - loss: 0.0433 - accuracy: 0.9784 - val_loss: 0.7386 - val_accuracy: 0.8644
+Epoch 11/15
+8/8 [==============================] - 3s 346ms/step - loss: 0.2051 - accuracy: 0.9052 - val_loss: 0.9894 - val_accuracy: 0.7797
+Epoch 12/15
+
+8/8 [==============================] - 3s 347ms/step - loss: 0.3649 - accuracy: 0.8362 - val_loss: 0.6189 - val_accuracy: 0.7966
+Epoch 13/15
+
+8/8 [==============================] - 3s 352ms/step - loss: 0.2170 - accuracy: 0.9052 - val_loss: 0.3916 - val_accuracy: 0.8136
+Epoch 14/15
+
+8/8 [==============================] - 3s 349ms/step - loss: 0.1226 - accuracy: 0.9397 - val_loss: 0.5667 - val_accuracy: 0.7966
+3/3 [==============================] - 1s 86ms/step - loss: 0.8888 - accuracy: 0.8356
+CNN         Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)    Frames/Second (Feat. Ext.)
+--------  -----------------  -------------  ----------  --------------------------------  ----------------------------  ----------------------------
+resnet50           0.835616       0.888795    0.846154                           72.5675                       4.01006                       1848.64

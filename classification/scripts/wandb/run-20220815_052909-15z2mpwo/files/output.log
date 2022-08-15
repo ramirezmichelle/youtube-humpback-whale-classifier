@@ -1,0 +1,86 @@
+Memory growth is now the same across all 8 available GPUs.
+Loading data...
+Video 0 ...
+Video 50 ...
+Video 100 ...
+Video 150 ...
+Video 200 ...
+Video 250 ...
+Video 300 ...
+Video 350 ...
+Done loading videos in 59.49877190589905 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 50.19981837272644 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 22.900004386901855 seconds.
+Setting TensorFlow Mirrored Strategy with 4 GPUs...
+Number of devices in strategy: 4
+Beginning Feature Extraction in GPU Mode...
+Done getting video frame feature representations in 23.34220790863037 seconds.
+Back from feature Extraction.
+Train Features: (232, 461, 2048) || Train Labels: (232, 1)
+Val Features: (59, 461, 2048) || Val Labels: (59, 1)
+Test Features: (73, 461, 2048) || Test Labels: (73, 1)
+is_wandb_enabled is True
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+WARNING:tensorflow:From /usr/local/lib/python3.8/dist-packages/tensorflow/python/profiler/internal/flops_registry.py:138: tensor_shape_from_node_def_name (from tensorflow.python.framework.graph_util_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.graph_util.tensor_shape_from_node_def_name`
+Epoch 1/15
+
+8/8 [==============================] - ETA: 0s - loss: 0.5510 - accuracy: 0.7069
+[34m[1mwandb[39m[22m: [32m[41mERROR[39m[49m Can't save model in the h5py format. The model will be saved as as an W&B Artifact in the 'tf' format.
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388931730> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388933f10> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f34653438b0> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388485910> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+[34m[1mwandb[39m[22m: Adding directory to artifact (/workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220815_052909-15z2mpwo/files/model-best)... Done. 0.9s
+8/8 [==============================] - 44s 5s/step - loss: 0.5510 - accuracy: 0.7069 - val_loss: 0.6478 - val_accuracy: 0.6610
+Epoch 2/15
+8/8 [==============================] - ETA: 0s - loss: 0.4039 - accuracy: 0.8276
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388931730> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388933f10> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f34653438b0> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388485910> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+[34m[1mwandb[39m[22m: Adding directory to artifact (/workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220815_052909-15z2mpwo/files/model-best)... Done. 0.9s
+8/8 [==============================] - 33s 5s/step - loss: 0.4039 - accuracy: 0.8276 - val_loss: 0.4255 - val_accuracy: 0.7797
+Epoch 3/15
+8/8 [==============================] - ETA: 0s - loss: 0.2975 - accuracy: 0.8578
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388931730> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388933f10> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f34653438b0> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388485910> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+
+[34m[1mwandb[39m[22m: Adding directory to artifact (/workspace/youtube-humpback-whale-classifier/classification/scripts/wandb/run-20220815_052909-15z2mpwo/files/model-best)... Done. 0.9s
+8/8 [==============================] - 33s 5s/step - loss: 0.2975 - accuracy: 0.8578 - val_loss: 0.3994 - val_accuracy: 0.8305
+Epoch 4/15
+8/8 [==============================] - ETA: 0s - loss: 0.1668 - accuracy: 0.9397
+WARNING:absl:Found untraced functions such as lstm_cell_1_layer_call_fn, lstm_cell_1_layer_call_and_return_conditional_losses, lstm_cell_2_layer_call_fn, lstm_cell_2_layer_call_and_return_conditional_losses, lstm_cell_4_layer_call_fn while saving (showing 5 of 8). These functions will not be directly callable after loading.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388931730> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388933f10> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f34653438b0> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+WARNING:absl:<keras.layers.recurrent.LSTMCell object at 0x7f3388485910> has the same name 'LSTMCell' as a built-in Keras object. Consider renaming <class 'keras.layers.recurrent.LSTMCell'> to avoid naming conflicts when loading with `tf.keras.models.load_model`. If renaming is not possible, pass the object in the `custom_objects` parameter of the load function.
+8/8 [==============================] - 34s 5s/step - loss: 0.1668 - accuracy: 0.9397 - val_loss: 0.4248 - val_accuracy: 0.8475
+Epoch 5/15
+8/8 [==============================] - 3s 351ms/step - loss: 0.1274 - accuracy: 0.9483 - val_loss: 0.9810 - val_accuracy: 0.7119
+Epoch 6/15
+8/8 [==============================] - 3s 349ms/step - loss: 0.1274 - accuracy: 0.9440 - val_loss: 0.9911 - val_accuracy: 0.7119
+Epoch 7/15
+8/8 [==============================] - 3s 343ms/step - loss: 0.1554 - accuracy: 0.9310 - val_loss: 1.2022 - val_accuracy: 0.6271
+Epoch 8/15
+
+8/8 [==============================] - 3s 348ms/step - loss: 0.1961 - accuracy: 0.9138 - val_loss: 0.5668 - val_accuracy: 0.7288
+Epoch 9/15
+
+8/8 [==============================] - 3s 353ms/step - loss: 0.1240 - accuracy: 0.9440 - val_loss: 0.5168 - val_accuracy: 0.8305
+3/3 [==============================] - 1s 83ms/step - loss: 0.5199 - accuracy: 0.7945
+CNN         Accuracy (Test)    Loss (Test)    F1 Score    Time to Extract Features (sec)    Videos/Second (Feat. Ext.)    Frames/Second (Feat. Ext.)
+--------  -----------------  -------------  ----------  --------------------------------  ----------------------------  ----------------------------
+resnet50           0.794521       0.519872         0.8                           73.0998                       3.98086                       1835.18
