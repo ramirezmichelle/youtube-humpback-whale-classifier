@@ -76,17 +76,14 @@ def feature_extraction_gpu(num_gpus, dataset, cnn_choice, augment_data=False):
     GLOBAL_BATCH_SIZE = BATCH_SIZE_PER_REPLICA * strategy.num_replicas_in_sync
     
     # store data in TF dataset with batch + prefetch
-    print("Creating TF Dataset...")
     with tf.device("/device:CPU:0"):
         dataset = dataset.batch(GLOBAL_BATCH_SIZE)
         dataset = dataset.prefetch(2) #* strategy.num_replicas_in_sync)
     
     # creates a distributed dataset aligned with our TF strategy
-    print("Creating TF DISTRIBUTED Dataset...")
     dist_dataset = strategy.experimental_distribute_dataset(dataset)
     
     # create a feature extractor on each active GPU in our TF strategy
-    print("Creating CNN Model on Each Active Replica (GPU)")
     with strategy.scope():
         cnn_model = get_feature_extractor(cnn_choice, augment_data)
         
@@ -123,7 +120,7 @@ def feature_extraction_gpu(num_gpus, dataset, cnn_choice, augment_data=False):
     duration = stop - start
     print(f'Done getting video frame feature representations in {stop-start} seconds.')
     
-    print("Formatting Results into Numpy Arrays...")
+    # format results into numpy arrays
     features = replica_objects_to_numpy(distributed_features, num_gpus)
     labels = replica_objects_to_numpy(distributed_labels, num_gpus)
     

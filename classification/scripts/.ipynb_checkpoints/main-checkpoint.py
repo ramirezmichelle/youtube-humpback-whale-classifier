@@ -104,15 +104,15 @@ def main():
     loss, accuracy = model.evaluate(test_dataset)    
     f1 = get_F1_score(test_dataset, model)
     
-    # visualize misclassifications on wandb
-    test_video_names = get_test_video_names(X)
-#     test_classifications = get_test_results(test_dataset, test_video_names)
-    display_misclassifications_wandb(test_dataset, test_video_names, model)
-    
     # print metrics for model run on test data
     display_results(args.cnn_model, loss, accuracy, f1, train_duration_cnn, val_duration_cnn)
     
     if args.wandb_api_key:
+        # visualize misclassifications on wandb
+        test_video_names = get_test_video_names(X)
+        display_misclassifications_wandb(test_dataset, test_video_names, model)
+        
+        #close out wandb process
         wandb.finish()
     
     return

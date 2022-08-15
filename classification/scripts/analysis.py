@@ -76,14 +76,8 @@ def display_misclassifications_wandb(dataset, video_names, model):
     further inspection + video visualization. """
     
     results_df = build_predictions_df(dataset, video_names, model)
-    
     fn_df = get_false_negatives(results_df)
     fp_df = get_false_positives(results_df)
-    
-    print(results_df)
-    print(fn_df)
-    print(fp_df)
-    
     return
     
 # def display_model_train_wandb():
